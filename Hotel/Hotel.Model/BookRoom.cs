@@ -3,6 +3,9 @@ using System.Data.SqlClient;
 
 namespace Hotel.Model
 {
+    /// <summary>
+    ///  class BookRoom Get/Set property
+    /// </summary>
     public class BookRoom
     {
         private string _maBookRoom;
