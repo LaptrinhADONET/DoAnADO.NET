@@ -1,0 +1,16 @@
+F:\C#.net\Hotel\Hotel\bin\Debug\Hotel.exe.config
+F:\C#.net\Hotel\Hotel\bin\Debug\Hotel.exe
+F:\C#.net\Hotel\Hotel\bin\Debug\Hotel.pdb
+F:\C#.net\Hotel\Hotel\obj\Debug\Hotel.Properties.Resources.resources
+F:\C#.net\Hotel\Hotel\obj\Debug\Hotel.csproj.GenerateResource.Cache
+F:\C#.net\Hotel\Hotel\obj\Debug\Hotel.exe
+F:\C#.net\Hotel\Hotel\obj\Debug\Hotel.pdb
+F:\C#.net\Hotel\Hotel\obj\Debug\Hotel.MenuHotel.resources
+F:\C#.net\Hotel\Hotel\obj\Debug\Hotel.ListForm.login.resources
+F:\C#.net\Hotel\Hotel\bin\Debug\Bunifu_UI_v1.52.dll
+F:\C#.net\Hotel\Hotel\bin\Debug\MetroFramework.dll
+F:\C#.net\Hotel\Hotel\bin\Debug\MetroFramework.Fonts.dll
+F:\C#.net\Hotel\Hotel\obj\Debug\Hotel.csprojResolveAssemblyReference.cache
+F:\C#.net\Hotel\Hotel\obj\Debug\Hotel.ListForm.Listslide.resources
+F:\C#.net\Hotel\Hotel\obj\Debug\Hotel.ListForm.Form1.resources
+F:\C#.net\Hotel\Hotel\obj\Debug\Hotel.ListForm.DetailRoom.resources

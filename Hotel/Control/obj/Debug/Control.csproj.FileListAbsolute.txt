@@ -1,0 +1,5 @@
+F:\C#.net\Hotel\Control\bin\Debug\Control.dll
+F:\C#.net\Hotel\Control\bin\Debug\Control.pdb
+F:\C#.net\Hotel\Control\obj\Debug\Control.csprojResolveAssemblyReference.cache
+F:\C#.net\Hotel\Control\obj\Debug\Control.dll
+F:\C#.net\Hotel\Control\obj\Debug\Control.pdb
