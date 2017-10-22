@@ -26,3 +26,4 @@ C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel
 C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.Properties.Resources.resources
 C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.csproj.GenerateResource.Cache
 C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.Login.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.Menu.resources
