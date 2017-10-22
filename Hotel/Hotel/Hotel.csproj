@@ -68,52 +68,16 @@
     <Compile Include="ButtonBorder.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ListForm\DetailRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ListForm\DetailRoom.Designer.cs">
-      <DependentUpon>DetailRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListForm\Form1.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListForm\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListForm\Listslide.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ListForm\Listslide.Designer.cs">
-      <DependentUpon>Listslide.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListForm\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListForm\Login.Designer.cs">
+    <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ListForm\DetailRoom.resx">
-      <DependentUpon>DetailRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListForm\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListForm\Listslide.resx">
-      <DependentUpon>Listslide.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListForm\Login.resx">
+    <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -139,7 +103,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ListForm\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Image1.bmp" />
     <None Include="Images\abc\Product1.jpg" />

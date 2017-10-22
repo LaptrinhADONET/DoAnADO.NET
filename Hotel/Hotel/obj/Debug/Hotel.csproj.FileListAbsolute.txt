@@ -17,3 +17,12 @@ F:\C#.net\Hotel\Hotel\obj\Debug\Hotel.ListForm.DetailRoom.resources
 C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\Hotel.exe.config
 C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.exe
 C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.pdb
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\Hotel.exe
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\Hotel.pdb
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\MetroFramework.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.csprojResolveAssemblyReference.cache
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.Properties.Resources.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.csproj.GenerateResource.Cache
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.Login.resources

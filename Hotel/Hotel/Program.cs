@@ -1,5 +1,4 @@
-﻿using Hotel.ListForm;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -16,7 +15,7 @@ namespace Hotel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuHotel());
+            Application.Run(new Login());
         }
     }
 }

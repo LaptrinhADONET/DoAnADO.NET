@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hotel.ListForm
+namespace Hotel
 {
     public partial class Login : Form
     {
@@ -17,13 +17,9 @@ namespace Hotel.ListForm
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void lcClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
         }
     }
 }
