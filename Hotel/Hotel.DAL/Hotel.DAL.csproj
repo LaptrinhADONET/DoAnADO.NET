@@ -57,6 +57,7 @@
     <Compile Include="DAL\LoaiPhongDAL.cs" />
     <Compile Include="DAL\MenuDAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
+    <Compile Include="DAL\PhanQuyenDAL.cs" />
     <Compile Include="DAL\PhongBanDAL.cs" />
     <Compile Include="DAL\PhongDAL.cs" />
     <Compile Include="DBcontact\DBContect.cs" />

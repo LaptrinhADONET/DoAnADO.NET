@@ -85,6 +85,25 @@ namespace Hotel
             btnTest[11, 0].Text = "Chức vụ";
             btnTest[12, 0].Text = "Lịch dọn phòng";
             btnTest[13, 0].Text = "Tài khoản của tôi";
+            btnTest[14, 0].Text = "Phân quyền";
+            lbNameNV.Text = Properties.Settings.Default.Name.ToString();
+            Login lg = new Login();
+            lg.ShowDialog();
+            btnTest[0, 0].Enabled = Login.TrangChu == true ? true : false;
+            btnTest[1, 0].Enabled = Login.TiepNhanKhach == true ? true : false;
+            btnTest[2, 0].Enabled = Login.DanhSachPhong == true ? true : false;
+            btnTest[3, 0].Enabled = Login.LoaiPhong == true ? true : false;
+            btnTest[4, 0].Enabled = Login.DichVu == true ? true : false;
+            btnTest[5, 0].Enabled = Login.ThucDon == true ? true : false;
+            btnTest[6, 0].Enabled = Login.PhongBan == true ? true : false;
+            btnTest[7, 0].Enabled = Login.ThongTinKhach == true ? true : false;
+            btnTest[8, 0].Enabled = Login.ThongTinNV == true ? true : false;
+            btnTest[9, 0].Enabled = Login.KhuVuc == true ? true : false;
+            btnTest[10, 0].Enabled = Login.DanhSachHD == true ? true : false;
+            btnTest[11, 0].Enabled = Login.ChucVu == true ? true : false;
+            btnTest[12, 0].Enabled = Login.LichDonPhong == true ? true : false;
+            btnTest[13, 0].Enabled = Login.TKCuaTui == true ? true : false;
+            btnTest[14, 0].Enabled = Login.PhanQuyen == true ? true : false;
         }
 
         private void btnTest_MouseLeave(object sender, EventArgs e)
@@ -112,10 +131,9 @@ namespace Hotel
 
         private void Menu_Load_1(object sender, EventArgs e)
         {
-            CreateListMenu(14);
+            CreateListMenu(15);
             getNameMenuAD();
             GetData();
-            lbNameNV.Text = Properties.Settings.Default.Name.ToString();
         }
     }
 }
