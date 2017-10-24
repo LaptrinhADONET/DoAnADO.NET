@@ -1,0 +1,10 @@
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.BUS\bin\Debug\Hotel.BUS.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.BUS\bin\Debug\Hotel.BUS.pdb
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.BUS\obj\Debug\Hotel.BUS.csprojResolveAssemblyReference.cache
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.BUS\obj\Debug\Hotel.BUS.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.BUS\obj\Debug\Hotel.BUS.pdb
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.BUS\bin\Debug\Configuration.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.BUS\bin\Debug\Configuration.pdb
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.BUS\bin\Debug\Configuration.xml
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.BUS\bin\Debug\Hotel.DAL.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.BUS\bin\Debug\Hotel.DAL.pdb

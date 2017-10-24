@@ -27,3 +27,11 @@ C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel
 C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.csproj.GenerateResource.Cache
 C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.Login.resources
 C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.Menu.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\obj\Debug\Hotel.Form1.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\Configuration.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\Configuration.pdb
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\Configuration.xml
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\Hotel.BUS.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\Hotel.DAL.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\Hotel.BUS.pdb
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel\bin\Debug\Hotel.DAL.pdb

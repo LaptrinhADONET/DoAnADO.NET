@@ -1,0 +1,5 @@
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.Model\bin\Debug\Hotel.Model.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.Model\bin\Debug\Hotel.Model.pdb
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.Model\obj\Debug\Hotel.Model.csprojResolveAssemblyReference.cache
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.Model\obj\Debug\Hotel.Model.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\DoAnADO.NET\Hotel\Hotel.Model\obj\Debug\Hotel.Model.pdb

@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Configuration, Version=0.2.0.0, Culture=neutral, PublicKeyToken=e2ce4cec8dd3804f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Configuration.0.2.0-beta13\lib\net45\Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,30 +44,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookRoomDAL.cs" />
-    <Compile Include="CheckOutDAL.cs" />
-    <Compile Include="ChucVuDAL.cs" />
-    <Compile Include="CTDichVuDAL.cs" />
-    <Compile Include="CTHoaDonDAL.cs" />
-    <Compile Include="DichVuDAL.cs" />
-    <Compile Include="HoaDonDAL.cs" />
-    <Compile Include="KhachHangDAL.cs" />
-    <Compile Include="KhuVucDAL.cs" />
-    <Compile Include="LichDonPhongDAL.cs" />
-    <Compile Include="LoaiPhongDAL.cs" />
-    <Compile Include="MenuDAL.cs" />
-    <Compile Include="NhanVienDAL.cs" />
-    <Compile Include="PhongBanDAL.cs" />
-    <Compile Include="PhongDAL.cs" />
+    <Compile Include="DAL\BookRoomDAL.cs" />
+    <Compile Include="DAL\CheckOutDAL.cs" />
+    <Compile Include="DAL\ChucVuDAL.cs" />
+    <Compile Include="DAL\CTDichVuDAL.cs" />
+    <Compile Include="DAL\CTHoaDonDAL.cs" />
+    <Compile Include="DAL\DichVuDAL.cs" />
+    <Compile Include="DAL\HoaDonDAL.cs" />
+    <Compile Include="DAL\KhachHangDAL.cs" />
+    <Compile Include="DAL\KhuVucDAL.cs" />
+    <Compile Include="DAL\LichDonPhongDAL.cs" />
+    <Compile Include="DAL\LoaiPhongDAL.cs" />
+    <Compile Include="DAL\MenuDAL.cs" />
+    <Compile Include="DAL\NhanVienDAL.cs" />
+    <Compile Include="DAL\PhongBanDAL.cs" />
+    <Compile Include="DAL\PhongDAL.cs" />
+    <Compile Include="DBcontact\DBContect.cs" />
+    <Compile Include="IRepository\IRepository.cs" />
+    <Compile Include="IRepository\Repository.cs" />
+    <Compile Include="Model\BookRoom.cs" />
+    <Compile Include="Model\CheckOut.cs" />
+    <Compile Include="Model\ChucVu.cs" />
+    <Compile Include="Model\CTDichVu.cs" />
+    <Compile Include="Model\CTHoaDon.cs" />
+    <Compile Include="Model\DichVu.cs" />
+    <Compile Include="Model\HoaDon.cs" />
+    <Compile Include="Model\KhachHang.cs" />
+    <Compile Include="Model\KhuVuc.cs" />
+    <Compile Include="Model\LichDonPhong.cs" />
+    <Compile Include="Model\LoaiPhong.cs" />
+    <Compile Include="Model\Menu.cs" />
+    <Compile Include="Model\NhanVien.cs" />
+    <Compile Include="Model\Phong.cs" />
+    <Compile Include="Model\PhongBan.cs" />
+    <Compile Include="Model\TTMonAn.cs" />
+    <Compile Include="Model\VatDung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TTMonAnDAL.cs" />
-    <Compile Include="VatDungDAL.cs" />
+    <Compile Include="DAL\TTMonAnDAL.cs" />
+    <Compile Include="DAL\VatDungDAL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hotel.Model\Hotel.Model.csproj">
-      <Project>{4b062496-c227-46dc-a00a-a5c231572b7f}</Project>
-      <Name>Hotel.Model</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
