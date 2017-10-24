@@ -29,17 +29,12 @@ namespace Hotel
             return lst;
         }
 
-        public void PQNguoiDUng(string TenPQ)
+        public void PQNguoiDUng()
         {
-            //
-            Hashtable openWith = new Hashtable();
-
-            // Add some elements to the hash table. There are no
-            // duplicate keys, but some of the values are duplicates.
-            openWith.Add("15", "admin");
-            openWith.Add("14", "Giám Đốc");
-            openWith.Add("dib", "paint.exe");
-            openWith.Add("rtf", "wordpad.exe");
+            ChucVuBUS cv = new ChucVuBUS();
+            List<ChucVu> lst = new List<ChucVu>();
+            Hashtable hst = new Hashtable();
+            lst = cv.Get_By_Top("", "", "");
         }
 
         private void btnSign_Click(object sender, EventArgs e)
