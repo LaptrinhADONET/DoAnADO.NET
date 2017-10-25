@@ -88,7 +88,7 @@ namespace Hotel
             btnTest[14, 0].Text = "Phân quyền";
             lbNameNV.Text = Properties.Settings.Default.Name.ToString();
             Login lg = new Login();
-            lg.ShowDialog();
+
             btnTest[0, 0].Enabled = Login.TrangChu == true ? true : false;
             btnTest[1, 0].Enabled = Login.TiepNhanKhach == true ? true : false;
             btnTest[2, 0].Enabled = Login.DanhSachPhong == true ? true : false;
@@ -127,6 +127,11 @@ namespace Hotel
         private void lbClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lbLogout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
 
         private void Menu_Load_1(object sender, EventArgs e)

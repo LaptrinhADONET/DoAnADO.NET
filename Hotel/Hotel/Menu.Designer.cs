@@ -48,9 +48,9 @@
             this.lbMenu = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.dgvLogin = new System.Windows.Forms.DataGridView();
             this.pnBottom = new System.Windows.Forms.Panel();
             this.pbTop = new System.Windows.Forms.Panel();
-            this.dgvLogin = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -161,6 +161,7 @@
             this.lbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.lbLogout, "lbLogout");
             this.lbLogout.Name = "lbLogout";
+            this.lbLogout.Click += new System.EventHandler(this.lbLogout_Click);
             // 
             // lbClose
             // 
@@ -191,6 +192,15 @@
             resources.ApplyResources(this.pnMenu, "pnMenu");
             this.pnMenu.Name = "pnMenu";
             // 
+            // dgvLogin
+            // 
+            this.dgvLogin.AllowUserToAddRows = false;
+            this.dgvLogin.AllowUserToDeleteRows = false;
+            this.dgvLogin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dgvLogin, "dgvLogin");
+            this.dgvLogin.Name = "dgvLogin";
+            this.dgvLogin.ReadOnly = true;
+            // 
             // pnBottom
             // 
             this.pnBottom.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -202,12 +212,6 @@
             this.pbTop.BackColor = System.Drawing.SystemColors.ActiveBorder;
             resources.ApplyResources(this.pbTop, "pbTop");
             this.pbTop.Name = "pbTop";
-            // 
-            // dgvLogin
-            // 
-            this.dgvLogin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dgvLogin, "dgvLogin");
-            this.dgvLogin.Name = "dgvLogin";
             // 
             // Menu
             // 

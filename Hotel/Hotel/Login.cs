@@ -57,10 +57,12 @@ namespace Hotel
                 {
                     Properties.Settings.Default.Name = i.TenNV.ToString();
                 }
-                Menu mn = new Hotel.Menu();
-                setBtnMenu();
 
+                Menu mn = new Hotel.Menu();
+
+                setBtnMenu();
                 mn.Show();
+                this.Hide();
             }
             else
             {

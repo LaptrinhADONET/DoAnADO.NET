@@ -801,10 +801,10 @@
     <value>7</value>
   </data>
   <data name="dgvLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 90</value>
+    <value>185, 90</value>
   </data>
   <data name="dgvLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>890, 150</value>
+    <value>767, 150</value>
   </data>
   <data name="dgvLogin.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
