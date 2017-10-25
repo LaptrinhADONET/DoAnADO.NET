@@ -55,9 +55,12 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.dgvPhanQuyen = new System.Windows.Forms.DataGridView();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Columns1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangChu = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TiepNhanKhach = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DanhSachPhong = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -73,8 +76,6 @@
             this.LichDonPhong = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TKCuaTui = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.PhanQuyen = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhanQuyen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -352,6 +353,7 @@
             this.MaTaiKhoan,
             this.MaNV,
             this.TenNV,
+            this.Columns1,
             this.TrangChu,
             this.TiepNhanKhach,
             this.DanhSachPhong,
@@ -388,6 +390,27 @@
             this.dgvPhanQuyen.TabIndex = 24;
             this.dgvPhanQuyen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhanQuyen_CellClick);
             // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(678, 247);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(235, 24);
+            this.txtTimKiem.TabIndex = 25;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(176)))), ((int)(((byte)(213)))));
+            this.btnTimKiem.FlatAppearance.BorderSize = 0;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.ForeColor = System.Drawing.Color.White;
+            this.btnTimKiem.Location = new System.Drawing.Point(934, 243);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(102, 30);
+            this.btnTimKiem.TabIndex = 26;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            // 
             // MaTaiKhoan
             // 
             this.MaTaiKhoan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -409,6 +432,13 @@
             this.TenNV.HeaderText = "Tên nhân viên";
             this.TenNV.Name = "TenNV";
             this.TenNV.ReadOnly = true;
+            // 
+            // Columns1
+            // 
+            this.Columns1.DataPropertyName = "TenCV";
+            this.Columns1.HeaderText = "Chức vụ";
+            this.Columns1.Name = "Columns1";
+            this.Columns1.ReadOnly = true;
             // 
             // TrangChu
             // 
@@ -545,27 +575,6 @@
             this.PhanQuyen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.PhanQuyen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(678, 247);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(235, 24);
-            this.txtTimKiem.TabIndex = 25;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(176)))), ((int)(((byte)(213)))));
-            this.btnTimKiem.FlatAppearance.BorderSize = 0;
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.ForeColor = System.Drawing.Color.White;
-            this.btnTimKiem.Location = new System.Drawing.Point(934, 243);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(102, 30);
-            this.btnTimKiem.TabIndex = 26;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            // 
             // frmPhanQuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -638,6 +647,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Columns1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangChu;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TiepNhanKhach;
         private System.Windows.Forms.DataGridViewCheckBoxColumn DanhSachPhong;
