@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,6 +57,13 @@ namespace Hotel
             }
         }
 
+        public void data()
+        {
+            PhanQuyenBUS pq = new PhanQuyenBUS();
+
+            dataGridView1.DataSource = pq.Get_By_Top1("admin", "1234");
+        }
+
         private void btnTest_MouseLeave(object sender, EventArgs e)
         {
             Button test = (Button)sender;
@@ -76,12 +84,13 @@ namespace Hotel
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CreateListMenu(8);
-            ///Button test = (Button)sender;
-            //string[] vt = test.Tag.ToString().Split(',');
-            //int i = int.Parse(vt[0]);
-            //int j = int.Parse(vt[1]);
-            btnTest[1, 0].Text = "Trang chủ";
+            data();
+            //CreateListMenu(8);
+            /////Button test = (Button)sender;
+            ////string[] vt = test.Tag.ToString().Split(',');
+            ////int i = int.Parse(vt[0]);
+            ////int j = int.Parse(vt[1]);
+            //btnTest[1, 0].Text = "Trang chủ";
         }
 
         private void pnMenu_Paint(object sender, PaintEventArgs e)

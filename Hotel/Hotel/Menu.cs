@@ -152,6 +152,7 @@ namespace Hotel
             if (i == 14)
             {
                 pnMenu.Controls.Clear();
+
                 frmPhanQuyen frmPhanQuyen = new frmPhanQuyen();
                 pnMenu.Controls.Add(frmPhanQuyen);
             }
@@ -177,7 +178,7 @@ namespace Hotel
 
         private void lbClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void lbLogout_Click(object sender, EventArgs e)

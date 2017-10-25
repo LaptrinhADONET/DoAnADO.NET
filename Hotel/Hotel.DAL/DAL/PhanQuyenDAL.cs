@@ -23,5 +23,17 @@ namespace Hotel.DAL.DAL
             da.Fill(dt);
             return dt;
         }
+
+        public DataTable Get_By_Top1(string Email, string Pass)
+        {
+            SqlCommand cmd = new SqlCommand("sp_PQ_Get_By_Top1", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            cmd.Parameters.Add(new SqlParameter("@Email", Email));
+            cmd.Parameters.Add(new SqlParameter("@Pass", Pass));
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
     }
 }

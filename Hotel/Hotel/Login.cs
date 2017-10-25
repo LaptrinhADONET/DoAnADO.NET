@@ -31,33 +31,21 @@ namespace Hotel
         public static bool TiepNhanKhach;
         public static bool TKCuaTui;
         public static bool TrangChu;
+        private DataTable dt = new DataTable();
 
         public Login()
         {
             InitializeComponent();
         }
 
-        public List<NhanVien> login()
-        {
-            NhanVienBUS nv = new NhanVienBUS();
-            List<NhanVien> lst = new List<NhanVien>();
-            lst = nv.Login(txtUser.Text, txtPass.Text);
-            return lst;
-        }
-
         private void btnSign_Click(object sender, EventArgs e)
         {
-            List<NhanVien> list = login();
-            NhanVien nv = new NhanVien();
-            if (list.Count() == 1)
+            dt = GetData();
+            if (dt.Rows.Count == 1)
             {
                 Properties.Settings.Default.Email = txtUser.Text;
                 Properties.Settings.Default.Pass = txtPass.Text;
-                foreach (var i in list)
-                {
-                    Properties.Settings.Default.Name = i.TenNV.ToString();
-                }
-
+                Properties.Settings.Default.Name = dt.Rows[0]["TenNV"].ToString();
                 Menu mn = new Hotel.Menu();
 
                 setBtnMenu();
@@ -70,11 +58,16 @@ namespace Hotel
             }
         }
 
+        private DataTable GetData()
+        {
+            PhanQuyenBUS PQBUS = new PhanQuyenBUS();
+            dt = PQBUS.Get_By_Top1(txtUser.Text, txtPass.Text);
+            return dt;
+        }
+
         private bool KTPhanQuyen(int col)
         {
-            DataTable dt = new DataTable();
-            PhanQuyenBUS PQBUS = new PhanQuyenBUS();
-            dt = PQBUS.Get_By_Top();
+            dt = GetData();
             bool check = false;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -95,21 +88,21 @@ namespace Hotel
 
         private void setBtnMenu()
         {
-            ChucVu = KTPhanQuyen(14);
-            DanhSachHD = KTPhanQuyen(13);
-            DanhSachPhong = KTPhanQuyen(5);
-            DichVu = KTPhanQuyen(7);
-            KhuVuc = KTPhanQuyen(10);
-            LichDonPhong = KTPhanQuyen(15);
-            LoaiPhong = KTPhanQuyen(6);
-            PhanQuyen = KTPhanQuyen(17);
-            PhongBan = KTPhanQuyen(9);
-            ThongTinKhach = KTPhanQuyen(11);
-            ThongTinNV = KTPhanQuyen(12);
-            ThucDon = KTPhanQuyen(8);
-            TiepNhanKhach = KTPhanQuyen(4);
-            TKCuaTui = KTPhanQuyen(16);
-            TrangChu = KTPhanQuyen(3);
+            ChucVu = KTPhanQuyen(12);
+            DanhSachHD = KTPhanQuyen(11);
+            DanhSachPhong = KTPhanQuyen(3);
+            DichVu = KTPhanQuyen(5);
+            KhuVuc = KTPhanQuyen(8);
+            LichDonPhong = KTPhanQuyen(13);
+            LoaiPhong = KTPhanQuyen(4);
+            PhanQuyen = KTPhanQuyen(16);
+            PhongBan = KTPhanQuyen(7);
+            ThongTinKhach = KTPhanQuyen(9);
+            ThongTinNV = KTPhanQuyen(10);
+            ThucDon = KTPhanQuyen(6);
+            TiepNhanKhach = KTPhanQuyen(2);
+            TKCuaTui = KTPhanQuyen(14);
+            TrangChu = KTPhanQuyen(1);
         }
     }
 }

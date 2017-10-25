@@ -16,5 +16,10 @@ namespace Hotel.BUS
         {
             return PQDAL.Get_By_Top();
         }
+
+        public DataTable Get_By_Top1(string Email, string Pass)
+        {
+            return PQDAL.Get_By_Top1(Email, Pass);
+        }
     }
 }
