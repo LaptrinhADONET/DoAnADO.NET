@@ -800,35 +800,14 @@
   <data name="&gt;&gt;lbMenu.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="dgvLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 90</value>
-  </data>
-  <data name="dgvLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>767, 150</value>
-  </data>
-  <data name="dgvLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dgvLogin.Name" xml:space="preserve">
-    <value>dgvLogin</value>
-  </data>
-  <data name="&gt;&gt;dgvLogin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvLogin.Parent" xml:space="preserve">
-    <value>pnMenu</value>
-  </data>
-  <data name="&gt;&gt;dgvLogin.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="pnMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="pnMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 100</value>
+    <value>0, 88</value>
   </data>
   <data name="pnMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1069, 580</value>
+    <value>1069, 610</value>
   </data>
   <data name="pnMenu.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -849,10 +828,10 @@
     <value>Bottom</value>
   </data>
   <data name="pnBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 680</value>
+    <value>0, 698</value>
   </data>
   <data name="pnBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1069, 50</value>
+    <value>1069, 32</value>
   </data>
   <data name="pnBottom.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -876,7 +855,7 @@
     <value>0, 50</value>
   </data>
   <data name="pbTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1069, 50</value>
+    <value>1069, 38</value>
   </data>
   <data name="pbTop.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

@@ -12,9 +12,9 @@ namespace Hotel.BUS
     {
         private PhanQuyenDAL PQDAL = new PhanQuyenDAL();
 
-        public DataTable Get_By_Top(string top, string where, string order)
+        public DataTable Get_By_Top()
         {
-            return PQDAL.Get_By_Top(top, where, order);
+            return PQDAL.Get_By_Top();
         }
     }
 }

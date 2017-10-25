@@ -11,6 +11,7 @@ using System.Configuration;
 using Configuration;
 using Hotel.BUS;
 using Hotel.Model;
+using Hotel.ListForm;
 
 namespace Hotel
 {
@@ -45,6 +46,7 @@ namespace Hotel
                     btnTest[i, j].Tag = "" + i + "," + j + "";
                     btnTest[i, j].MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnTest_MouseMove);
                     btnTest[i, j].MouseLeave += new System.EventHandler(this.btnTest_MouseLeave);
+                    btnTest[i, j].Click += new System.EventHandler(this.btnTest_Click);
 
                     // btnTest[i, j].Click += new System.EventHandler(this.btnTest_Click);
 
@@ -61,31 +63,23 @@ namespace Hotel
             }
         }
 
-        public void GetData()
+        public void CreateNameMenuAD()
         {
-            ChucVuBUS cv = new ChucVuBUS();
-            List<ChucVu> lst = new List<ChucVu>();
-            lst = cv.Get_By_Top("", "", "");
-            dgvLogin.DataSource = lst;
-        }
-
-        public void getNameMenuAD()
-        {
-            btnTest[0, 0].Text = "Trang chủ";
-            btnTest[1, 0].Text = "Tiếp nhận khách";
-            btnTest[2, 0].Text = "Danh sách phòng";
-            btnTest[3, 0].Text = "Loại phòng";
-            btnTest[4, 0].Text = "Dịch vụ";
-            btnTest[5, 0].Text = "Thực đơn";
-            btnTest[6, 0].Text = "Phòng ban";
-            btnTest[7, 0].Text = "Thông tin khách hàng";
-            btnTest[8, 0].Text = "Thông tin nhân viên";
-            btnTest[9, 0].Text = "Khu vực";
-            btnTest[10, 0].Text = "Danh sách hóa đơn";
-            btnTest[11, 0].Text = "Chức vụ";
-            btnTest[12, 0].Text = "Lịch dọn phòng";
-            btnTest[13, 0].Text = "Tài khoản của tôi";
-            btnTest[14, 0].Text = "Phân quyền";
+            btnTest[0, 0].Text = "TRANG CHỦ";
+            btnTest[1, 0].Text = "TIẾP NHẬN KHÁCH";
+            btnTest[2, 0].Text = "DANH SÁCH PHÒNG";
+            btnTest[3, 0].Text = "LOẠI PHÒNG";
+            btnTest[4, 0].Text = "DỊCH VỤ";
+            btnTest[5, 0].Text = "THỰC ĐƠN";
+            btnTest[6, 0].Text = "PHÒNG BAN";
+            btnTest[7, 0].Text = "THÔNG TIN KHÁCH HÀNG";
+            btnTest[8, 0].Text = "THÔNG TIN NHÂN VIÊN";
+            btnTest[9, 0].Text = "KHU VỰC";
+            btnTest[10, 0].Text = "DANH SÁCH HÓA ĐƠN";
+            btnTest[11, 0].Text = "CHỨC VỤ";
+            btnTest[12, 0].Text = "LỊCH DỌN PHÒNG";
+            btnTest[13, 0].Text = "TÀI KHOẢN CỦA TÔI";
+            btnTest[14, 0].Text = "PHÂN QUYỀN";
             lbNameNV.Text = Properties.Settings.Default.Name.ToString();
             Login lg = new Login();
 
@@ -104,6 +98,63 @@ namespace Hotel
             btnTest[12, 0].Enabled = Login.LichDonPhong == true ? true : false;
             btnTest[13, 0].Enabled = Login.TKCuaTui == true ? true : false;
             btnTest[14, 0].Enabled = Login.PhanQuyen == true ? true : false;
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            Button test = (Button)sender;
+            string[] vt = test.Tag.ToString().Split(',');
+            int i = int.Parse(vt[0]);
+            int j = int.Parse(vt[1]);
+            if (i == 0)
+            {
+                pnMenu.Controls.Clear();
+            }
+            if (i == 1)
+            {
+            }
+            if (i == 2)
+            {
+            }
+            if (i == 3)
+            {
+            }
+            if (i == 4)
+            {
+            }
+            if (i == 5)
+            {
+            }
+            if (i == 6)
+            {
+            }
+            if (i == 7)
+            {
+            }
+            if (i == 8)
+            {
+            }
+            if (i == 9)
+            {
+            }
+            if (i == 10)
+            {
+            }
+            if (i == 11)
+            {
+            }
+            if (i == 12)
+            {
+            }
+            if (i == 13)
+            {
+            }
+            if (i == 14)
+            {
+                pnMenu.Controls.Clear();
+                frmPhanQuyen frmPhanQuyen = new frmPhanQuyen();
+                pnMenu.Controls.Add(frmPhanQuyen);
+            }
         }
 
         private void btnTest_MouseLeave(object sender, EventArgs e)
@@ -137,8 +188,7 @@ namespace Hotel
         private void Menu_Load_1(object sender, EventArgs e)
         {
             CreateListMenu(15);
-            getNameMenuAD();
-            GetData();
+            CreateNameMenuAD();
         }
     }
 }

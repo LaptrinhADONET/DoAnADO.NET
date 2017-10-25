@@ -74,8 +74,7 @@ namespace Hotel
         {
             DataTable dt = new DataTable();
             PhanQuyenBUS PQBUS = new PhanQuyenBUS();
-            dt = PQBUS.Get_By_Top("", "", "");
-
+            dt = PQBUS.Get_By_Top();
             bool check = false;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -96,21 +95,21 @@ namespace Hotel
 
         private void setBtnMenu()
         {
-            ChucVu = KTPhanQuyen(12);
-            DanhSachHD = KTPhanQuyen(11);
-            DanhSachPhong = KTPhanQuyen(3);
-            DichVu = KTPhanQuyen(5);
-            KhuVuc = KTPhanQuyen(8);
-            LichDonPhong = KTPhanQuyen(13);
-            LoaiPhong = KTPhanQuyen(4);
-            PhanQuyen = KTPhanQuyen(16);
-            PhongBan = KTPhanQuyen(7);
-            ThongTinKhach = KTPhanQuyen(9);
-            ThongTinNV = KTPhanQuyen(10);
-            ThucDon = KTPhanQuyen(6);
-            TiepNhanKhach = KTPhanQuyen(2);
-            TKCuaTui = KTPhanQuyen(14);
-            TrangChu = KTPhanQuyen(1);
+            ChucVu = KTPhanQuyen(14);
+            DanhSachHD = KTPhanQuyen(13);
+            DanhSachPhong = KTPhanQuyen(5);
+            DichVu = KTPhanQuyen(7);
+            KhuVuc = KTPhanQuyen(10);
+            LichDonPhong = KTPhanQuyen(15);
+            LoaiPhong = KTPhanQuyen(6);
+            PhanQuyen = KTPhanQuyen(17);
+            PhongBan = KTPhanQuyen(9);
+            ThongTinKhach = KTPhanQuyen(11);
+            ThongTinNV = KTPhanQuyen(12);
+            ThucDon = KTPhanQuyen(8);
+            TiepNhanKhach = KTPhanQuyen(4);
+            TKCuaTui = KTPhanQuyen(16);
+            TrangChu = KTPhanQuyen(3);
         }
     }
 }

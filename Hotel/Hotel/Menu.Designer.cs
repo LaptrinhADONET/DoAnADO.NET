@@ -48,7 +48,6 @@
             this.lbMenu = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnMenu = new System.Windows.Forms.Panel();
-            this.dgvLogin = new System.Windows.Forms.DataGridView();
             this.pnBottom = new System.Windows.Forms.Panel();
             this.pbTop = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -56,8 +55,6 @@
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.pnMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -188,18 +185,8 @@
             // pnMenu
             // 
             this.pnMenu.BackColor = System.Drawing.Color.White;
-            this.pnMenu.Controls.Add(this.dgvLogin);
             resources.ApplyResources(this.pnMenu, "pnMenu");
             this.pnMenu.Name = "pnMenu";
-            // 
-            // dgvLogin
-            // 
-            this.dgvLogin.AllowUserToAddRows = false;
-            this.dgvLogin.AllowUserToDeleteRows = false;
-            this.dgvLogin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dgvLogin, "dgvLogin");
-            this.dgvLogin.Name = "dgvLogin";
-            this.dgvLogin.ReadOnly = true;
             // 
             // pnBottom
             // 
@@ -230,8 +217,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.pnMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLogin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -259,6 +244,5 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel pnMenuLeft;
-        private System.Windows.Forms.DataGridView dgvLogin;
     }
 }

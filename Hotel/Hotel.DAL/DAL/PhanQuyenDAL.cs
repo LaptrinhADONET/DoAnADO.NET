@@ -14,13 +14,10 @@ namespace Hotel.DAL.DAL
     {
         private DBContect db = new DBContect();
 
-        public DataTable Get_By_Top(string top, string where, string order)
+        public DataTable Get_By_Top()
         {
             SqlCommand cmd = new SqlCommand("sp_PQ_Get_By_Top", db.GetConnection());
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@top", top));
-            cmd.Parameters.Add(new SqlParameter("@where", where));
-            cmd.Parameters.Add(new SqlParameter("@order", order));
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
