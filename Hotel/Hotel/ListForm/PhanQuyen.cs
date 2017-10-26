@@ -24,6 +24,29 @@ namespace Hotel.ListForm
             InitializeComponent();
         }
 
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            txtMaTK.Text = "";
+            txtMaNV.Text = "";
+            txtTenNV.Text = "";
+            txtChucVu.Text = "";
+            ckTrangChu.Checked = false;
+            ckTiepNhanKhach.Checked = false;
+            ckDSPhong.Checked = false;
+            ckLoaiPhong.Checked = false;
+            ckDichVu.Checked = false;
+            ckThucDon.Checked = false;
+            ckPhongBan.Checked = false;
+            ckKhuVuc.Checked = false;
+            ckTTKhach.Checked = false;
+            ckThongTinNV.Checked = false;
+            ckDSHD.Checked = false;
+            ckChucVu.Checked = false;
+            ckLichDonPhong.Checked = false;
+            ckTaiKhoan.Checked = false;
+            ckPhanQuyen.Checked = false;
+        }
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
             dt = PQ.Insearch_PQ(txtMaTK.Text, Int32.Parse(txtMaNV.Text), CKBox(ckTrangChu), CKBox(ckTiepNhanKhach), CKBox(ckDSPhong), CKBox(ckLoaiPhong), CKBox(ckDichVu), CKBox(ckThucDon), CKBox(ckPhongBan), CKBox(ckKhuVuc), CKBox(ckTTKhach), CKBox(ckThongTinNV), CKBox(ckDSHD), CKBox(ckChucVu),
@@ -47,6 +70,10 @@ namespace Hotel.ListForm
         private void ckTiepNhanKhach_Load(object sender, EventArgs e)
         {
             GetData();
+            txtMaTK.Enabled = false;
+            txtMaNV.Enabled = false;
+            txtTenNV.Enabled = false;
+            txtChucVu.Enabled = false;
         }
 
         private void dgvPhanQuyen_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -82,6 +109,16 @@ namespace Hotel.ListForm
             dt = PQ.Get_By_Top();
             dgvPhanQuyen.DataSource = dt;
             lbSoLuong.Text = dt.Rows.Count.ToString();
+        }
+
+        private void txtTimKiem_Leave(object sender, EventArgs e)
+        {
+            txtTimKiem.Text = "Tìm kiếm...";
+        }
+
+        private void txtTimKiem_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtTimKiem.Text = "";
         }
     }
 }
