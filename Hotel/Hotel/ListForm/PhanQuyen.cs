@@ -103,6 +103,11 @@ namespace Hotel.ListForm
             }
         }
 
+        private void frmPhanQuyen_Click(object sender, EventArgs e)
+        {
+            txtTimKiem.Refresh();
+        }
+
         private void GetData()
         {
             dt.Clear();
@@ -111,14 +116,50 @@ namespace Hotel.ListForm
             lbSoLuong.Text = dt.Rows.Count.ToString();
         }
 
+        private void Search()
+        {
+            int local = cbTimKiem.SelectedIndex;
+            if (local == 0)
+            {
+                dt.Clear();
+                dt = PQ.Search(txtTimKiem.Text, "", "", "");
+                dgvPhanQuyen.DataSource = dt;
+            }
+            if (local == 1)
+            {
+                dt.Clear();
+                dt = PQ.Search("", "", txtTimKiem.Text, "");
+
+                dgvPhanQuyen.DataSource = dt;
+            }
+            if (local == 2)
+            {
+                dt.Clear();
+                dt = PQ.Search("", txtTimKiem.Text, "", "");
+                dgvPhanQuyen.DataSource = dt;
+            }
+            if (local == 3)
+            {
+                dt.Clear();
+                dt = PQ.Search("", "", "", txtTimKiem.Text);
+                dgvPhanQuyen.DataSource = dt;
+            }
+        }
+
         private void txtTimKiem_Leave(object sender, EventArgs e)
         {
             txtTimKiem.Text = "Tìm kiếm...";
+            GetData();
         }
 
         private void txtTimKiem_MouseClick(object sender, MouseEventArgs e)
         {
             txtTimKiem.Text = "";
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }

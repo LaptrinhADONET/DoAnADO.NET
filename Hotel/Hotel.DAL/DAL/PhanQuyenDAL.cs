@@ -28,9 +28,9 @@ namespace Hotel.DAL.DAL
         {
             SqlCommand cmd = new SqlCommand("sp_PQ_Get_By_Top1", db.GetConnection());
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
             cmd.Parameters.Add(new SqlParameter("@Email", Email));
             cmd.Parameters.Add(new SqlParameter("@Pass", Pass));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
         }
@@ -58,6 +58,21 @@ namespace Hotel.DAL.DAL
             cmd.Parameters.Add(new SqlParameter("@LichDonPhong", LichDonPhong));
             cmd.Parameters.Add(new SqlParameter("@TKCuaTui", TKCuaTui));
             cmd.Parameters.Add(new SqlParameter("@PhanQuyen", PhanQuyen));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            cmd.ExecuteNonQuery();
+            db.conn.Close();
+            da.Fill(dt);
+            return dt;
+        }
+
+        public DataTable Search(string tk, string manv, string tennv, string chucvu)
+        {
+            SqlCommand cmd = new SqlCommand("sp_Search_PQ", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@tk", tk));
+            cmd.Parameters.Add(new SqlParameter("@tennv", chucvu));
+            cmd.Parameters.Add(new SqlParameter("@manv", manv));
+            cmd.Parameters.Add(new SqlParameter("@tencv", tennv));
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
             db.conn.Close();

@@ -29,5 +29,10 @@ namespace Hotel.BUS
             DichVu, ThucDon, PhongBan, KhuVuc, ThongTinKhach, ThongTinNV, DanhSachHD, ChucVu, LichDonPhong,
             TKCuaTui, PhanQuyen);
         }
+
+        public DataTable Search(string tk, string manv, string tennv, string chucvu)
+        {
+            return PQDAL.Search(tk, manv, tennv, chucvu);
+        }
     }
 }
