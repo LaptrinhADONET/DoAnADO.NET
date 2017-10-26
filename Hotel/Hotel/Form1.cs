@@ -82,6 +82,31 @@ namespace Hotel
             pnThanh[i, j].Visible = true;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button2.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("abc");
+        }
+
+        private void button2_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("abc");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = true;
+        }
+
+        private void button3_MouseClick(object sender, MouseEventArgs e)
+        {
+            button2.Enabled = true;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             data();
@@ -91,6 +116,8 @@ namespace Hotel
             ////int i = int.Parse(vt[0]);
             ////int j = int.Parse(vt[1]);
             //btnTest[1, 0].Text = "Trang chủ";
+            button2.Enabled = false;
+            //button2.Visible = false;
         }
 
         private void pnMenu_Paint(object sender, PaintEventArgs e)

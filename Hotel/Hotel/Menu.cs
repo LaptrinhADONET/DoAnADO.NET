@@ -106,53 +106,52 @@ namespace Hotel
             string[] vt = test.Tag.ToString().Split(',');
             int i = int.Parse(vt[0]);
             int j = int.Parse(vt[1]);
-            if (i == 0)
+            if (i == 0 && (btnTest[0, 0].Enabled == true))
             {
                 pnMenu.Controls.Clear();
             }
-            if (i == 1)
+            if (i == 1 && (btnTest[1, 0].Enabled == true))
             {
             }
-            if (i == 2)
+            if (i == 2 && (btnTest[2, 0].Enabled == true))
             {
             }
-            if (i == 3)
+            if (i == 3 && (btnTest[3, 0].Enabled == true))
             {
             }
-            if (i == 4)
+            if (i == 4 && (btnTest[4, 0].Enabled == true))
             {
             }
-            if (i == 5)
+            if (i == 5 && (btnTest[5, 0].Enabled == true))
             {
             }
-            if (i == 6)
+            if (i == 6 && (btnTest[6, 0].Enabled == true))
             {
             }
-            if (i == 7)
+            if (i == 7 && (btnTest[7, 0].Enabled == true))
             {
             }
-            if (i == 8)
+            if (i == 8 && (btnTest[8, 0].Enabled == true))
             {
             }
-            if (i == 9)
+            if (i == 9 && (btnTest[9, 0].Enabled == true))
             {
             }
-            if (i == 10)
+            if (i == 10 && (btnTest[10, 0].Enabled == true))
             {
             }
-            if (i == 11)
+            if (i == 11 && (btnTest[11, 0].Enabled == true))
             {
             }
-            if (i == 12)
+            if (i == 12 && (btnTest[12, 0].Enabled == true))
             {
             }
-            if (i == 13)
+            if (i == 13 && (btnTest[13, 0].Enabled == true))
             {
             }
-            if (i == 14)
+            if (i == 14 && (btnTest[14, 0].Enabled == true))
             {
                 pnMenu.Controls.Clear();
-
                 frmPhanQuyen frmPhanQuyen = new frmPhanQuyen();
                 pnMenu.Controls.Add(frmPhanQuyen);
             }

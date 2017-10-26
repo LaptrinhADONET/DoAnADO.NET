@@ -16,10 +16,19 @@ namespace Hotel.ListForm
     public partial class frmPhanQuyen : UserControl
     {
         private DBContect db = new DBContect();
+        private DataTable dt = new DataTable();
+        private PhanQuyenBUS PQ = new PhanQuyenBUS();
 
         public frmPhanQuyen()
         {
             InitializeComponent();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            dt = PQ.Insearch_PQ(txtMaTK.Text, Int32.Parse(txtMaNV.Text), CKBox(ckTrangChu), CKBox(ckTiepNhanKhach), CKBox(ckDSPhong), CKBox(ckLoaiPhong), CKBox(ckDichVu), CKBox(ckThucDon), CKBox(ckPhongBan), CKBox(ckKhuVuc), CKBox(ckTTKhach), CKBox(ckThongTinNV), CKBox(ckDSHD), CKBox(ckChucVu),
+            CKBox(ckLichDonPhong), CKBox(ckTaiKhoan), CKBox(ckPhanQuyen));
+            GetData();
         }
 
         private void CheckOrUncheck(CheckBox ck, DataGridView dgv, int index, int cell)
@@ -27,6 +36,12 @@ namespace Hotel.ListForm
             if (dgv.Rows[index].Cells[cell].Value.ToString() == "True")
                 ck.Checked = true;
             else ck.Checked = false;
+        }
+
+        private int CKBox(CheckBox ck)
+        {
+            if (ck.Checked) return 1;
+            return 0;
         }
 
         private void ckTiepNhanKhach_Load(object sender, EventArgs e)
@@ -39,33 +54,34 @@ namespace Hotel.ListForm
             int r = e.RowIndex;
             if (r >= 0)
             {
-                txtMaTK.Text = dgvPhanQuyen.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtMaNV.Text = dgvPhanQuyen.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtTenNV.Text = dgvPhanQuyen.Rows[e.RowIndex].Cells[1].Value.ToString();
-                CheckOrUncheck(ckTrangChu, dgvPhanQuyen, e.RowIndex, 3);
-                CheckOrUncheck(ckTiepNhanKhach, dgvPhanQuyen, e.RowIndex, 4);
-                CheckOrUncheck(ckDSPhong, dgvPhanQuyen, e.RowIndex, 5);
-                CheckOrUncheck(ckLoaiPhong, dgvPhanQuyen, e.RowIndex, 6);
-                CheckOrUncheck(ckDichVu, dgvPhanQuyen, e.RowIndex, 7);
-                CheckOrUncheck(ckThucDon, dgvPhanQuyen, e.RowIndex, 8);
-                CheckOrUncheck(ckPhongBan, dgvPhanQuyen, e.RowIndex, 9);
-                CheckOrUncheck(ckKhuVuc, dgvPhanQuyen, e.RowIndex, 10);
-                CheckOrUncheck(ckTTKhach, dgvPhanQuyen, e.RowIndex, 11);
-                CheckOrUncheck(ckThongTinNV, dgvPhanQuyen, e.RowIndex, 12);
-                CheckOrUncheck(ckDSHD, dgvPhanQuyen, e.RowIndex, 13);
-                CheckOrUncheck(ckChucVu, dgvPhanQuyen, e.RowIndex, 14);
-                CheckOrUncheck(ckLichDonPhong, dgvPhanQuyen, e.RowIndex, 15);
-                CheckOrUncheck(ckTaiKhoan, dgvPhanQuyen, e.RowIndex, 16);
-                CheckOrUncheck(ckPhanQuyen, dgvPhanQuyen, e.RowIndex, 17);
+                txtMaTK.Text = dgvPhanQuyen.Rows[r].Cells[0].Value.ToString();
+                txtMaNV.Text = dgvPhanQuyen.Rows[r].Cells[2].Value.ToString();
+                txtTenNV.Text = dgvPhanQuyen.Rows[r].Cells[1].Value.ToString();
+                txtChucVu.Text = dgvPhanQuyen.Rows[r].Cells[3].Value.ToString();
+                CheckOrUncheck(ckTrangChu, dgvPhanQuyen, e.RowIndex, 4);
+                CheckOrUncheck(ckTiepNhanKhach, dgvPhanQuyen, r, 5);
+                CheckOrUncheck(ckDSPhong, dgvPhanQuyen, r, 6);
+                CheckOrUncheck(ckLoaiPhong, dgvPhanQuyen, r, 7);
+                CheckOrUncheck(ckDichVu, dgvPhanQuyen, r, 8);
+                CheckOrUncheck(ckThucDon, dgvPhanQuyen, r, 9);
+                CheckOrUncheck(ckPhongBan, dgvPhanQuyen, r, 10);
+                CheckOrUncheck(ckKhuVuc, dgvPhanQuyen, r, 11);
+                CheckOrUncheck(ckTTKhach, dgvPhanQuyen, r, 12);
+                CheckOrUncheck(ckThongTinNV, dgvPhanQuyen, r, 13);
+                CheckOrUncheck(ckDSHD, dgvPhanQuyen, r, 14);
+                CheckOrUncheck(ckChucVu, dgvPhanQuyen, r, 15);
+                CheckOrUncheck(ckLichDonPhong, dgvPhanQuyen, r, 16);
+                CheckOrUncheck(ckTaiKhoan, dgvPhanQuyen, r, 17);
+                CheckOrUncheck(ckPhanQuyen, dgvPhanQuyen, r, 18);
             }
         }
 
         private void GetData()
         {
-            DataTable dt = new DataTable();
-            PhanQuyenBUS PQ = new PhanQuyenBUS();
+            dt.Clear();
             dt = PQ.Get_By_Top();
             dgvPhanQuyen.DataSource = dt;
+            lbSoLuong.Text = dt.Rows.Count.ToString();
         }
     }
 }

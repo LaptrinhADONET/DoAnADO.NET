@@ -21,5 +21,13 @@ namespace Hotel.BUS
         {
             return PQDAL.Get_By_Top1(Email, Pass);
         }
+
+        public DataTable Insearch_PQ(string MaTK, int MaNV, int TrangChu, int TiepNhanKhach, int DanhSachPhong, int LoaiPhong, int DichVu, int ThucDon, int PhongBan, int KhuVuc, int ThongTinKhach, int ThongTinNV, int DanhSachHD, int ChucVu,
+            int LichDonPhong, int TKCuaTui, int PhanQuyen)
+        {
+            return PQDAL.Insearch_PQ(MaTK, MaNV, TrangChu, TiepNhanKhach, DanhSachPhong, LoaiPhong,
+            DichVu, ThucDon, PhongBan, KhuVuc, ThongTinKhach, ThongTinNV, DanhSachHD, ChucVu, LichDonPhong,
+            TKCuaTui, PhanQuyen);
+        }
     }
 }
