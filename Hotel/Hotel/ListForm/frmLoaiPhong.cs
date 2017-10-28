@@ -61,5 +61,15 @@ namespace Hotel.ListForm
             lbSoLuong.Text = lp.Count.ToString();
             dgvLoaiPhong.ColumnHeadersDefaultCellStyle.ForeColor = Color.Blue;
         }
+
+        private void txtMa_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtMa.Text = "";
+        }
+
+        private void txtTen_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtTen.Text = "";
+        }
     }
 }

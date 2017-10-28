@@ -91,6 +91,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="libraly\Admin.cs" />
+    <Compile Include="ListForm2\frmADDTTLoaiPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListForm2\frmADDTTLoaiPhong.Designer.cs">
+      <DependentUpon>frmADDTTLoaiPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListForm\frmLoaiPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,16 +121,19 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewFolder1\frmAddLoaiPhong.cs">
+    <Compile Include="ListForm1\frmAddLoaiPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NewFolder1\frmAddLoaiPhong.Designer.cs">
+    <Compile Include="ListForm1\frmAddLoaiPhong.Designer.cs">
       <DependentUpon>frmAddLoaiPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm2\frmADDTTLoaiPhong.resx">
+      <DependentUpon>frmADDTTLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListForm\frmLoaiPhong.resx">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
@@ -138,7 +147,7 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewFolder1\frmAddLoaiPhong.resx">
+    <EmbeddedResource Include="ListForm1\frmAddLoaiPhong.resx">
       <DependentUpon>frmAddLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -178,6 +187,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Images\High Importance_20px.png" />
+    <None Include="Images\Ok_20px.png" />
     <Content Include="NewFolder2\LT.Net.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

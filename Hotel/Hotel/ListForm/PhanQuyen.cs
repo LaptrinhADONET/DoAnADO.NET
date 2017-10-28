@@ -49,9 +49,12 @@ namespace Hotel.ListForm
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            dt = PQ.Insearch_PQ(txtMaTK.Text, Int32.Parse(txtMaNV.Text), CKBox(ckTrangChu), CKBox(ckTiepNhanKhach), CKBox(ckDSPhong), CKBox(ckLoaiPhong), CKBox(ckDichVu), CKBox(ckThucDon), CKBox(ckPhongBan), CKBox(ckKhuVuc), CKBox(ckTTKhach), CKBox(ckThongTinNV), CKBox(ckDSHD), CKBox(ckChucVu),
-            CKBox(ckLichDonPhong), CKBox(ckTaiKhoan), CKBox(ckPhanQuyen));
-            GetData();
+            if (txtMaNV.Text != "" && txtMaTK.Text != "" && txtTenNV.Text != "" && txtChucVu.Text != "")
+            {
+                dt = PQ.Insearch_PQ(txtMaTK.Text, Int32.Parse(txtMaNV.Text), CKBox(ckTrangChu), CKBox(ckTiepNhanKhach), CKBox(ckDSPhong), CKBox(ckLoaiPhong), CKBox(ckDichVu), CKBox(ckThucDon), CKBox(ckPhongBan), CKBox(ckKhuVuc), CKBox(ckTTKhach), CKBox(ckThongTinNV), CKBox(ckDSHD), CKBox(ckChucVu),
+           CKBox(ckLichDonPhong), CKBox(ckTaiKhoan), CKBox(ckPhanQuyen));
+                GetData();
+            }
         }
 
         private void CheckOrUncheck(CheckBox ck, DataGridView dgv, int index, int cell)
