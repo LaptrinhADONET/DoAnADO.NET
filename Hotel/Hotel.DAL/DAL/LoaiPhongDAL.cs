@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hotel.Model;
+using System.Data.SqlClient;
 
 namespace Hotel.DAL
 {
@@ -22,7 +23,25 @@ namespace Hotel.DAL
 
         public override List<LoaiPhong> Get_By_Top(string Top, string Where, string Order)
         {
-            throw new NotImplementedException();
+            List<LoaiPhong> lst = new List<LoaiPhong>();
+            using (SqlCommand cmd = new SqlCommand("sp_LoaiPhong_Get_By_Top", db.GetConnection()))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@top", Top));
+                cmd.Parameters.Add(new SqlParameter("@where", Where));
+                cmd.Parameters.Add(new SqlParameter("@order", Order));
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        LoaiPhong obj = new LoaiPhong();
+                        obj.LoaiPhongIDataReader(dr);
+                        lst.Add(obj);
+                    }
+                }
+            }
+            return lst;
         }
 
         public override void Update(LoaiPhong obj)

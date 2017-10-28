@@ -76,6 +76,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="libraly\Admin.cs" />
+    <Compile Include="ListForm\frmLoaiPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListForm\frmLoaiPhong.Designer.cs">
+      <DependentUpon>frmLoaiPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListForm\PhanQuyen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,10 +100,19 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewFolder1\frmAddLoaiPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewFolder1\frmAddLoaiPhong.Designer.cs">
+      <DependentUpon>frmAddLoaiPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm\frmLoaiPhong.resx">
+      <DependentUpon>frmLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListForm\PhanQuyen.resx">
       <DependentUpon>PhanQuyen.cs</DependentUpon>
@@ -107,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFolder1\frmAddLoaiPhong.resx">
+      <DependentUpon>frmAddLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -144,6 +162,7 @@
     <None Include="Images\New folder\product2.jpg" />
     <None Include="Images\New folder\product3.jpg" />
     <None Include="Images\New folder\product4.jpg" />
+    <None Include="Images\NguyenHongCam3.png" />
     <Content Include="libraly\Bunifu_UI_v1.52.dll" />
   </ItemGroup>
   <ItemGroup>

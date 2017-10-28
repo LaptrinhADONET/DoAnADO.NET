@@ -12,6 +12,7 @@ namespace Hotel.Model
         private string _giaPhong;
         private string _maLoaiPhong;
         private string _tenLoaiPhong;
+        private string _trangThai;
 
         public string GiaPhong
         {
@@ -52,11 +53,25 @@ namespace Hotel.Model
             }
         }
 
+        public string TrangThai
+        {
+            get
+            {
+                return _trangThai;
+            }
+
+            set
+            {
+                _trangThai = value;
+            }
+        }
+
         public void LoaiPhongIDataReader(SqlDataReader dr)
         {
             MaLoaiPhong = dr["MaLoaiPhong"] is DBNull ? string.Empty : dr["MaLoaiPhong"].ToString();
             TenLoaiPhong = dr["TenLoaiPhong"] is DBNull ? string.Empty : dr["TenLoaiPhong"].ToString();
             GiaPhong = dr["GiaPhong"] is DBNull ? string.Empty : dr["GiaPhong"].ToString();
+            TrangThai = dr["TrangThai"] is DBNull ? string.Empty : dr["TrangThai"].ToString();
         }
     }
 }

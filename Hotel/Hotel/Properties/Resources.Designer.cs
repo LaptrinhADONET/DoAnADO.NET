@@ -63,39 +63,9 @@ namespace Hotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap product1 {
+        internal static System.Drawing.Bitmap NguyenHongCam3 {
             get {
-                object obj = ResourceManager.GetObject("product1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap product2 {
-            get {
-                object obj = ResourceManager.GetObject("product2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap product3 {
-            get {
-                object obj = ResourceManager.GetObject("product3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap product4 {
-            get {
-                object obj = ResourceManager.GetObject("product4", resourceCulture);
+                object obj = ResourceManager.GetObject("NguyenHongCam3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

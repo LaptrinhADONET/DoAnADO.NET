@@ -17,6 +17,8 @@ namespace Hotel
 {
     public partial class Menu : Form
     {
+        private static int f;
+        private static Boolean flag = false;
         private Button[,] btnTest;
         private Panel[,] pnThanhMN;
 
@@ -102,6 +104,10 @@ namespace Hotel
 
         private void btnTest_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                pnThanhMN[f, 0].Visible = false;
+            }
             Button test = (Button)sender;
             string[] vt = test.Tag.ToString().Split(',');
             int i = int.Parse(vt[0]);
@@ -109,6 +115,8 @@ namespace Hotel
             if (i == 0 && (btnTest[0, 0].Enabled == true))
             {
                 pnMenu.Controls.Clear();
+                flag = true;
+                f = 0;
             }
             if (i == 1 && (btnTest[1, 0].Enabled == true))
             {
@@ -118,6 +126,11 @@ namespace Hotel
             }
             if (i == 3 && (btnTest[3, 0].Enabled == true))
             {
+                pnMenu.Controls.Clear();
+                frmLoaiPhong frm = new frmLoaiPhong();
+                pnMenu.Controls.Add(frm);
+                flag = true;
+                f = 3;
             }
             if (i == 4 && (btnTest[4, 0].Enabled == true))
             {
@@ -154,20 +167,30 @@ namespace Hotel
                 pnMenu.Controls.Clear();
                 frmPhanQuyen frmPhanQuyen = new frmPhanQuyen();
                 pnMenu.Controls.Add(frmPhanQuyen);
+                flag = true;
+                f = 14;
             }
         }
 
         private void btnTest_MouseLeave(object sender, EventArgs e)
         {
-            Button test = (Button)sender;
-            string[] vt = test.Tag.ToString().Split(',');
-            int i = int.Parse(vt[0]);
-            int j = int.Parse(vt[1]);
-            pnThanhMN[i, j].Visible = false;
+            //Button test = (Button)sender;
+            //string[] vt = test.Tag.ToString().Split(',');
+            //int i = int.Parse(vt[0]);
+            //int j = int.Parse(vt[1]);
+            //pnThanhMN[i, j].Visible = false;
         }
 
         private void btnTest_MouseMove(object sender, MouseEventArgs e)
         {
+            for (int k = 0; k < 15; k++)
+            {
+                pnThanhMN[k, 0].Visible = false;
+            }
+            if (flag)
+            {
+                pnThanhMN[f, 0].Visible = true;
+            }
             Button test = (Button)sender;
             string[] vt = test.Tag.ToString().Split(',');
             int i = int.Parse(vt[0]);
