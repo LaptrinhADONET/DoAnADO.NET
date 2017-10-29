@@ -15,7 +15,7 @@ namespace Hotel.DAL
             throw new NotImplementedException();
         }
 
-        public override void Delete(Phong obj)
+        public override void Delete(int obj)
         {
             throw new NotImplementedException();
         }

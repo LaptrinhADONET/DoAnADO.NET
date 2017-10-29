@@ -15,7 +15,7 @@ namespace Hotel.DAL
             throw new NotImplementedException();
         }
 
-        public override void Delete(CheckOut obj)
+        public override void Delete(int ma)
         {
             throw new NotImplementedException();
         }

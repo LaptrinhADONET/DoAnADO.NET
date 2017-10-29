@@ -19,7 +19,6 @@ namespace Hotel.DAL
                 using (SqlCommand cmd = new SqlCommand("sp_LoaiPhong_insert", db.GetConnection()))
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@ma", obj.MaLoaiPhong));
                     cmd.Parameters.Add(new SqlParameter("@ten", obj.TenLoaiPhong));
                     cmd.Parameters.Add(new SqlParameter("@gia", float.Parse(obj.GiaPhong)));
                     cmd.Parameters.Add(new SqlParameter("@trangthai", int.Parse(obj.TrangThai)));
@@ -43,9 +42,19 @@ namespace Hotel.DAL
             return dt;
         }
 
-        public override void Delete(LoaiPhong obj)
+        public override void Delete(int ma)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_LoaiPhong_Delete", db.GetConnection());
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@ma", ma));
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public override List<LoaiPhong> Get_By_Top(string Top, string Where, string Order)
@@ -68,12 +77,28 @@ namespace Hotel.DAL
                     }
                 }
             }
+            db.conn.Close();
             return lst;
         }
 
         public override void Update(LoaiPhong obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_LoaiPhong_Update", db.GetConnection()))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@ma", obj.MaLoaiPhong));
+                    cmd.Parameters.Add(new SqlParameter("@ten", obj.TenLoaiPhong));
+                    cmd.Parameters.Add(new SqlParameter("@gia", float.Parse(obj.GiaPhong)));
+                    cmd.Parameters.Add(new SqlParameter("@trangthai", int.Parse(obj.TrangThai)));
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

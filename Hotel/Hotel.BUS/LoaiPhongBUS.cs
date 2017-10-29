@@ -23,9 +23,19 @@ namespace Hotel.BUS
             return lp.checkma(ma);
         }
 
+        public void Delete(int obj)
+        {
+            lp.Delete(obj);
+        }
+
         public List<LoaiPhong> Get_By_Top(string Top, string Where, string Order)
         {
             return lp.Get_By_Top(Top, Where, Order);
+        }
+
+        public void Update(LoaiPhong obj)
+        {
+            lp.Update(obj);
         }
     }
 }

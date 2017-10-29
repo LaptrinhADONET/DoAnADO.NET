@@ -10,7 +10,7 @@ namespace Hotel.Model.IRepository
     {
         void Add(T obj);
 
-        void Delete(T obj);
+        void Delete(int ma);
 
         List<T> Get_By_Top(string Top, string Where, string Order);
 

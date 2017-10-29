@@ -11,11 +11,13 @@ using Hotel.Model;
 using Hotel.BUS;
 using System.Reflection;
 using Hotel.NewFolder1;
+using System.Threading;
 
 namespace Hotel.ListForm
 {
     public partial class frmLoaiPhong : UserControl
     {
+        public static LoaiPhong objLoai = new LoaiPhong();
         private DataTable data = new DataTable();
         private List<LoaiPhong> lp = new List<LoaiPhong>();
         private LoaiPhongBUS lpBUS = new LoaiPhongBUS();
@@ -23,19 +25,6 @@ namespace Hotel.ListForm
         public frmLoaiPhong()
         {
             InitializeComponent();
-        }
-
-        public void AddCheckBoxColumn(DataGridView gridDanhSach, string headerText, string propertyName, int Width, string image)
-        {
-            var newColumn = new DataGridViewImageColumn();
-            // newColumn.DataPropertyName = propertyName;
-            newColumn.Name = propertyName;
-            newColumn.HeaderText = headerText;
-            newColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            newColumn.Resizable = DataGridViewTriState.False;
-            newColumn.Width = Width;
-            // newColumn.Image = Bitmap.FromFile(image, true);
-            gridDanhSach.Columns.AddRange(new DataGridViewColumn[] { newColumn });
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -49,6 +38,29 @@ namespace Hotel.ListForm
         {
         }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string a = Properties.Settings.Default.MaLoaiPhong.ToString();
+            //MessageBox.Show(a);
+            lpBUS.Delete(int.Parse(a));
+            lbCheck.Visible = true;
+            lbCheck.ForeColor = Color.Green;
+            lbCheck.Text = "Xóa thành công";
+            getData();
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void dgvLoaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Properties.Settings.Default.MaLoaiPhong = int.Parse(dgvLoaiPhong.Rows[e.RowIndex].Cells[1].Value.ToString());
+            }
+        }
+
         private void frmLoaiPhong_Load(object sender, EventArgs e)
         {
             getData();
@@ -59,7 +71,12 @@ namespace Hotel.ListForm
             lp = lpBUS.Get_By_Top("", "", "");
             dgvLoaiPhong.DataSource = lp;
             lbSoLuong.Text = lp.Count.ToString();
-            dgvLoaiPhong.ColumnHeadersDefaultCellStyle.ForeColor = Color.Blue;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Start();
+            lbCheck.Visible = false;
         }
 
         private void txtMa_MouseClick(object sender, MouseEventArgs e)

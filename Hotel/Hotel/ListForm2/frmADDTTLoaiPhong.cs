@@ -29,94 +29,69 @@ namespace Hotel.ListForm2
             {
                 lbTen.Visible = true;
                 lbTextTen.Visible = true;
-                lbTextTen.Text = "Bạn chưa nhập giá";
+                lbTextTen.Text = "Bạn chưa nhập tên";
                 lbTextTen.ForeColor = Color.Red;
                 lbTen.Image = Properties.Resources.Loi;
             }
             else
             {
-                if (txtMaLoaiPhong.Text == "")
+                if (cbTrangThai.Text == "")
                 {
-                    lbMa.Visible = true;
-                    lbTextMa.Visible = true;
-                    lbTextMa.Text = "Bạn chưa nhập giá";
-                    lbTextMa.ForeColor = Color.Red;
-                    lbMa.Image = Properties.Resources.Loi;
+                    lbTextCB.Visible = true;
+                    lbcbTT.Visible = true;
+                    lbTextCB.Text = "Bạn chưa chọn trạng thái";
+                    lbTextGia.ForeColor = Color.Red;
+                    lbcbTT.Image = Properties.Resources.Loi;
                 }
                 else
                 {
                     if (txtDonGia.Text == "")
                     {
-                        lbGia.Visible = true;
                         lbTextGia.Visible = true;
                         lbTextGia.Text = "Bạn chưa nhập giá";
                         lbTextGia.ForeColor = Color.Red;
+                        lbGia.Visible = true;
                         lbGia.Image = Properties.Resources.Loi;
                     }
                     else
                     {
-                        if (cbTrangThai.Text == "")
+                        float num;
+                        if (float.TryParse(txtDonGia.Text, out num))
                         {
-                            lbTextCB.Visible = true;
-                            lbcbTT.Visible = true;
-                            lbTextCB.Text = "Bạn chưa chọn trạng thái";
-                            lbTextGia.ForeColor = Color.Red;
-                            lbcbTT.Image = Properties.Resources.Loi;
+                            LoaiPhong obj = new LoaiPhong();
+                            obj.TenLoaiPhong = txtLoaiPhong.Text;
+                            obj.GiaPhong = (txtDonGia.Text);
+                            if (cbTrangThai.Text == "Hoạt động")
+                            {
+                                obj.TrangThai = "1";
+                            }
+                            else obj.TrangThai = "0";
+                            lpBUS.Add(obj);
+                            lbCheckAdd.Visible = true;
+                            lbIconCheckAdd.Visible = true;
+                            lbCheckAdd.ForeColor = Color.Green;
+                            lbCheckAdd.Text = "Thêm mới thành công";
+                            lbIconCheckAdd.Image = Properties.Resources.Ok_20px;
+                            txtLoaiPhong.Text = " Tên Loại Phòng";
+                            txtDonGia.Text = " Đơn giá";
                         }
                         else
                         {
-                            if (CheckKhoa())
-                            {
-                                lbCheckAdd.ForeColor = Color.Red;
-                                lbCheckAdd.Text = "Mã loại phòng đã bị trùng";
-                                lbCheckAdd.Visible = true;
-                                lbIconCheckAdd.Image = Properties.Resources.Loi;
-                                lbIconCheckAdd.Visible = true;
-                                txtMaLoaiPhong.Text = "";
-                            }
-                            else
-                            {
-                                LoaiPhong obj = new LoaiPhong();
-                                obj.MaLoaiPhong = txtMaLoaiPhong.Text;
-                                obj.TenLoaiPhong = txtLoaiPhong.Text;
-                                obj.GiaPhong = (txtDonGia.Text);
-                                if (cbTrangThai.SelectedValue == "Hoạt động")
-                                {
-                                    obj.TrangThai = "1";
-                                }
-                                else obj.TrangThai = "0";
-                                lpBUS.Add(obj);
-                                lbCheckAdd.Visible = true;
-                                lbIconCheckAdd.Visible = true;
-                                lbCheckAdd.ForeColor = Color.Green;
-                                lbCheckAdd.Text = "Thêm mới thành công";
-                                lbIconCheckAdd.Image = Properties.Resources.Ok_20px;
-                                txtMaLoaiPhong.Text = " Mã Loại Phòng";
-                                txtLoaiPhong.Text = " Tên Loại Phòng";
-                            }
+                            lbTextGia.Visible = true;
+                            lbTextGia.Text = "Bạn nhập sai kiểu";
+                            lbTextGia.ForeColor = Color.Red;
+                            lbGia.Visible = true;
+                            lbGia.Image = Properties.Resources.Loi;
                         }
                     }
                 }
             }
         }
 
-        private bool CheckKhoa()
-        {
-            DataTable dt = new DataTable();
-            dt = lpBUS.checkma(int.Parse(txtMaLoaiPhong.Text));
-            if (dt.Rows.Count != 0)
-            {
-                return true;
-            }
-            return false;
-        }
-
         private void checkLoi()
         {
             lbGia.Visible = false;
-            lbMa.Visible = false;
             lbTen.Visible = false;
-            lbTextMa.Visible = false;
             lbTextTen.Visible = false;
             lbTextGia.Visible = false;
             lbIconCheckAdd.Visible = false;
@@ -128,6 +103,8 @@ namespace Hotel.ListForm2
         private void frmADDTTLoaiPhong_Load(object sender, EventArgs e)
         {
             checkLoi();
+            cbTrangThai.Items.Add("Hoạt động");
+            cbTrangThai.Items.Add("Không hoạt động");
         }
 
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
@@ -139,12 +116,6 @@ namespace Hotel.ListForm2
         private void txtLoaiPhong_MouseClick(object sender, MouseEventArgs e)
         {
             txtLoaiPhong.Text = "";
-            checkLoi();
-        }
-
-        private void txtMaLoaiPhong_MouseClick(object sender, MouseEventArgs e)
-        {
-            txtMaLoaiPhong.Text = "";
             checkLoi();
         }
     }

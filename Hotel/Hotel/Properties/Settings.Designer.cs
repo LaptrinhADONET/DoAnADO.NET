@@ -82,41 +82,5 @@ namespace Hotel.Properties {
                 this["MaLoaiPhong"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string TenLoaiPhong {
-            get {
-                return ((string)(this["TenLoaiPhong"]));
-            }
-            set {
-                this["TenLoaiPhong"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public float GiaPhong {
-            get {
-                return ((float)(this["GiaPhong"]));
-            }
-            set {
-                this["GiaPhong"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int TrangThai {
-            get {
-                return ((int)(this["TrangThai"]));
-            }
-            set {
-                this["TrangThai"] = value;
-            }
-        }
     }
 }
