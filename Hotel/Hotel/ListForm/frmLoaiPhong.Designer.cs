@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoaiPhong));
             this.pnMenuLoaiPhong = new System.Windows.Forms.Panel();
             this.dgvLoaiPhong = new System.Windows.Forms.DataGridView();
@@ -43,7 +43,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lbCheck = new System.Windows.Forms.Label();
+            this.btnSua = new System.Windows.Forms.Button();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnTimKiem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbCheck = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnMenuLoaiPhong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiPhong)).BeginInit();
@@ -91,14 +91,14 @@
             this.dgvLoaiPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLoaiPhong.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoaiPhong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLoaiPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLoaiPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLoaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -109,16 +109,16 @@
             this.dgvLoaiPhong.Location = new System.Drawing.Point(17, 279);
             this.dgvLoaiPhong.Name = "dgvLoaiPhong";
             this.dgvLoaiPhong.ReadOnly = true;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLoaiPhong.RowHeadersDefaultCellStyle = dataGridViewCellStyle26;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvLoaiPhong.RowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLoaiPhong.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvLoaiPhong.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLoaiPhong.Size = new System.Drawing.Size(1037, 282);
             this.dgvLoaiPhong.TabIndex = 4;
             this.dgvLoaiPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiPhong_CellClick);
@@ -190,7 +190,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.Controls.Add(this.lbCheck);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnSua);
             this.panel3.Controls.Add(this.bunifuFlatButton1);
             this.panel3.Controls.Add(this.btnTimKiem);
             this.panel3.Controls.Add(this.btnXoa);
@@ -210,17 +210,29 @@
             this.panel3.Size = new System.Drawing.Size(1038, 188);
             this.panel3.TabIndex = 3;
             // 
-            // button1
+            // lbCheck
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(914, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 35);
-            this.button1.TabIndex = 16;
-            this.button1.UseVisualStyleBackColor = false;
+            this.lbCheck.AutoSize = true;
+            this.lbCheck.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheck.Location = new System.Drawing.Point(596, 37);
+            this.lbCheck.Name = "lbCheck";
+            this.lbCheck.Size = new System.Drawing.Size(45, 19);
+            this.lbCheck.TabIndex = 17;
+            this.lbCheck.Text = "label9";
+            this.lbCheck.Visible = false;
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(173)))), ((int)(((byte)(78)))));
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.Location = new System.Drawing.Point(914, 18);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(35, 35);
+            this.btnSua.TabIndex = 16;
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.button1_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -453,21 +465,10 @@
             this.label1.Size = new System.Drawing.Size(33, 23);
             this.label1.TabIndex = 0;
             // 
-            // lbCheck
-            // 
-            this.lbCheck.AutoSize = true;
-            this.lbCheck.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCheck.Location = new System.Drawing.Point(596, 37);
-            this.lbCheck.Name = "lbCheck";
-            this.lbCheck.Size = new System.Drawing.Size(45, 19);
-            this.lbCheck.TabIndex = 17;
-            this.lbCheck.Text = "label9";
-            this.lbCheck.Visible = false;
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 700;
+            this.timer1.Interval = 1200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmLoaiPhong
@@ -516,7 +517,7 @@
         private System.Windows.Forms.Label lbSoLuong;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgvLoaiPhong;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

@@ -17,6 +17,7 @@ namespace Hotel.ListForm
 {
     public partial class frmLoaiPhong : UserControl
     {
+        public static bool flag;
         public static LoaiPhong objLoai = new LoaiPhong();
         private DataTable data = new DataTable();
         private List<LoaiPhong> lp = new List<LoaiPhong>();
@@ -29,6 +30,7 @@ namespace Hotel.ListForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            flag = true;
             pnMenuLoaiPhong.Controls.Clear();
             frmAddLoaiPhong frm = new frmAddLoaiPhong();
             pnMenuLoaiPhong.Controls.Add(frm);
@@ -40,9 +42,7 @@ namespace Hotel.ListForm
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string a = Properties.Settings.Default.MaLoaiPhong.ToString();
-            //MessageBox.Show(a);
-            lpBUS.Delete(int.Parse(a));
+            lpBUS.Delete(int.Parse(objLoai.MaLoaiPhong));
             lbCheck.Visible = true;
             lbCheck.ForeColor = Color.Green;
             lbCheck.Text = "Xóa thành công";
@@ -53,11 +53,27 @@ namespace Hotel.ListForm
         {
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            objLoai = Properties.Settings.Default.LoaiPhong;
+            if (!(objLoai == null))
+            {
+                flag = false;
+                pnMenuLoaiPhong.Controls.Clear();
+                frmAddLoaiPhong frm = new frmAddLoaiPhong();
+                pnMenuLoaiPhong.Controls.Add(frm);
+            }
+        }
+
         private void dgvLoaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                Properties.Settings.Default.MaLoaiPhong = int.Parse(dgvLoaiPhong.Rows[e.RowIndex].Cells[1].Value.ToString());
+                objLoai.MaLoaiPhong = dgvLoaiPhong.Rows[e.RowIndex].Cells[1].Value.ToString();
+                objLoai.TenLoaiPhong = dgvLoaiPhong.Rows[e.RowIndex].Cells[2].Value.ToString();
+                objLoai.GiaPhong = dgvLoaiPhong.Rows[e.RowIndex].Cells[0].Value.ToString();
+                objLoai.TrangThai = dgvLoaiPhong.Rows[e.RowIndex].Cells[3].Value.ToString();
+                Properties.Settings.Default.LoaiPhong = objLoai;
             }
         }
 

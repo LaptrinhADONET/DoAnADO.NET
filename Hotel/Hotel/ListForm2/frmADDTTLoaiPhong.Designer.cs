@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmADDTTLoaiPhong));
             this.txtLoaiPhong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.lbIconCheckAdd = new System.Windows.Forms.Label();
             this.lbTextCB = new System.Windows.Forms.Label();
             this.lbcbTT = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txtLoaiPhong
@@ -114,6 +116,7 @@
             this.cbTrangThai.Name = "cbTrangThai";
             this.cbTrangThai.Size = new System.Drawing.Size(165, 27);
             this.cbTrangThai.TabIndex = 12;
+            this.cbTrangThai.Click += new System.EventHandler(this.cbTrangThai_Click);
             // 
             // lbGia
             // 
@@ -224,6 +227,12 @@
             this.lbcbTT.Size = new System.Drawing.Size(20, 20);
             this.lbcbTT.TabIndex = 23;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1200;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmADDTTLoaiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,5 +282,6 @@
         private System.Windows.Forms.Label lbIconCheckAdd;
         private System.Windows.Forms.Label lbTextCB;
         private System.Windows.Forms.Label lbcbTT;
+        private System.Windows.Forms.Timer timer1;
     }
 }

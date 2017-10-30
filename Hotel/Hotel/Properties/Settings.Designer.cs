@@ -73,13 +73,24 @@ namespace Hotel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int MaLoaiPhong {
+        public global::Hotel.Model.LoaiPhong LoaiPhong {
             get {
-                return ((int)(this["MaLoaiPhong"]));
+                return ((global::Hotel.Model.LoaiPhong)(this["LoaiPhong"]));
             }
             set {
-                this["MaLoaiPhong"] = value;
+                this["LoaiPhong"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int FlagLoaiPhong {
+            get {
+                return ((int)(this["FlagLoaiPhong"]));
+            }
+            set {
+                this["FlagLoaiPhong"] = value;
             }
         }
     }

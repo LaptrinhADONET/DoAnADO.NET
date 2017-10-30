@@ -15,8 +15,6 @@ namespace Hotel.NewFolder1
 {
     public partial class frmAddLoaiPhong : UserControl
     {
-        private frmADDTTLoaiPhong frmADDTT = new frmADDTTLoaiPhong();
-
         public frmAddLoaiPhong()
         {
             InitializeComponent();
@@ -25,6 +23,7 @@ namespace Hotel.NewFolder1
         private void button1_Click(object sender, EventArgs e)
         {
             pnContentAddLoaiPhong.Controls.Clear();
+            frmADDTTLoaiPhong frmADDTT = new frmADDTTLoaiPhong();
             pnContentAddLoaiPhong.Controls.Add(frmADDTT);
         }
 
@@ -43,7 +42,13 @@ namespace Hotel.NewFolder1
         private void frmAddLoaiPhong_Load(object sender, EventArgs e)
         {
             pnContentAddLoaiPhong.Controls.Clear();
+            frmADDTTLoaiPhong frmADDTT = new frmADDTTLoaiPhong();
             pnContentAddLoaiPhong.Controls.Add(frmADDTT);
+        }
+
+        private void pnMenu_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

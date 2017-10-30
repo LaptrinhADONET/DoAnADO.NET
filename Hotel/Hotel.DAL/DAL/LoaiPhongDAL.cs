@@ -85,15 +85,13 @@ namespace Hotel.DAL
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("sp_LoaiPhong_Update", db.GetConnection()))
-                {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@ma", obj.MaLoaiPhong));
-                    cmd.Parameters.Add(new SqlParameter("@ten", obj.TenLoaiPhong));
-                    cmd.Parameters.Add(new SqlParameter("@gia", float.Parse(obj.GiaPhong)));
-                    cmd.Parameters.Add(new SqlParameter("@trangthai", int.Parse(obj.TrangThai)));
-                    cmd.ExecuteNonQuery();
-                }
+                SqlCommand cmd = new SqlCommand("sp_LoaiPhong_Update", db.GetConnection());
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@ma", int.Parse(obj.MaLoaiPhong)));
+                cmd.Parameters.Add(new SqlParameter("@ten", obj.TenLoaiPhong));
+                cmd.Parameters.Add(new SqlParameter("@gia", float.Parse(obj.GiaPhong)));
+                cmd.Parameters.Add(new SqlParameter("@trangthai", int.Parse(obj.TrangThai)));
+                cmd.ExecuteNonQuery();
             }
             catch (Exception)
             {
