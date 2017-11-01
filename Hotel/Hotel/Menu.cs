@@ -12,6 +12,7 @@ using Configuration;
 using Hotel.BUS;
 using Hotel.Model;
 using Hotel.ListForm;
+using Hotel.ListForm1;
 
 namespace Hotel
 {
@@ -123,6 +124,11 @@ namespace Hotel
             }
             if (i == 2 && (btnTest[2, 0].Enabled == true))
             {
+                pnMenu.Controls.Clear();
+                frmDanhSachPhong dsp = new frmDanhSachPhong();
+                pnMenu.Controls.Add(dsp);
+                flag = true;
+                f = 2;
             }
             if (i == 3 && (btnTest[3, 0].Enabled == true))
             {

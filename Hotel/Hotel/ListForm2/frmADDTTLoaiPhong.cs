@@ -25,6 +25,15 @@ namespace Hotel.ListForm2
             InitializeComponent();
         }
 
+        public LoaiPhong getdata()
+        {
+            LoaiPhong lp = new LoaiPhong();
+            lp.TenLoaiPhong = txtLoaiPhong.Text;
+            lp.GiaPhong = txtDonGia.Text;
+            lp.TrangThai = cbTrangThai.Text;
+            return lp;
+        }
+
         private void Add()
         {
             if (txtLoaiPhong.Text == "")

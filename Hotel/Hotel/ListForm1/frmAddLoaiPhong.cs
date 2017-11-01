@@ -48,7 +48,6 @@ namespace Hotel.NewFolder1
 
         private void pnMenu_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }

@@ -91,6 +91,18 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="libraly\Admin.cs" />
+    <Compile Include="ListForm2\DanhSachPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForm2\DanhSachPhong.Designer.cs">
+      <DependentUpon>DanhSachPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListForm\frmDanhSachPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListForm\frmDanhSachPhong.Designer.cs">
+      <DependentUpon>frmDanhSachPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListForm2\frmADDTTLoaiPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +143,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm2\DanhSachPhong.resx">
+      <DependentUpon>DanhSachPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm\frmDanhSachPhong.resx">
+      <DependentUpon>frmDanhSachPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListForm2\frmADDTTLoaiPhong.resx">
       <DependentUpon>frmADDTTLoaiPhong.cs</DependentUpon>
@@ -189,7 +207,7 @@
   <ItemGroup>
     <None Include="Images\High Importance_20px.png" />
     <None Include="Images\Ok_20px.png" />
-    <Content Include="NewFolder2\LT.Net.mdf">
+    <Content Include="DATABASE\LT.Net.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Image1.bmp" />

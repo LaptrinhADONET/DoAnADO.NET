@@ -38,30 +38,62 @@ namespace Hotel.ListForm
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            LoaiPhong lp = new LoaiPhong();
+            lp.MaLoaiPhong = txtMa.Text;
+            lp.TenLoaiPhong = txtTen.Text;
+            lp.GiaPhong = numDonGia.Value.ToString();
+            if (cbTrangThai.Text == "Hoạt động")
+            {
+                lp.TrangThai = "1";
+            }
+            lp.TrangThai = "0";
+            lpBUS.Get_By_Top("", "", "");
+            string sql = "MaLoaiPhong LIKE '%" + txtMa.Text + "%'AND TenLoaiPhong LIKE '%" + txtTen.Text + "%' AND GiaPhong LIKE '%" + numDonGia.Value + "%' AND TrangThai LIKE '%" + cbTrangThai.Text + "%'";
+            getData("", sql, "");
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            lpBUS.Delete(int.Parse(objLoai.MaLoaiPhong));
-            lbCheck.Visible = true;
-            lbCheck.ForeColor = Color.Green;
-            lbCheck.Text = "Xóa thành công";
-            getData();
+            if (!(objLoai == null))
+            {
+                lpBUS.Delete(int.Parse(objLoai.MaLoaiPhong));
+                lbCheck.Visible = true;
+                lbCheck.ForeColor = Color.Green;
+                lbCheck.Text = "Xóa thành công";
+                getData("", "", "");
+            }
+            else
+            {
+                objLoai = Properties.Settings.Default.LoaiPhong;
+                lbCheck.ForeColor = Color.Red;
+                lbCheck.Text = "Bạn chưa chọn dữ liệu để xóa";
+                lbCheck.Visible = true;
+                getData("", "", "");
+            }
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
+            txtMa.Text = "Nhập mã loại...";
+            txtTen.Text = "Nhập tên loại...";
+            getData("", "", "");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            objLoai = Properties.Settings.Default.LoaiPhong;
             if (!(objLoai == null))
             {
                 flag = false;
                 pnMenuLoaiPhong.Controls.Clear();
                 frmAddLoaiPhong frm = new frmAddLoaiPhong();
                 pnMenuLoaiPhong.Controls.Add(frm);
+            }
+            else
+            {
+                objLoai = Properties.Settings.Default.LoaiPhong;
+                lbCheck.ForeColor = Color.Red;
+                lbCheck.Text = "Bạn chưa chọn dữ liệu";
+                lbCheck.Visible = true;
             }
         }
 
@@ -74,17 +106,21 @@ namespace Hotel.ListForm
                 objLoai.GiaPhong = dgvLoaiPhong.Rows[e.RowIndex].Cells[0].Value.ToString();
                 objLoai.TrangThai = dgvLoaiPhong.Rows[e.RowIndex].Cells[3].Value.ToString();
                 Properties.Settings.Default.LoaiPhong = objLoai;
+                btnXoa.Enabled = true;
+                btnSua.Enabled = true;
             }
         }
 
         private void frmLoaiPhong_Load(object sender, EventArgs e)
         {
-            getData();
+            getData("", "", "");
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
         }
 
-        private void getData()
+        private void getData(string top, string where, string order)
         {
-            lp = lpBUS.Get_By_Top("", "", "");
+            lp = lpBUS.Get_By_Top(top, where, order);
             dgvLoaiPhong.DataSource = lp;
             lbSoLuong.Text = lp.Count.ToString();
         }

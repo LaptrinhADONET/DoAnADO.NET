@@ -48,6 +48,7 @@
     <Compile Include="LoaiPhongBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="PhanQuyenBUS.cs" />
+    <Compile Include="PhongBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

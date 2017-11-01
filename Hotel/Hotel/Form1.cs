@@ -1,4 +1,5 @@
 ﻿using Hotel.BUS;
+using Hotel.ListForm1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -89,7 +90,10 @@ namespace Hotel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("abc");
+            //this.Close();
+            this.Hide();
+            DanhSachPhong sap = new DanhSachPhong();
+            sap.ShowDialog();
         }
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
@@ -99,7 +103,8 @@ namespace Hotel
 
         private void button3_Click(object sender, EventArgs e)
         {
-            button2.Enabled = true;
+            frmDanhSachPhong dsp = new frmDanhSachPhong();
+            dsp.Show();
         }
 
         private void button3_MouseClick(object sender, MouseEventArgs e)
@@ -116,7 +121,7 @@ namespace Hotel
             ////int i = int.Parse(vt[0]);
             ////int j = int.Parse(vt[1]);
             //btnTest[1, 0].Text = "Trang chủ";
-            button2.Enabled = false;
+            //  button2.Enabled = false;
             //button2.Visible = false;
         }
 

@@ -9,9 +9,9 @@ namespace Hotel.Model
 {
     public class Phong
     {
-        private string _anhPhong;
+        private byte[] _anhPhong;
         private string _gia;
-        private string _maBookRoom;
+        private string _maKV;
         private string _maLoaiPhong;
         private string _maPhong;
         private string _moTa;
@@ -21,7 +21,7 @@ namespace Hotel.Model
         private string _treEm;
         private string _viTri;
 
-        public string AnhPhong
+        public byte[] AnhPhong
         {
             get
             {
@@ -47,16 +47,16 @@ namespace Hotel.Model
             }
         }
 
-        public string MaBookRoom
+        public string MaKV
         {
             get
             {
-                return _maBookRoom;
+                return _maKV;
             }
 
             set
             {
-                _maBookRoom = value;
+                _maKV = value;
             }
         }
 
@@ -169,14 +169,13 @@ namespace Hotel.Model
             MaPhong = dr["MaPhong"] is DBNull ? string.Empty : dr["MaPhong"].ToString();
             TenPhong = dr["TenPhong"] is DBNull ? string.Empty : dr["TenPhong"].ToString();
             MaLoaiPhong = dr["MaLoaiPhong"] is DBNull ? string.Empty : dr["MaLoaiPhong"].ToString();
-            AnhPhong = dr["AnhPhong"] is DBNull ? string.Empty : dr["AnhPhong"].ToString();
+            //AnhPhong = dr["AnhPhong"] is DBNull ? string.Empty : dr["AnhPhong"].ToString();
             MoTa = dr["MoTa"] is DBNull ? string.Empty : dr["MoTa"].ToString();
             ViTri = dr["ViTri"] is DBNull ? string.Empty : dr["ViTri"].ToString();
             TrangThai = dr["TrangThai"] is DBNull ? string.Empty : dr["TrangThai"].ToString();
             NguoiLon = dr["NguoiLon"] is DBNull ? string.Empty : dr["NguoiLon"].ToString();
             TreEm = dr["TreEm"] is DBNull ? string.Empty : dr["TreEm"].ToString();
-            Gia = dr["Gia"] is DBNull ? string.Empty : dr["Gia"].ToString();
-            MaBookRoom = dr["MaBookRoom"] is DBNull ? string.Empty : dr["MaBookRoom"].ToString();
+            MaKV = dr["MaKV"] is DBNull ? string.Empty : dr["MaKV"].ToString();
         }
     }
 }

@@ -81,5 +81,7 @@ C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Ho
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.csproj.GenerateResource.Cache
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm.frmLoaiPhong.resources
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.NewFolder1.frmAddLoaiPhong.resources
-C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\bin\Debug\NewFolder2\LT.Net.mdf
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm2.frmADDTTLoaiPhong.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\bin\Debug\DATABASE\LT.Net.mdf
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm1.DanhSachPhong.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm1.frmDanhSachPhong.resources

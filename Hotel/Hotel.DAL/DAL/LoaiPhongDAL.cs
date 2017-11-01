@@ -81,6 +81,24 @@ namespace Hotel.DAL
             return lst;
         }
 
+        public void Search(LoaiPhong obj)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_LoaiPhong_Search", db.GetConnection());
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@ma", int.Parse(obj.MaLoaiPhong)));
+                cmd.Parameters.Add(new SqlParameter("@ten", obj.TenLoaiPhong));
+                cmd.Parameters.Add(new SqlParameter("@gia", float.Parse(obj.GiaPhong)));
+                cmd.Parameters.Add(new SqlParameter("@trangthai", int.Parse(obj.TrangThai)));
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public override void Update(LoaiPhong obj)
         {
             try

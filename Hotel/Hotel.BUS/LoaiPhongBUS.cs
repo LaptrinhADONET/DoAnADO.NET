@@ -33,6 +33,11 @@ namespace Hotel.BUS
             return lp.Get_By_Top(Top, Where, Order);
         }
 
+        public void Search(LoaiPhong obj)
+        {
+            lp.Search(obj);
+        }
+
         public void Update(LoaiPhong obj)
         {
             lp.Update(obj);
