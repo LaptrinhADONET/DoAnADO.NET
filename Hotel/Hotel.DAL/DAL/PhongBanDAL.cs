@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hotel.Model;
+using System.Data.SqlClient;
 
 namespace Hotel.DAL
 {
@@ -22,7 +23,52 @@ namespace Hotel.DAL
 
         public override List<PhongBan> Get_By_Top(string Top, string Where, string Order)
         {
-            throw new NotImplementedException();
+            List<PhongBan> lst = new List<PhongBan>();
+            using (SqlCommand cmd = new SqlCommand("sp_Get_By_Top", db.GetConnection()))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                //cmd.Parameters.Add(new SqlParameter("@top", Top));
+                cmd.Parameters.Add(new SqlParameter("@top", Top));
+                cmd.Parameters.Add(new SqlParameter("@where", Where));
+                cmd.Parameters.Add(new SqlParameter("@order", Order));
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        PhongBan obj = new PhongBan();
+                        obj.PhongBanIDataReader(dr);
+                        lst.Add(obj);
+                    }
+                }
+            }
+            db.conn.Close();
+            return lst;
+        }
+
+        public List<PhongBan> Get_By_Top1(string Top, string Where, string Order, string tenbang)
+        {
+            List<PhongBan> lst = new List<PhongBan>();
+            using (SqlCommand cmd = new SqlCommand("sp_Get_By_Top", db.GetConnection()))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@tenbang", tenbang));
+                cmd.Parameters.Add(new SqlParameter("@top", Top));
+                cmd.Parameters.Add(new SqlParameter("@where", Where));
+                cmd.Parameters.Add(new SqlParameter("@order", Order));
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        PhongBan obj = new PhongBan();
+                        obj.PhongBanIDataReader(dr);
+                        lst.Add(obj);
+                    }
+                }
+            }
+            db.conn.Close();
+            return lst;
         }
 
         public override void Update(PhongBan obj)

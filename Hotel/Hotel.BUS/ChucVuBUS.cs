@@ -12,9 +12,9 @@ namespace Hotel.BUS
     {
         private ChucVuDAL cmd = new ChucVuDAL();
 
-        public List<ChucVu> Get_By_Top(string Top, string Where, string Order)
+        public List<ChucVu> Get_By_Top(string Top, string Where, string Order, string tenbang)
         {
-            return cmd.Get_By_Top(Top, Where, Order);
+            return cmd.Get_By_Top1(Top, Where, Order, tenbang);
         }
     }
 }

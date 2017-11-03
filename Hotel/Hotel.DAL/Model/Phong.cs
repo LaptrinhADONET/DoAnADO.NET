@@ -16,6 +16,8 @@ namespace Hotel.Model
         private string _maPhong;
         private string _moTa;
         private string _nguoiLon;
+        private string _tenKhuVuc;
+        private string _tenLoaiPhong;
         private string _tenPhong;
         private string _trangThai;
         private string _treEm;
@@ -109,6 +111,32 @@ namespace Hotel.Model
             set
             {
                 _nguoiLon = value;
+            }
+        }
+
+        public string TenKhuVuc
+        {
+            get
+            {
+                return _tenKhuVuc;
+            }
+
+            set
+            {
+                _tenKhuVuc = value;
+            }
+        }
+
+        public string TenLoaiPhong
+        {
+            get
+            {
+                return _tenLoaiPhong;
+            }
+
+            set
+            {
+                _tenLoaiPhong = value;
             }
         }
 

@@ -44,6 +44,30 @@ namespace Hotel.DAL
             return lst;
         }
 
+        public List<ChucVu> Get_By_Top1(string top, string where, string order, string tenbang)
+        {
+            db.conn.Close();
+            List<ChucVu> lst = new List<ChucVu>();
+            SqlCommand cmd = new SqlCommand("sp_Get_By_Top", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@tenbang", tenbang));
+            cmd.Parameters.Add(new SqlParameter("@top", top));
+            cmd.Parameters.Add(new SqlParameter("@where", where));
+            cmd.Parameters.Add(new SqlParameter("@order", order));
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    ChucVu obj = new ChucVu();
+                    obj.ChucVuIdataReader(dr);
+                    lst.Add(obj);
+                }
+            }
+
+            return lst;
+        }
+
         public override void Update(ChucVu obj)
         {
             throw new NotImplementedException();

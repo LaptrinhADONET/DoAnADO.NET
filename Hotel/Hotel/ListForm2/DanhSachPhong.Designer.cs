@@ -62,6 +62,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.picPhong = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numTreEm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numNguoiLon)).BeginInit();
             this.panel1.SuspendLayout();
@@ -110,11 +111,6 @@
             // 
             this.numTreEm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numTreEm.Location = new System.Drawing.Point(83, 361);
-            this.numTreEm.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numTreEm.Name = "numTreEm";
             this.numTreEm.Size = new System.Drawing.Size(219, 26);
             this.numTreEm.TabIndex = 16;
@@ -128,11 +124,6 @@
             // 
             this.numNguoiLon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numNguoiLon.Location = new System.Drawing.Point(83, 283);
-            this.numNguoiLon.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numNguoiLon.Name = "numNguoiLon";
             this.numNguoiLon.Size = new System.Drawing.Size(219, 26);
             this.numNguoiLon.TabIndex = 15;
@@ -317,6 +308,7 @@
             // 
             this.pnMenu.BackColor = System.Drawing.Color.White;
             this.pnMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnMenu.Controls.Add(this.btnHuy);
             this.pnMenu.Controls.Add(this.btnThem);
             this.pnMenu.Controls.Add(this.panel1);
             this.pnMenu.Controls.Add(this.btnThongTin);
@@ -466,6 +458,19 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "Người lớn";
             // 
+            // btnHuy
+            // 
+            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(63)))), ((int)(((byte)(58)))));
+            this.btnHuy.FlatAppearance.BorderSize = 0;
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(974, 55);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(35, 35);
+            this.btnHuy.TabIndex = 22;
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // DanhSachPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,5 +530,6 @@
         private System.Windows.Forms.Label lbViTri;
         private System.Windows.Forms.Label lbTen;
         private System.Windows.Forms.Label lbImage;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

@@ -16,9 +16,6 @@ namespace Hotel.ListForm1
 {
     public partial class DanhSachPhong : Form
     {
-        private Image file;
-        private string Imglocation = "";
-        private Phong obj = new Phong();
         private PhongBUS pBUS = new PhongBUS();
 
         public DanhSachPhong()
@@ -33,8 +30,8 @@ namespace Hotel.ListForm1
 
         private void AddData()
         {
+            Phong obj = new Phong();
             byte[] image = null;
-
             FileStream Stream = new FileStream(picPhong.ImageLocation, FileMode.Open, FileAccess.Read);
             BinaryReader brs = new BinaryReader(Stream);
             image = brs.ReadBytes((int)Stream.Length);
@@ -71,12 +68,28 @@ namespace Hotel.ListForm1
             }
         }
 
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (checkNull() == true)
+            if (Properties.Settings.Default.FlagLoaiPhong == 1)
             {
-                AddData();
-                this.Close();
+                if (checkNull() == true)
+                {
+                    AddData();
+                    this.Close();
+                }
+            }
+            if (Properties.Settings.Default.FlagLoaiPhong == 2)
+            {
+                if (checkNull() == true)
+                {
+                    update();
+                    this.Close();
+                }
             }
         }
 
@@ -87,7 +100,6 @@ namespace Hotel.ListForm1
 
         private bool checkNull()
         {
-            float n;
             if (txtTen.Text == "")
             {
                 lbTen.Visible = true;
@@ -114,11 +126,11 @@ namespace Hotel.ListForm1
                 lbImage.Visible = true;
                 return false;
             }
-            if (float.TryParse(txtGia.Text, out n))
-            {
-                lbGiaPhong.Visible = true;
-                return false;
-            }
+            //if (float.TryParse(txtGia.Text, out n))
+            //{
+            //    lbGiaPhong.Visible = true;
+            //    return false;
+            //}
             return true;
         }
 
@@ -131,6 +143,27 @@ namespace Hotel.ListForm1
         {
             GetCMB(cbTenKhuVuc, "MaKV", "TenKV", "KhuVuc");
             GetCMB(cbMaLoaiPhong, "MaLoaiPhong", "TenLoaiPhong", "LoaiPhong");
+            if (Properties.Settings.Default.FlagLoaiPhong == 2)
+            {
+                Phong obj = new Phong();
+                obj = Properties.Settings.Default.Phong;
+                txtTen.Text = obj.TenPhong;
+                txtViTri.Text = obj.ViTri;
+                if (obj.TrangThai == "1")
+                {
+                    cbTT.Text = "Hoạt động";
+                }
+                cbTT.Text = "Không hoạt động";
+                numNguoiLon.Value = int.Parse(obj.NguoiLon);
+                numTreEm.Value = int.Parse(obj.TreEm);
+                txtGia.Text = obj.Gia;
+                cbTenKhuVuc.DisplayMember = obj.TenKhuVuc;
+                cbMaLoaiPhong.DisplayMember = obj.MaLoaiPhong;
+                byte[] imgData = obj.AnhPhong;
+                MemoryStream stream = new MemoryStream(imgData);
+                picPhong.Image = Image.FromStream(stream);
+                txtMoTa.Text = obj.MoTa;
+            }
         }
 
         private void GetCMB(ComboBox cb, string ma, string ten, string tenbang)
@@ -166,6 +199,30 @@ namespace Hotel.ListForm1
         private void txtViTri_Click(object sender, EventArgs e)
         {
             hidelb();
+        }
+
+        private void update()
+        {
+            Phong obj = new Phong();
+            obj.MaPhong = Properties.Settings.Default.Phong.MaPhong;
+            obj.TenPhong = txtTen.Text;
+            if (txtMoTa.Text == "")
+            {
+                obj.MoTa = "";
+            }
+            obj.MoTa = txtMoTa.Text;
+            obj.ViTri = txtViTri.Text;
+            obj.AnhPhong = Properties.Settings.Default.Phong.AnhPhong;
+            if (cbTT.Text == "Hoạt động")
+            {
+                obj.TrangThai = "1";
+            }
+            else obj.TrangThai = "0";
+            obj.NguoiLon = numNguoiLon.Value.ToString();
+            obj.TreEm = numTreEm.Value.ToString();
+            obj.MaKV = cbTenKhuVuc.SelectedValue.ToString();
+            obj.MaLoaiPhong = cbMaLoaiPhong.SelectedValue.ToString();
+            pBUS.Update(obj);
         }
     }
 }

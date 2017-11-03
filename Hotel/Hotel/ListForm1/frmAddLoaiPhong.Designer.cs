@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnAnh = new System.Windows.Forms.Button();
             this.btnThongTin = new System.Windows.Forms.Button();
             this.pnContentAddLoaiPhong = new System.Windows.Forms.Panel();
             this.pnMenu.SuspendLayout();
@@ -45,7 +44,6 @@
             // 
             this.pnMenu.Controls.Add(this.panel1);
             this.pnMenu.Controls.Add(this.button1);
-            this.pnMenu.Controls.Add(this.btnAnh);
             this.pnMenu.Controls.Add(this.btnThongTin);
             this.pnMenu.Controls.Add(this.pnContentAddLoaiPhong);
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -99,17 +97,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
-            // btnAnh
-            // 
-            this.btnAnh.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnAnh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnh.Location = new System.Drawing.Point(100, 65);
-            this.btnAnh.Name = "btnAnh";
-            this.btnAnh.Size = new System.Drawing.Size(78, 40);
-            this.btnAnh.TabIndex = 18;
-            this.btnAnh.Text = "Dữ liệu";
-            this.btnAnh.UseVisualStyleBackColor = true;
-            // 
             // btnThongTin
             // 
             this.btnThongTin.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
@@ -153,7 +140,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnAnh;
         private System.Windows.Forms.Button btnThongTin;
         private System.Windows.Forms.Panel pnContentAddLoaiPhong;
     }

@@ -129,6 +129,7 @@ namespace Hotel
                 pnMenu.Controls.Add(dsp);
                 flag = true;
                 f = 2;
+                Properties.Settings.Default.Flag = 2;
             }
             if (i == 3 && (btnTest[3, 0].Enabled == true))
             {
@@ -140,12 +141,30 @@ namespace Hotel
             }
             if (i == 4 && (btnTest[4, 0].Enabled == true))
             {
+                Properties.Settings.Default.Flag = 4;
+                pnMenu.Controls.Clear();
+                frmDanhSachPhong dsp = new frmDanhSachPhong();
+                pnMenu.Controls.Add(dsp);
+                flag = true;
+                f = 4;
             }
             if (i == 5 && (btnTest[5, 0].Enabled == true))
             {
+                Properties.Settings.Default.Flag = 5;
+                pnMenu.Controls.Clear();
+                frmDanhSachPhong dsp = new frmDanhSachPhong();
+                pnMenu.Controls.Add(dsp);
+                flag = true;
+                f = 5;
             }
             if (i == 6 && (btnTest[6, 0].Enabled == true))
             {
+                Properties.Settings.Default.Flag = 6;
+                pnMenu.Controls.Clear();
+                frmDanhSachPhong dsp = new frmDanhSachPhong();
+                pnMenu.Controls.Add(dsp);
+                flag = true;
+                f = 6;
             }
             if (i == 7 && (btnTest[7, 0].Enabled == true))
             {
@@ -155,12 +174,24 @@ namespace Hotel
             }
             if (i == 9 && (btnTest[9, 0].Enabled == true))
             {
+                Properties.Settings.Default.Flag = 9;
+                pnMenu.Controls.Clear();
+                frmDanhSachPhong dsp = new frmDanhSachPhong();
+                pnMenu.Controls.Add(dsp);
+                flag = true;
+                f = 9;
             }
             if (i == 10 && (btnTest[10, 0].Enabled == true))
             {
             }
             if (i == 11 && (btnTest[11, 0].Enabled == true))
             {
+                Properties.Settings.Default.Flag = 11;
+                pnMenu.Controls.Clear();
+                frmDanhSachPhong dsp = new frmDanhSachPhong();
+                pnMenu.Controls.Add(dsp);
+                flag = true;
+                f = 11;
             }
             if (i == 12 && (btnTest[12, 0].Enabled == true))
             {

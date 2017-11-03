@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhSachPhong));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,18 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvPhong = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbSoLuong = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -57,8 +46,8 @@
             this.btnTimKiem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtMa = new System.Windows.Forms.TextBox();
-            this.lbIDLP = new System.Windows.Forms.Label();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.panel3.SuspendLayout();
@@ -109,19 +98,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
-            this.Column1,
-            this.Column2,
-            this.Column11,
-            this.Column10,
-            this.Column3,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column12});
             this.dgvPhong.GridColor = System.Drawing.Color.Gray;
             this.dgvPhong.Location = new System.Drawing.Point(16, 187);
             this.dgvPhong.Name = "dgvPhong";
@@ -139,97 +115,7 @@
             this.dgvPhong.RowTemplate.Height = 80;
             this.dgvPhong.Size = new System.Drawing.Size(1037, 380);
             this.dgvPhong.TabIndex = 5;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "Anh";
-            this.Column4.HeaderText = "Ảnh phòng";
-            this.Column4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaPhong";
-            this.Column1.HeaderText = "Mã phòng";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenPhong";
-            this.Column2.HeaderText = "Tên phòng";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "GiaPhong";
-            this.Column11.HeaderText = "Giá phòng";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "TenKV";
-            this.Column10.HeaderText = "Tên khu vực";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "MaLoaiPhong";
-            this.Column3.HeaderText = "Mã loại phòng";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Visible = false;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "MoTa";
-            this.Column5.HeaderText = "Mô tả";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "ViTri";
-            this.Column6.HeaderText = "Vị trí";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "NguoiLon";
-            this.Column7.HeaderText = "Số người lớn";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "TreEm";
-            this.Column8.HeaderText = "Số trẻ em";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "MaKV";
-            this.Column9.HeaderText = "Mã khu vực";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Visible = false;
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "TrangThai";
-            this.Column12.HeaderText = "Trạng thái";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
+            this.dgvPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellClick);
             // 
             // lbSoLuong
             // 
@@ -260,8 +146,7 @@
             this.panel3.Controls.Add(this.btnTimKiem);
             this.panel3.Controls.Add(this.btnXoa);
             this.panel3.Controls.Add(this.btnThem);
-            this.panel3.Controls.Add(this.txtMa);
-            this.panel3.Controls.Add(this.lbIDLP);
+            this.panel3.Controls.Add(this.txtTimKiem);
             this.panel3.Location = new System.Drawing.Point(15, 66);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1038, 87);
@@ -289,6 +174,7 @@
             this.btnSua.Size = new System.Drawing.Size(35, 35);
             this.btnSua.TabIndex = 16;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -323,6 +209,7 @@
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // btnTimKiem
             // 
@@ -357,6 +244,7 @@
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnTimKiem.Textcolor = System.Drawing.Color.White;
             this.btnTimKiem.TextFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnXoa
             // 
@@ -369,6 +257,7 @@
             this.btnXoa.Size = new System.Drawing.Size(35, 35);
             this.btnXoa.TabIndex = 13;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -383,27 +272,22 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // txtMa
+            // txtTimKiem
             // 
-            this.txtMa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMa.Location = new System.Drawing.Point(63, 43);
-            this.txtMa.Name = "txtMa";
-            this.txtMa.Size = new System.Drawing.Size(198, 22);
-            this.txtMa.TabIndex = 1;
-            this.txtMa.Text = "Nhập tìm kiếm....";
+            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTimKiem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTimKiem.Location = new System.Drawing.Point(63, 43);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(198, 22);
+            this.txtTimKiem.TabIndex = 1;
+            this.txtTimKiem.Text = "Nhập tìm kiếm....";
+            this.txtTimKiem.Click += new System.EventHandler(this.txtTimKiem_Click);
             // 
-            // lbIDLP
+            // timer1
             // 
-            this.lbIDLP.AutoSize = true;
-            this.lbIDLP.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDLP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.lbIDLP.Location = new System.Drawing.Point(60, 15);
-            this.lbIDLP.Name = "lbIDLP";
-            this.lbIDLP.Size = new System.Drawing.Size(83, 15);
-            this.lbIDLP.TabIndex = 0;
-            this.lbIDLP.Text = "Mã loại phòng";
+            this.timer1.Interval = 700;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmDanhSachPhong
             // 
@@ -442,19 +326,20 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnTimKiem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtMa;
-        private System.Windows.Forms.Label lbIDLP;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.DataGridViewImageColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.Timer timer1;
     }
 }

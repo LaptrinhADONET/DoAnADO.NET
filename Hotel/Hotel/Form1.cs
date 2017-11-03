@@ -62,7 +62,7 @@ namespace Hotel
         {
             PhanQuyenBUS pq = new PhanQuyenBUS();
 
-            dataGridView1.DataSource = pq.Get_By_Top1("admin", "1234");
+            dgv.DataSource = pq.Get_By_Top1("admin", "1234");
         }
 
         private void btnTest_MouseLeave(object sender, EventArgs e)
@@ -114,7 +114,9 @@ namespace Hotel
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            data();
+            PhongBUS pBUS = new PhongBUS();
+            dgv.DataSource = pBUS.GetByTop("", "", "");
+            //  lbSoLuong.Text = pBUS.Get_By_Top1(top, where, order).Rows.Count.ToString();
             //CreateListMenu(8);
             /////Button test = (Button)sender;
             ////string[] vt = test.Tag.ToString().Split(',');

@@ -93,5 +93,28 @@ namespace Hotel.Properties {
                 this["FlagLoaiPhong"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Hotel.Model.Phong Phong {
+            get {
+                return ((global::Hotel.Model.Phong)(this["Phong"]));
+            }
+            set {
+                this["Phong"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int Flag {
+            get {
+                return ((int)(this["Flag"]));
+            }
+            set {
+                this["Flag"] = value;
+            }
+        }
     }
 }

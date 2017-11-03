@@ -19,19 +19,24 @@ namespace Hotel.BUS
             pDAL.Add(obj);
         }
 
-        public DataTable Get_By_Top1(string Top, string Where, string Order)
+        public void Delete(int obj)
         {
-            return pDAL.Get_By_Top1(Top, Where, Order);
+            pDAL.Delete(obj);
         }
 
-        public List<Phong> GetByTop(string top, string where, string order)
+        public DataTable GetByTop(string top, string where, string order)
         {
-            return pDAL.Get_By_Top(top, where, order);
+            return pDAL.Get_By_Top1(top, where, order);
         }
 
         public DataTable loadcb(string ma, string ten, string tenbang)
         {
             return pDAL.loadcb(ma, ten, tenbang);
+        }
+
+        public void Update(Phong obj)
+        {
+            pDAL.Update(obj);
         }
     }
 }

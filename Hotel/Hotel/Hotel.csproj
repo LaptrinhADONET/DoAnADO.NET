@@ -84,6 +84,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dgv\DGV.cs" />
+    <Compile Include="Dgv\DGVChucVu.cs" />
+    <Compile Include="Dgv\DGVDichVu.cs" />
+    <Compile Include="Dgv\DGVKhuVuc.cs" />
+    <Compile Include="Dgv\DGVPhong.cs" />
+    <Compile Include="Dgv\DGVPhongBan.cs" />
+    <Compile Include="Dgv\DGVThucDon.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
