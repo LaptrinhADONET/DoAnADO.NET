@@ -116,5 +116,49 @@ namespace Hotel.Properties {
                 this["Flag"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Hotel.Model.ChucVu ChucVuObj {
+            get {
+                return ((global::Hotel.Model.ChucVu)(this["ChucVuObj"]));
+            }
+            set {
+                this["ChucVuObj"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Hotel.Model.KhuVuc KhuVucObj {
+            get {
+                return ((global::Hotel.Model.KhuVuc)(this["KhuVucObj"]));
+            }
+            set {
+                this["KhuVucObj"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Hotel.Model.PhongBan PhongBanObj {
+            get {
+                return ((global::Hotel.Model.PhongBan)(this["PhongBanObj"]));
+            }
+            set {
+                this["PhongBanObj"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Hotel.Model.DichVu DichVuObj {
+            get {
+                return ((global::Hotel.Model.DichVu)(this["DichVuObj"]));
+            }
+            set {
+                this["DichVuObj"] = value;
+            }
+        }
     }
 }

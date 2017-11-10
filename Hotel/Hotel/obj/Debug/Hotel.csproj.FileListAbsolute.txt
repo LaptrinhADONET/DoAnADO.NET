@@ -85,3 +85,7 @@ C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Ho
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\bin\Debug\DATABASE\LT.Net.mdf
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm1.DanhSachPhong.resources
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm1.frmDanhSachPhong.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm2.frmPhongBan.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm2.frmChucVu.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm2.frmDichVu.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm2.frmKhuVuc.resources

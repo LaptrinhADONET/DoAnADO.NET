@@ -1,4 +1,5 @@
 ﻿using Hotel.BUS;
+using Hotel.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,15 @@ namespace Hotel.Dgv
             ChucVuBUS cvBUS = new ChucVuBUS();
             dgv.DataSource = cvBUS.Get_By_Top(top, where, order, tenbang);
             lb.Text = cvBUS.Get_By_Top(top, where, order, tenbang).Count.ToString();
+        }
+
+        public static void obj(DataGridView dgv, int r)
+        {
+            ChucVu obj = new ChucVu();
+            obj.MaCV = dgv.Rows[r].Cells[1].Value.ToString();
+            obj.TenCV = dgv.Rows[r].Cells[2].Value.ToString();
+            obj.HSLuong = dgv.Rows[r].Cells[0].Value.ToString();
+            Properties.Settings.Default.ChucVuObj = obj;
         }
     }
 }

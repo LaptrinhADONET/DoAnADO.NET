@@ -12,9 +12,24 @@ namespace Hotel.BUS
     {
         private ChucVuDAL cmd = new ChucVuDAL();
 
+        public void Add(ChucVu obj)
+        {
+            cmd.Add(obj);
+        }
+
+        public void Delete(int ma)
+        {
+            cmd.Delete(ma);
+        }
+
         public List<ChucVu> Get_By_Top(string Top, string Where, string Order, string tenbang)
         {
             return cmd.Get_By_Top1(Top, Where, Order, tenbang);
+        }
+
+        public void Update(ChucVu obj)
+        {
+            cmd.Update(obj);
         }
     }
 }

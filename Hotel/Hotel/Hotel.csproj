@@ -104,6 +104,30 @@
     <Compile Include="ListForm2\DanhSachPhong.Designer.cs">
       <DependentUpon>DanhSachPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListForm2\frmChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForm2\frmChucVu.Designer.cs">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListForm2\frmDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForm2\frmDichVu.Designer.cs">
+      <DependentUpon>frmDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListForm2\frmKhuVuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForm2\frmKhuVuc.Designer.cs">
+      <DependentUpon>frmKhuVuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListForm2\frmPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForm2\frmPhongBan.Designer.cs">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListForm\frmDanhSachPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +177,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListForm2\DanhSachPhong.resx">
       <DependentUpon>DanhSachPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm2\frmChucVu.resx">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm2\frmDichVu.resx">
+      <DependentUpon>frmDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm2\frmKhuVuc.resx">
+      <DependentUpon>frmKhuVuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm2\frmPhongBan.resx">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListForm\frmDanhSachPhong.resx">
       <DependentUpon>frmDanhSachPhong.cs</DependentUpon>

@@ -93,9 +93,25 @@ namespace Hotel.ListForm1
             }
         }
 
+        private void btnThongTin_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void cbMaLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cbTenKhuVuc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
         private void cbTT_Click(object sender, EventArgs e)
         {
             hidelb();
+        }
+
+        private void cbTT_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
 
         private bool checkNull()
@@ -182,6 +198,94 @@ namespace Hotel.ListForm1
             lbViTri.Visible = false;
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lbGiaPhong_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lbImage_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lbTen_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lbTT_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lbViTri_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void numNguoiLon_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void numTreEm_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void picPhong_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void pnContentAddLoaiPhong_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
         private void pnMenu_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -191,14 +295,30 @@ namespace Hotel.ListForm1
             hidelb();
         }
 
+        private void txtGia_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtMoTa_TextChanged(object sender, EventArgs e)
+        {
+        }
+
         private void txtTen_MouseClick(object sender, MouseEventArgs e)
         {
             hidelb();
         }
 
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+        }
+
         private void txtViTri_Click(object sender, EventArgs e)
         {
             hidelb();
+        }
+
+        private void txtViTri_TextChanged(object sender, EventArgs e)
+        {
         }
 
         private void update()

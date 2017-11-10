@@ -26,5 +26,17 @@
     <Setting Name="Flag" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2</Value>
     </Setting>
+    <Setting Name="ChucVuObj" Type="Hotel.Model.ChucVu" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="KhuVucObj" Type="Hotel.Model.KhuVuc" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PhongBanObj" Type="Hotel.Model.PhongBan" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DichVuObj" Type="Hotel.Model.DichVu" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

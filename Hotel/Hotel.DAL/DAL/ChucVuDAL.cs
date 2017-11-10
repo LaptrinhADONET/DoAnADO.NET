@@ -13,12 +13,19 @@ namespace Hotel.DAL
     {
         public override void Add(ChucVu obj)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("sp_ChucVu_ADD", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ten", obj.TenCV));
+            cmd.Parameters.Add(new SqlParameter("@hsl", float.Parse(obj.HSLuong)));
+            cmd.ExecuteNonQuery();
         }
 
         public override void Delete(int ma)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("sp_Delete_ChucVu", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ma", ma));
+            cmd.ExecuteNonQuery();
         }
 
         public override List<ChucVu> Get_By_Top(string Top, string Where, string Order)
@@ -70,7 +77,12 @@ namespace Hotel.DAL
 
         public override void Update(ChucVu obj)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("sp_ChucVu_Update", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ma", int.Parse(obj.MaCV)));
+            cmd.Parameters.Add(new SqlParameter("@ten", obj.TenCV));
+            cmd.Parameters.Add(new SqlParameter("@gia", float.Parse(obj.HSLuong)));
+            cmd.ExecuteNonQuery();
         }
     }
 }

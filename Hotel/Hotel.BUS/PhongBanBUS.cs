@@ -12,9 +12,19 @@ namespace Hotel.BUS
     {
         private PhongBanDAL pbDAL = new PhongBanDAL();
 
+        public void Add(PhongBan obj)
+        {
+            pbDAL.Add(obj);
+        }
+
         public List<PhongBan> Get_By_Top(string Top, string Where, string Order, string tenbang)
         {
             return pbDAL.Get_By_Top1(Top, Where, Order, tenbang);
+        }
+
+        public void Update(PhongBan obj)
+        {
+            pbDAL.Update(obj);
         }
     }
 }

@@ -13,7 +13,11 @@ namespace Hotel.DAL
     {
         public override void Add(PhongBan obj)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("sp_PhongBan_ADD", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ten", obj.TenPhongBan));
+            cmd.Parameters.Add(new SqlParameter("@TrangThai", int.Parse(obj.TrangThai)));
+            cmd.ExecuteNonQuery();
         }
 
         public override void Delete(int obj)
@@ -73,7 +77,12 @@ namespace Hotel.DAL
 
         public override void Update(PhongBan obj)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("sp_PhongBan_Update", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ma", int.Parse(obj.MaPhongBan)));
+            cmd.Parameters.Add(new SqlParameter("@ten", obj.TenPhongBan));
+            cmd.Parameters.Add(new SqlParameter("@TrangThai", int.Parse(obj.TrangThai)));
+            cmd.ExecuteNonQuery();
         }
     }
 }

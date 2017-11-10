@@ -35,5 +35,14 @@ namespace Hotel.Dgv
             dgv.DataSource = pbBUS.Get_By_Top(top, where, order, tenbang);
             lb.Text = pbBUS.Get_By_Top(top, where, order, tenbang).Count.ToString();
         }
+
+        public static void obj(DataGridView dgv, int r)
+        {
+            PhongBan obj = new PhongBan();
+            obj.MaPhongBan = dgv.Rows[r].Cells[0].Value.ToString();
+            obj.TenPhongBan = dgv.Rows[r].Cells[1].Value.ToString();
+            obj.TrangThai = dgv.Rows[r].Cells[2].Value.ToString();
+            Properties.Settings.Default.PhongBanObj = obj;
+        }
     }
 }

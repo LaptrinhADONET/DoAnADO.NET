@@ -5,10 +5,24 @@ namespace Hotel.Model
 {
     public class DichVu
     {
+        private string _ghiChu;
         private string _gia;
         private string _maDV;
         private string _tenDV;
         private string _trangThai;
+
+        public string GhiChu
+        {
+            get
+            {
+                return _ghiChu;
+            }
+
+            set
+            {
+                _ghiChu = value;
+            }
+        }
 
         public string Gia
         {
@@ -68,6 +82,7 @@ namespace Hotel.Model
             TenDV = dr["TenDV"] is DBNull ? string.Empty : dr["TenDV"].ToString();
             TrangThai = dr["TrangThai"] is DBNull ? string.Empty : dr["TrangThai"].ToString();
             Gia = dr["Gia"] is DBNull ? string.Empty : dr["Gia"].ToString();
+            GhiChu = dr["GhiChu"] is DBNull ? string.Empty : dr["GhiChu"].ToString();
         }
     }
 }

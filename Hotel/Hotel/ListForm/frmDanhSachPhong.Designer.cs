@@ -257,6 +257,7 @@
             this.btnXoa.Size = new System.Drawing.Size(35, 35);
             this.btnXoa.TabIndex = 13;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Visible = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem

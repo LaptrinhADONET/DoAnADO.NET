@@ -13,7 +13,11 @@ namespace Hotel.DAL
     {
         public override void Add(KhuVuc obj)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("sp_KhuVuc_ADD", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ten", obj.TenKV));
+            cmd.Parameters.Add(new SqlParameter("@mota", obj.MoTa));
+            cmd.ExecuteNonQuery();
         }
 
         public override void Delete(int obj)
@@ -72,7 +76,12 @@ namespace Hotel.DAL
 
         public override void Update(KhuVuc obj)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("[sp_KhuVuc_Update]", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ma", int.Parse(obj.MaKV)));
+            cmd.Parameters.Add(new SqlParameter("@ten", obj.TenKV));
+            cmd.Parameters.Add(new SqlParameter("@mota", obj.MoTa));
+            cmd.ExecuteNonQuery();
         }
     }
 }

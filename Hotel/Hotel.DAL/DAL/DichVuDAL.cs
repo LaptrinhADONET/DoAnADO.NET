@@ -13,7 +13,13 @@ namespace Hotel.DAL
     {
         public override void Add(DichVu obj)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("sp_DichVu_ADD", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ten", obj.TenDV));
+            cmd.Parameters.Add(new SqlParameter("@gia", float.Parse(obj.Gia)));
+            cmd.Parameters.Add(new SqlParameter("@trangThai", int.Parse(obj.TrangThai)));
+            cmd.Parameters.Add(new SqlParameter("@ghichu", obj.GhiChu));
+            cmd.ExecuteNonQuery();
         }
 
         public override void Delete(int obj)
@@ -53,7 +59,14 @@ namespace Hotel.DAL
 
         public override void Update(DichVu obj)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("sp_DichVu_Update", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ma", int.Parse(obj.MaDV)));
+            cmd.Parameters.Add(new SqlParameter("@ten", obj.TenDV));
+            cmd.Parameters.Add(new SqlParameter("@gia", float.Parse(obj.Gia)));
+            cmd.Parameters.Add(new SqlParameter("@trangThai", int.Parse(obj.TrangThai)));
+            cmd.Parameters.Add(new SqlParameter("@ghichu", obj.GhiChu));
+            cmd.ExecuteNonQuery();
         }
     }
 }

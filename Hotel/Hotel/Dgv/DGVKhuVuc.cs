@@ -1,4 +1,5 @@
 ﻿using Hotel.BUS;
+using Hotel.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,15 @@ namespace Hotel.Dgv
             KhuVucBUS obj = new KhuVucBUS();
             dgv.DataSource = obj.Get_By_Top(top, where, order, tenbang);
             lb.Text = obj.Get_By_Top(top, where, order, tenbang).Count.ToString();
+        }
+
+        public static void obj(DataGridView dgv, int r)
+        {
+            KhuVuc obj = new KhuVuc();
+            obj.MaKV = dgv.Rows[r].Cells[0].Value.ToString();
+            obj.TenKV = dgv.Rows[r].Cells[2].Value.ToString();
+            obj.MoTa = dgv.Rows[r].Cells[1].Value.ToString();
+            Properties.Settings.Default.KhuVucObj = obj;
         }
     }
 }

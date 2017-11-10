@@ -10,11 +10,21 @@ namespace Hotel.BUS
 {
     public class DichVuBUS
     {
-        private DichVuDAL obj = new DichVuDAL();
+        private DichVuDAL dvDAL = new DichVuDAL();
+
+        public void Add(DichVu obj)
+        {
+            dvDAL.Add(obj);
+        }
 
         public List<DichVu> GetByTop(string top, string where, string order, string tenbang)
         {
-            return obj.GetByTop(top, where, order, tenbang);
+            return dvDAL.GetByTop(top, where, order, tenbang);
+        }
+
+        public void Update(DichVu obj)
+        {
+            dvDAL.Update(obj);
         }
     }
 }
