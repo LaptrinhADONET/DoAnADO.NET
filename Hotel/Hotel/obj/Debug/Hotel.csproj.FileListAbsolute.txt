@@ -89,3 +89,5 @@ C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Ho
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm2.frmChucVu.resources
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm2.frmDichVu.resources
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm2.frmKhuVuc.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm.TrangChu.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm.LstTinTuc.resources

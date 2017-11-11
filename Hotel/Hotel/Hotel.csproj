@@ -146,11 +146,23 @@
     <Compile Include="ListForm\frmLoaiPhong.Designer.cs">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListForm\LstTinTuc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListForm\LstTinTuc.Designer.cs">
+      <DependentUpon>LstTinTuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListForm\PhanQuyen.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ListForm\PhanQuyen.Designer.cs">
       <DependentUpon>PhanQuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListForm\TrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListForm\TrangChu.Designer.cs">
+      <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -199,8 +211,14 @@
     <EmbeddedResource Include="ListForm\frmLoaiPhong.resx">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListForm\LstTinTuc.resx">
+      <DependentUpon>LstTinTuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListForm\PhanQuyen.resx">
       <DependentUpon>PhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm\TrangChu.resx">
+      <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -248,6 +266,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\check.bmp" />
     <None Include="Images\High Importance_20px.png" />
     <None Include="Images\Ok_20px.png" />
     <Content Include="DATABASE\LT.Net.mdf">
@@ -264,6 +283,7 @@
     <None Include="Images\New folder\product3.jpg" />
     <None Include="Images\New folder\product4.jpg" />
     <None Include="Images\NguyenHongCam3.png" />
+    <None Include="Images\Circle_10px1.png" />
     <Content Include="libraly\Bunifu_UI_v1.52.dll" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using Hotel.BUS;
+using Hotel.ListForm;
 using Hotel.ListForm1;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace Hotel
         public Form1()
         {
             InitializeComponent();
+            TrangChu frm = new TrangChu();
+            pnMenu.Controls.Add(frm);
         }
 
         public void CreateListMenu(int n)
@@ -62,7 +65,7 @@ namespace Hotel
         {
             PhanQuyenBUS pq = new PhanQuyenBUS();
 
-            dgv.DataSource = pq.Get_By_Top1("admin", "1234");
+            // dgv.DataSource = pq.Get_By_Top1("admin", "1234");
         }
 
         private void btnTest_MouseLeave(object sender, EventArgs e)
@@ -85,7 +88,6 @@ namespace Hotel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button2.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -109,13 +111,13 @@ namespace Hotel
 
         private void button3_MouseClick(object sender, MouseEventArgs e)
         {
-            button2.Enabled = true;
+            // button2.Enabled = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             PhongBUS pBUS = new PhongBUS();
-            dgv.DataSource = pBUS.GetByTop("", "", "");
+            // dgv.DataSource = pBUS.GetByTop("", "", "");
             //  lbSoLuong.Text = pBUS.Get_By_Top1(top, where, order).Rows.Count.ToString();
             //CreateListMenu(8);
             /////Button test = (Button)sender;

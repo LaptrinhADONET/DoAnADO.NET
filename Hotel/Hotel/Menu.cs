@@ -26,6 +26,10 @@ namespace Hotel
         public Menu()
         {
             InitializeComponent();
+            CreateListMenu(15);
+            TrangChu frm = new TrangChu();
+            pnMenu.Controls.Add(frm);
+            pnThanhMN[0, 0].Visible = true;
         }
 
         public void CreateListMenu(int n)
@@ -116,6 +120,8 @@ namespace Hotel
             if (i == 0 && (btnTest[0, 0].Enabled == true))
             {
                 pnMenu.Controls.Clear();
+                TrangChu frm = new TrangChu();
+                pnMenu.Controls.Add(frm);
                 flag = true;
                 f = 0;
             }
@@ -247,7 +253,6 @@ namespace Hotel
 
         private void Menu_Load_1(object sender, EventArgs e)
         {
-            CreateListMenu(15);
             CreateNameMenuAD();
         }
     }
