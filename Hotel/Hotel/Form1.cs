@@ -21,8 +21,6 @@ namespace Hotel
         public Form1()
         {
             InitializeComponent();
-            TrangChu frm = new TrangChu();
-            pnMenu.Controls.Add(frm);
         }
 
         public void CreateListMenu(int n)
@@ -116,17 +114,8 @@ namespace Hotel
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            PhongBUS pBUS = new PhongBUS();
-            // dgv.DataSource = pBUS.GetByTop("", "", "");
-            //  lbSoLuong.Text = pBUS.Get_By_Top1(top, where, order).Rows.Count.ToString();
-            //CreateListMenu(8);
-            /////Button test = (Button)sender;
-            ////string[] vt = test.Tag.ToString().Split(',');
-            ////int i = int.Parse(vt[0]);
-            ////int j = int.Parse(vt[1]);
-            //btnTest[1, 0].Text = "Trang chủ";
-            //  button2.Enabled = false;
-            //button2.Visible = false;
+            frmNhanKhach frm = new frmNhanKhach();
+            pnMenu.Controls.Add(frm);
         }
 
         private void pnMenu_Paint(object sender, PaintEventArgs e)

@@ -37,6 +37,17 @@ namespace Hotel.DAL
             }
         }
 
+        public DataTable DataPhong()
+        {
+            string str = " SELECT Phong.MaPhong, TenPhong, ViTri, NguoiLon, TreEm, Phong.TrangThai, KhuVuc.MaKV, TenKV FROM dbo.Phong, dbo.KhuVuc, dbo.BookRoom,dbo.KhachHang,dbo.ctphong, dbo.CheckOut WHERE dbo.KhuVuc.MaKV = dbo.Phong.MaKV AND phong.MaPhong = dbo.ctphong.MaPhong ANDdbo.ctphong.MaBookRoom = BookRoom.MaBookRoom AND dbo.CheckOut.MaBookRoom = BookRoom.MaBookRoomAND dbo.KhachHang.MaKH = dbo.CheckOut.MaKH AND dbo.Phong.MaPhong = N''";
+            SqlCommand cmd = new SqlCommand(str, db.GetConnection());
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+
         public override void Delete(int obj)
         {
             using (SqlCommand cmd = new SqlCommand("sp_delete_Phong", db.GetConnection()))
@@ -99,6 +110,16 @@ namespace Hotel.DAL
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
+        }
+
+        public int SoLuongPhong()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.Phong", db.GetConnection());
+            // cmd.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt.Rows.Count;
         }
 
         public override void Update(Phong obj)

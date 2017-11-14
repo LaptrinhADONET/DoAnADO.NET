@@ -34,6 +34,11 @@ namespace Hotel.BUS
             return pDAL.loadcb(ma, ten, tenbang);
         }
 
+        public int SoLuongPhong()
+        {
+            return pDAL.SoLuongPhong();
+        }
+
         public void Update(Phong obj)
         {
             pDAL.Update(obj);

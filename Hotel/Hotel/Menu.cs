@@ -127,6 +127,11 @@ namespace Hotel
             }
             if (i == 1 && (btnTest[1, 0].Enabled == true))
             {
+                pnMenu.Controls.Clear();
+                frmNhanKhach frm = new frmNhanKhach();
+                pnMenu.Controls.Add(frm);
+                flag = true;
+                f = 1;
             }
             if (i == 2 && (btnTest[2, 0].Enabled == true))
             {
