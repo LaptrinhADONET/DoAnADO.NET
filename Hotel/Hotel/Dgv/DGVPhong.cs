@@ -64,7 +64,7 @@ namespace Hotel.Dgv
             text3.DataPropertyName = "GiaPhong";
             text3.Visible = true;
             DataGridViewTextBoxColumn text4 = new DataGridViewTextBoxColumn();
-            text4.HeaderText = "Tên khu vực";
+            text4.HeaderText = "khu vực";
             text4.DataPropertyName = "TenKV";
             text4.Visible = true;
             DataGridViewTextBoxColumn text5 = new DataGridViewTextBoxColumn();
@@ -72,7 +72,7 @@ namespace Hotel.Dgv
             text5.DataPropertyName = "MaLoaiPhong";
             text5.Visible = false;
             DataGridViewTextBoxColumn text6 = new DataGridViewTextBoxColumn();
-            text6.HeaderText = "Tên loại phòng";
+            text6.HeaderText = "Loại phòng";
             text6.DataPropertyName = "TenLoaiPhong";
             text6.Visible = true;
             DataGridViewTextBoxColumn text7 = new DataGridViewTextBoxColumn();

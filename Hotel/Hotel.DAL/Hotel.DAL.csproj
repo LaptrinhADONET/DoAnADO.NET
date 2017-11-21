@@ -60,6 +60,7 @@
     <Compile Include="DAL\PhanQuyenDAL.cs" />
     <Compile Include="DAL\PhongBanDAL.cs" />
     <Compile Include="DAL\PhongDAL.cs" />
+    <Compile Include="DAL\reposstLstHoaDon.cs" />
     <Compile Include="DBcontact\DBContect.cs" />
     <Compile Include="IRepository\IRepository.cs" />
     <Compile Include="IRepository\Repository.cs" />

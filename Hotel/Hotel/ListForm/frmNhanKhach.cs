@@ -1,6 +1,8 @@
 ﻿using Hotel.BUS;
+using Hotel.Model;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Text;
@@ -26,6 +28,17 @@ namespace Hotel
             txtTrangThai.Enabled = false;
             ve();
             lbName.Text = "Tiếp nhận khách";
+        }
+
+        private DataTable abc()
+        {
+            DBContect db = new DBContect();
+            SqlCommand cmd = new SqlCommand("SELECT * from dbo.vv_SLSD", db.GetConnection());
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
 
         private void button1_MouseHover(object sender, EventArgs e)
@@ -101,7 +114,21 @@ namespace Hotel
                     btn[i, j].ImageAlign = ContentAlignment.TopCenter;
                     btn[i, j].Tag = "" + i + "," + j + "";
                     btn[i, j].MouseHover += new System.EventHandler(this.button1_MouseHover);
-
+                    if (dt.Rows[flag][12].ToString() == "Hoạt Động")
+                    {
+                        btn[i, j].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(39)))));
+                    }
+                    if (dt.Rows[flag][12].ToString() == "Không hoạt Động")
+                    {
+                        btn[i, j].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(41)))));
+                    }
+                    for (int u = 0; u < abc().Rows.Count; u++)
+                    {
+                        if (abc().Rows[u][0].ToString() == dt.Rows[flag][0].ToString())
+                        {
+                            btn[i, j].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(185)))), ((int)(((byte)(26)))));
+                        }
+                    }
                     grbDanhsach.Controls.Add(btn[i, j]);
                     flag++;
                 }

@@ -5,27 +5,14 @@ namespace Hotel.Model
 {
     public class KhachHang
     {
-        private string _anh;
         private string _cMT;
         private string _diaChi;
         private string _email;
         private string _maKH;
+        private string _ns;
         private string _sDT;
         private string _tenKH;
         private string _trangThai;
-
-        public string Anh
-        {
-            get
-            {
-                return _anh;
-            }
-
-            set
-            {
-                _anh = value;
-            }
-        }
 
         public string CMT
         {
@@ -79,6 +66,19 @@ namespace Hotel.Model
             }
         }
 
+        public string Ns
+        {
+            get
+            {
+                return _ns;
+            }
+
+            set
+            {
+                _ns = value;
+            }
+        }
+
         public string SDT
         {
             get
@@ -126,7 +126,7 @@ namespace Hotel.Model
             SDT = dr["SDT"] is DBNull ? string.Empty : dr["SDT"].ToString();
             Email = dr["Email"] is DBNull ? string.Empty : dr["Email"].ToString();
             TrangThai = dr["TrangThai"] is DBNull ? string.Empty : dr["TrangThai"].ToString();
-            Anh = dr["Anh"] is DBNull ? string.Empty : dr["Anh"].ToString();
+
             CMT = dr["CMT"] is DBNull ? string.Empty : dr["CMT"].ToString();
         }
     }

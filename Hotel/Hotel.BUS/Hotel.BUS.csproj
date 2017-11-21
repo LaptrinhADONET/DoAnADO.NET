@@ -46,8 +46,11 @@
   <ItemGroup>
     <Compile Include="ChucVuBUS.cs" />
     <Compile Include="DichVuBUS.cs" />
+    <Compile Include="HoaDonBUS.cs" />
+    <Compile Include="KhachHangBUS.cs" />
     <Compile Include="KhuVucBUS.cs" />
     <Compile Include="LoaiPhongBUS.cs" />
+    <Compile Include="LstHoaDonBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="PhanQuyenBUS.cs" />
     <Compile Include="PhongBanBUS.cs" />

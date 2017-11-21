@@ -43,5 +43,13 @@ namespace Hotel.Dgv
             dgv.Columns.Add(text5);
             dgv.Columns.Add(text6);
         }
+
+        public static void GetData(DataGridView dgv, string top, string where, string order, Label lb, string tenbang)
+        {
+        }
+
+        public static void obj(DataGridView dgv, int r)
+        {
+        }
     }
 }

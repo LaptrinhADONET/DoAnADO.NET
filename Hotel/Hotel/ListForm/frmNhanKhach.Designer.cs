@@ -36,13 +36,6 @@
             this.pnMenu = new System.Windows.Forms.Panel();
             this.grbDanhsach = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCMT = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSDT = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTrangThai = new System.Windows.Forms.TextBox();
@@ -63,7 +56,6 @@
             this.panel2.SuspendLayout();
             this.pnMenu.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPhong)).BeginInit();
             this.SuspendLayout();
@@ -124,80 +116,16 @@
             this.grbDanhsach.Size = new System.Drawing.Size(717, 558);
             this.grbDanhsach.TabIndex = 1;
             this.grbDanhsach.TabStop = false;
-            this.grbDanhsach.Text = "Danh sách";
+            this.grbDanhsach.Text = "Danh sách phòng";
             this.grbDanhsach.Enter += new System.EventHandler(this.grbDanhsach_Enter);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(738, 39);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(331, 571);
             this.panel1.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtCMT);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtSDT);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtTenKhachHang);
-            this.groupBox2.Location = new System.Drawing.Point(3, 385);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(325, 176);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin khách hàng";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 131);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Số chứng minh thư";
-            // 
-            // txtCMT
-            // 
-            this.txtCMT.Location = new System.Drawing.Point(117, 128);
-            this.txtCMT.Name = "txtCMT";
-            this.txtCMT.Size = new System.Drawing.Size(176, 20);
-            this.txtCMT.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Số điện thoại";
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(117, 85);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(176, 20);
-            this.txtSDT.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên khách hàng";
-            // 
-            // txtTenKhachHang
-            // 
-            this.txtTenKhachHang.Location = new System.Drawing.Point(117, 43);
-            this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(176, 20);
-            this.txtTenKhachHang.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -216,9 +144,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtTenPhong);
             this.groupBox1.Controls.Add(this.picPhong);
-            this.groupBox1.Location = new System.Drawing.Point(3, 7);
+            this.groupBox1.Location = new System.Drawing.Point(3, 65);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 372);
+            this.groupBox1.Size = new System.Drawing.Size(325, 430);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phòng";
@@ -227,7 +155,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(29, 344);
+            this.label11.Location = new System.Drawing.Point(29, 383);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 15;
@@ -235,7 +163,7 @@
             // 
             // txtTrangThai
             // 
-            this.txtTrangThai.Location = new System.Drawing.Point(117, 341);
+            this.txtTrangThai.Location = new System.Drawing.Point(117, 380);
             this.txtTrangThai.Name = "txtTrangThai";
             this.txtTrangThai.Size = new System.Drawing.Size(176, 20);
             this.txtTrangThai.TabIndex = 14;
@@ -243,7 +171,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 305);
+            this.label10.Location = new System.Drawing.Point(16, 344);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 13);
             this.label10.TabIndex = 13;
@@ -251,7 +179,7 @@
             // 
             // txtTenKhuVuc
             // 
-            this.txtTenKhuVuc.Location = new System.Drawing.Point(117, 302);
+            this.txtTenKhuVuc.Location = new System.Drawing.Point(117, 341);
             this.txtTenKhuVuc.Name = "txtTenKhuVuc";
             this.txtTenKhuVuc.Size = new System.Drawing.Size(176, 20);
             this.txtTenKhuVuc.TabIndex = 12;
@@ -259,7 +187,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(32, 266);
+            this.label9.Location = new System.Drawing.Point(32, 305);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 13);
             this.label9.TabIndex = 11;
@@ -267,7 +195,7 @@
             // 
             // txtTreEm
             // 
-            this.txtTreEm.Location = new System.Drawing.Point(117, 263);
+            this.txtTreEm.Location = new System.Drawing.Point(117, 302);
             this.txtTreEm.Name = "txtTreEm";
             this.txtTreEm.Size = new System.Drawing.Size(176, 20);
             this.txtTreEm.TabIndex = 10;
@@ -275,7 +203,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 227);
+            this.label8.Location = new System.Drawing.Point(18, 266);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 13);
             this.label8.TabIndex = 9;
@@ -283,7 +211,7 @@
             // 
             // txtNguoiLon
             // 
-            this.txtNguoiLon.Location = new System.Drawing.Point(117, 224);
+            this.txtNguoiLon.Location = new System.Drawing.Point(117, 263);
             this.txtNguoiLon.Name = "txtNguoiLon";
             this.txtNguoiLon.Size = new System.Drawing.Size(176, 20);
             this.txtNguoiLon.TabIndex = 8;
@@ -291,7 +219,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(55, 188);
+            this.label7.Location = new System.Drawing.Point(55, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 7;
@@ -299,7 +227,7 @@
             // 
             // txtViTri
             // 
-            this.txtViTri.Location = new System.Drawing.Point(117, 185);
+            this.txtViTri.Location = new System.Drawing.Point(117, 224);
             this.txtViTri.Name = "txtViTri";
             this.txtViTri.Size = new System.Drawing.Size(176, 20);
             this.txtViTri.TabIndex = 6;
@@ -307,7 +235,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(61, 149);
+            this.label6.Location = new System.Drawing.Point(61, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 13);
             this.label6.TabIndex = 5;
@@ -315,7 +243,7 @@
             // 
             // txtGia
             // 
-            this.txtGia.Location = new System.Drawing.Point(117, 146);
+            this.txtGia.Location = new System.Drawing.Point(117, 185);
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(176, 20);
             this.txtGia.TabIndex = 4;
@@ -323,7 +251,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 110);
+            this.label5.Location = new System.Drawing.Point(25, 149);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 3;
@@ -331,7 +259,7 @@
             // 
             // txtTenPhong
             // 
-            this.txtTenPhong.Location = new System.Drawing.Point(117, 107);
+            this.txtTenPhong.Location = new System.Drawing.Point(117, 146);
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.Size = new System.Drawing.Size(176, 20);
             this.txtTenPhong.TabIndex = 2;
@@ -341,7 +269,7 @@
             this.picPhong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picPhong.Location = new System.Drawing.Point(18, 19);
             this.picPhong.Name = "picPhong";
-            this.picPhong.Size = new System.Drawing.Size(114, 61);
+            this.picPhong.Size = new System.Drawing.Size(301, 100);
             this.picPhong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPhong.TabIndex = 0;
             this.picPhong.TabStop = false;
@@ -358,8 +286,6 @@
             this.panel2.PerformLayout();
             this.pnMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPhong)).EndInit();
@@ -377,13 +303,6 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grbDanhsach;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCMT;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtSDT;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTenPhong;
         private System.Windows.Forms.PictureBox picPhong;

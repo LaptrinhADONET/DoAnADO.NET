@@ -40,6 +40,7 @@
             this.lbSoLuong = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnIn = new System.Windows.Forms.Button();
             this.lbCheck = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -140,6 +141,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.btnIn);
             this.panel3.Controls.Add(this.lbCheck);
             this.panel3.Controls.Add(this.btnSua);
             this.panel3.Controls.Add(this.bunifuFlatButton1);
@@ -151,6 +153,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1038, 87);
             this.panel3.TabIndex = 8;
+            // 
+            // btnIn
+            // 
+            this.btnIn.BackColor = System.Drawing.Color.White;
+            this.btnIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
+            this.btnIn.Location = new System.Drawing.Point(865, 23);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(35, 35);
+            this.btnIn.TabIndex = 18;
+            this.btnIn.UseVisualStyleBackColor = false;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // lbCheck
             // 
@@ -342,5 +357,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnIn;
     }
 }

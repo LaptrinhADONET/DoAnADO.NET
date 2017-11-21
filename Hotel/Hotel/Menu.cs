@@ -179,9 +179,21 @@ namespace Hotel
             }
             if (i == 7 && (btnTest[7, 0].Enabled == true))
             {
+                Properties.Settings.Default.Flag = 7;
+                pnMenu.Controls.Clear();
+                frmDanhSachPhong dsp = new frmDanhSachPhong();
+                pnMenu.Controls.Add(dsp);
+                flag = true;
+                f = 7;
             }
             if (i == 8 && (btnTest[8, 0].Enabled == true))
             {
+                Properties.Settings.Default.Flag = 8;
+                pnMenu.Controls.Clear();
+                frmDanhSachPhong dsp = new frmDanhSachPhong();
+                pnMenu.Controls.Add(dsp);
+                flag = true;
+                f = 8;
             }
             if (i == 9 && (btnTest[9, 0].Enabled == true))
             {
@@ -194,6 +206,12 @@ namespace Hotel
             }
             if (i == 10 && (btnTest[10, 0].Enabled == true))
             {
+                Properties.Settings.Default.Flag = 10;
+                pnMenu.Controls.Clear();
+                frmDanhSachPhong dsp = new frmDanhSachPhong();
+                pnMenu.Controls.Add(dsp);
+                flag = true;
+                f = 10;
             }
             if (i == 11 && (btnTest[11, 0].Enabled == true))
             {

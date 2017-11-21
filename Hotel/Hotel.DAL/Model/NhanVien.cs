@@ -9,32 +9,21 @@ namespace Hotel.Model
 {
     public class NhanVien
     {
-        private string _anhNV;
         private string _diaChi;
         private string _email;
         private string _gioiTinh;
         private string _luong;
         private string _maCV;
         private string _maNV;
+        private string _maPhongBan;
         private string _ngayBDL;
         private string _ngaySinh;
         private string _password;
         private string _sDT;
+        private string _tenCV;
         private string _tenNV;
+        private string _tenPhong;
         private string _trangThai;
-
-        public string AnhNV
-        {
-            get
-            {
-                return _anhNV;
-            }
-
-            set
-            {
-                _anhNV = value;
-            }
-        }
 
         public string DiaChi
         {
@@ -114,6 +103,19 @@ namespace Hotel.Model
             }
         }
 
+        public string MaPhongBan
+        {
+            get
+            {
+                return _maPhongBan;
+            }
+
+            set
+            {
+                _maPhongBan = value;
+            }
+        }
+
         public string NgayBDL
         {
             get
@@ -166,6 +168,19 @@ namespace Hotel.Model
             }
         }
 
+        public string TenCV
+        {
+            get
+            {
+                return _tenCV;
+            }
+
+            set
+            {
+                _tenCV = value;
+            }
+        }
+
         public string TenNV
         {
             get
@@ -176,6 +191,19 @@ namespace Hotel.Model
             set
             {
                 _tenNV = value;
+            }
+        }
+
+        public string TenPhong
+        {
+            get
+            {
+                return _tenPhong;
+            }
+
+            set
+            {
+                _tenPhong = value;
             }
         }
 
@@ -203,7 +231,6 @@ namespace Hotel.Model
             NgaySinh = dr["NgaySinh"] is DBNull ? string.Empty : dr["NgaySinh"].ToString();
             DiaChi = dr["DiaChi"] is DBNull ? string.Empty : dr["DiaChi"].ToString();
             GioiTinh = dr["GioiTinh"] is DBNull ? string.Empty : dr["GioiTinh"].ToString();
-            AnhNV = dr["AnhNV"] is DBNull ? string.Empty : dr["AnhNV"].ToString();
             TrangThai = dr["TrangThai"] is DBNull ? string.Empty : dr["TrangThai"].ToString();
             SDT = dr["SDT"] is DBNull ? string.Empty : dr["SDT"].ToString();
             Email = dr["Email"] is DBNull ? string.Empty : dr["Email"].ToString();

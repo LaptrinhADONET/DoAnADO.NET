@@ -27,6 +27,20 @@ namespace Hotel.DAL
             throw new NotImplementedException();
         }
 
+        public DataTable GetByTop(string Top, string Where, string Order, string tenbang)
+        {
+            SqlCommand cmd = new SqlCommand("sp_Get_By_Top", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@tenbang", tenbang));
+            cmd.Parameters.Add(new SqlParameter("@top", Top));
+            cmd.Parameters.Add(new SqlParameter("@where", Where));
+            cmd.Parameters.Add(new SqlParameter("@order", Order));
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+
         public List<NhanVien> login(string Email, string Pass)
         {
             List<NhanVien> lst = new List<NhanVien>();
@@ -52,6 +66,16 @@ namespace Hotel.DAL
         public override void Update(NhanVien obj)
         {
             throw new NotImplementedException();
+        }
+
+        public DataTable ViewData()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.vv_rpNhanVien", db.GetConnection());
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
         }
     }
 }

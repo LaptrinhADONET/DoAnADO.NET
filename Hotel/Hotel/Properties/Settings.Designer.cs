@@ -160,5 +160,47 @@ namespace Hotel.Properties {
                 this["DichVuObj"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Hotel.Model.NhanVien NhanVienObj {
+            get {
+                return ((global::Hotel.Model.NhanVien)(this["NhanVienObj"]));
+            }
+            set {
+                this["NhanVienObj"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Hotel.Model.KhachHang KhachHangObj {
+            get {
+                return ((global::Hotel.Model.KhachHang)(this["KhachHangObj"]));
+            }
+            set {
+                this["KhachHangObj"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=LT.Net;Integrated Security=True")]
+        public string LT_NetConnectionString {
+            get {
+                return ((string)(this["LT_NetConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=LT.Net;Integrated Security=True")]
+        public string LT_NetConnectionString1 {
+            get {
+                return ((string)(this["LT_NetConnectionString1"]));
+            }
+        }
     }
 }

@@ -26,6 +26,7 @@ namespace Hotel.ListForm
         public frmLoaiPhong()
         {
             InitializeComponent();
+            btnXoa.Visible = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)

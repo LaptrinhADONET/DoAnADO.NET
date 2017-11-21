@@ -59,6 +59,11 @@
       <HintPath>..\packages\Configuration.0.2.0-beta13\lib\net45\Configuration.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
       <Private>True</Private>
@@ -73,6 +78,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,9 +91,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DATABASE\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dgv\DGV.cs" />
     <Compile Include="Dgv\DGVChucVu.cs" />
+    <Compile Include="Dgv\DGVDanhSachKhach.cs" />
     <Compile Include="Dgv\DGVDichVu.cs" />
+    <Compile Include="Dgv\DGVDSNhanVien.cs" />
+    <Compile Include="Dgv\DGVHoaDon.cs" />
     <Compile Include="Dgv\DGVKhuVuc.cs" />
     <Compile Include="Dgv\DGVPhong.cs" />
     <Compile Include="Dgv\DGVPhongBan.cs" />
@@ -96,6 +111,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repost\HoaDon_RP_View.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDon_RP_View.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ListForm\frmNhanKhach.cs">
       <SubType>UserControl</SubType>
@@ -152,12 +173,6 @@
     <Compile Include="ListForm\frmLoaiPhong.Designer.cs">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListForm\LstTinTuc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ListForm\LstTinTuc.Designer.cs">
-      <DependentUpon>LstTinTuc.cs</DependentUpon>
-    </Compile>
     <Compile Include="ListForm\PhanQuyen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,8 +205,54 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repost\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repost\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repost\HoaDon_RP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repost\HoaDon_RP.Designer.cs">
+      <DependentUpon>HoaDon_RP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repost\KhachHang_rp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repost\KhachHang_rp.Designer.cs">
+      <DependentUpon>KhachHang_rp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repost\NhanVien_rp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repost\NhanVien_rp.Designer.cs">
+      <DependentUpon>NhanVien_rp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repost\Nhan_Vien_RP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Nhan_Vien_RP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Repost\RpPhong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RpPhong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Repost\Rp_KhachHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rp_KhachHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repost\HoaDon_RP_View.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HoaDon_RP_View.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ListForm\frmNhanKhach.resx">
       <DependentUpon>frmNhanKhach.cs</DependentUpon>
@@ -220,9 +281,6 @@
     <EmbeddedResource Include="ListForm\frmLoaiPhong.resx">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListForm\LstTinTuc.resx">
-      <DependentUpon>LstTinTuc.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ListForm\PhanQuyen.resx">
       <DependentUpon>PhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +301,41 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Repost\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repost\HoaDon_RP.resx">
+      <DependentUpon>HoaDon_RP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repost\KhachHang_rp.resx">
+      <DependentUpon>KhachHang_rp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repost\NhanVien_rp.resx">
+      <DependentUpon>NhanVien_rp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repost\Nhan_Vien_RP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Nhan_Vien_RP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repost\RpPhong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RpPhong.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repost\Rp_KhachHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rp_KhachHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DATABASE\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DATABASE\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DATABASE\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -309,6 +402,10 @@
       <Name>Hotel.DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
