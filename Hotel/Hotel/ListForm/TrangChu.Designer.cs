@@ -81,7 +81,7 @@
             // 
             this.lbDattruoc.AutoSize = true;
             this.lbDattruoc.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDattruoc.Location = new System.Drawing.Point(738, 119);
+            this.lbDattruoc.Location = new System.Drawing.Point(738, 42);
             this.lbDattruoc.Name = "lbDattruoc";
             this.lbDattruoc.Size = new System.Drawing.Size(19, 21);
             this.lbDattruoc.TabIndex = 110;
@@ -92,7 +92,7 @@
             // 
             this.lbDonDep.AutoSize = true;
             this.lbDonDep.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDonDep.Location = new System.Drawing.Point(528, 119);
+            this.lbDonDep.Location = new System.Drawing.Point(528, 42);
             this.lbDonDep.Name = "lbDonDep";
             this.lbDonDep.Size = new System.Drawing.Size(19, 21);
             this.lbDonDep.TabIndex = 109;
@@ -103,7 +103,7 @@
             // 
             this.lbTrong.AutoSize = true;
             this.lbTrong.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTrong.Location = new System.Drawing.Point(324, 119);
+            this.lbTrong.Location = new System.Drawing.Point(324, 42);
             this.lbTrong.Name = "lbTrong";
             this.lbTrong.Size = new System.Drawing.Size(19, 21);
             this.lbTrong.TabIndex = 108;
@@ -114,7 +114,7 @@
             // 
             this.lbDangSD.AutoSize = true;
             this.lbDangSD.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDangSD.Location = new System.Drawing.Point(109, 119);
+            this.lbDangSD.Location = new System.Drawing.Point(109, 42);
             this.lbDangSD.Name = "lbDangSD";
             this.lbDangSD.Size = new System.Drawing.Size(19, 21);
             this.lbDangSD.TabIndex = 107;
@@ -129,7 +129,7 @@
             this.panel6.Controls.Add(this.lbSuaChua);
             this.panel6.Controls.Add(this.label12);
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(871, 103);
+            this.panel6.Location = new System.Drawing.Point(871, 26);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(176, 93);
             this.panel6.TabIndex = 105;
@@ -174,7 +174,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(659, 103);
+            this.panel5.Location = new System.Drawing.Point(659, 26);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(176, 93);
             this.panel5.TabIndex = 106;
@@ -208,7 +208,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Location = new System.Drawing.Point(447, 103);
+            this.panel4.Location = new System.Drawing.Point(447, 26);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(176, 93);
             this.panel4.TabIndex = 105;
@@ -242,7 +242,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(235, 103);
+            this.panel3.Location = new System.Drawing.Point(235, 26);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(176, 93);
             this.panel3.TabIndex = 104;
@@ -275,7 +275,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(23, 103);
+            this.panel1.Location = new System.Drawing.Point(23, 26);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 93);
             this.panel1.TabIndex = 103;

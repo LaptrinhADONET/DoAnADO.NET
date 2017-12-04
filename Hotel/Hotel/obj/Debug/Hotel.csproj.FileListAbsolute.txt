@@ -114,3 +114,4 @@ C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Ho
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.Repost.KhachHang_rp.resources
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.Repost.NhanVien_rp.resources
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.Repost.HoaDon_RP.resources
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel\obj\Debug\Hotel.ListForm1.frm_DatPhong.resources

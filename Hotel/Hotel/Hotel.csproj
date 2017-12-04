@@ -99,6 +99,7 @@
     <Compile Include="Dgv\DGV.cs" />
     <Compile Include="Dgv\DGVChucVu.cs" />
     <Compile Include="Dgv\DGVDanhSachKhach.cs" />
+    <Compile Include="Dgv\dgvDatPhong.cs" />
     <Compile Include="Dgv\DGVDichVu.cs" />
     <Compile Include="Dgv\DGVDSNhanVien.cs" />
     <Compile Include="Dgv\DGVHoaDon.cs" />
@@ -111,6 +112,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListForm1\frm_DatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForm1\frm_DatPhong.Designer.cs">
+      <DependentUpon>frm_DatPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Repost\HoaDon_RP_View.cs">
       <AutoGen>True</AutoGen>
@@ -249,6 +256,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm1\frm_DatPhong.resx">
+      <DependentUpon>frm_DatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Repost\HoaDon_RP_View.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
