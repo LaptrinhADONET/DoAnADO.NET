@@ -65,12 +65,29 @@ namespace Hotel.DAL
 
         public override void Update(NhanVien obj)
         {
-            throw new NotImplementedException();
+            using (SqlCommand cmd = new SqlCommand("sp_NhanVien_Update", db.GetConnection()))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@ten", obj.TenNV));
+                cmd.Parameters.Add(new SqlParameter("@ma", float.Parse(obj.MaNV)));
+                cmd.Parameters.Add(new SqlParameter("@diachi", obj.DiaChi));
+                cmd.Parameters.Add(new SqlParameter("@ngaysinh", DateTime.Parse(obj.NgaySinh)));
+                cmd.Parameters.Add(new SqlParameter("@gioitinh", obj.GioiTinh.ToString().Contains("Nam") ? 1 : 0));
+                cmd.Parameters.Add(new SqlParameter("@trangthai", (obj.TrangThai.ToString().Contains("Hoạt động") ? 1 : 0)));
+                cmd.Parameters.Add(new SqlParameter("@sdt", int.Parse(obj.SDT)));
+                cmd.Parameters.Add(new SqlParameter("@email", obj.Email));
+                cmd.Parameters.Add(new SqlParameter("@ngaybdl", DateTime.Parse(obj.NgayBDL)));
+                cmd.Parameters.Add(new SqlParameter("@pass", obj.Password));
+                cmd.Parameters.Add(new SqlParameter("@macv", int.Parse(obj.MaCV)));
+                cmd.Parameters.Add(new SqlParameter("@mapb", int.Parse(obj.MaPhongBan)));
+
+                cmd.ExecuteNonQuery();
+            }
         }
 
         public DataTable ViewData()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.vv_rpNhanVien", db.GetConnection());
+            SqlCommand cmd = new SqlCommand("SELECT * FROM vv_nhanviens", db.GetConnection());
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

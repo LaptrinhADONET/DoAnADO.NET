@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b20f43f9b5dc4595bb5c2106c9bca243" Name="Diagram1">
+        <EntityTypeShape EntityType="HotelNetModel.BookRoom" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.ChucVu" Width="1.5" PointX="1.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.CTDichVu" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.CTHoaDon" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.DichVu" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.HoaDon" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.KhachHang" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.KhuVuc" Width="1.5" PointX="3.75" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.LichDonPhong" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.LoaiPhong" Width="1.5" PointX="3.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.Menu" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.NhanVien" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.PhanQuyen" Width="1.5" PointX="6" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.Phong" Width="1.5" PointX="6" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.PhongBan" Width="1.5" PointX="1.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.Product" Width="1.5" PointX="8.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.sysdiagram" Width="1.5" PointX="8.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.TTMonAn" Width="1.5" PointX="3.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.VatDung" Width="1.5" PointX="8.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.DisplayKH" Width="1.5" PointX="8.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.vv_HoaDon" Width="1.5" PointX="10.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.vv_KHD" Width="1.5" PointX="10.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.vv_Phong" Width="1.5" PointX="10.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.vv_PhongHD" Width="1.5" PointX="10.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.vv_rpKhachHang" Width="1.5" PointX="12.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.vv_rpNhanVien" Width="1.5" PointX="12.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.vv_rpNhanVienShow" Width="1.5" PointX="12.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.vv_rpPhong" Width="1.5" PointX="10.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.vv_sl" Width="1.5" PointX="12.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelNetModel.vv_SLSD" Width="1.5" PointX="14.75" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="HotelNetModel.FK_CTDichVu_BookRoom" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_CTHoaDon_BookRoom1" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_LichDonPhong_BookRoom1" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_Menu_BookRoom1" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_NhanVien_ChucVu" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_CTDichVu_DichVu1" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_CTHoaDon_HoaDon1" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_Phong_KhuVuc" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_LichDonPhong_NhanVien1" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_Phong_LoaiPhong1" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_Menu_TTMonAn" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_NhanVien_PhongBan" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_PhanQuyen_NhanVien1" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.FK_VatDung_Phong1" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.CheckOut" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelNetModel.ctphong" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

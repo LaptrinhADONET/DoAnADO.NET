@@ -202,5 +202,25 @@ namespace Hotel.Properties {
                 return ((string)(this["LT_NetConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int dichVu {
+            get {
+                return ((int)(this["dichVu"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-8N9I71J\\SQLEXPRESS;Initial Catalog=LT.Net;Persist Security In" +
+            "fo=True;User ID=sa")]
+        public string LT_NetConnectionString2 {
+            get {
+                return ((string)(this["LT_NetConnectionString2"]));
+            }
+        }
     }
 }

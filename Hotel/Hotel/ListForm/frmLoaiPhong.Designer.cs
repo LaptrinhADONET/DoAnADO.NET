@@ -49,16 +49,8 @@
             this.btnTimKiem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.cbTrangThai = new System.Windows.Forms.ComboBox();
-            this.numDonGia = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtMa = new System.Windows.Forms.TextBox();
-            this.lbIDLP = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,7 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiPhong)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDonGia)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,16 +186,8 @@
             this.panel3.Controls.Add(this.btnTimKiem);
             this.panel3.Controls.Add(this.btnXoa);
             this.panel3.Controls.Add(this.btnThem);
-            this.panel3.Controls.Add(this.cbTrangThai);
-            this.panel3.Controls.Add(this.numDonGia);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.txtTen);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.txtMa);
-            this.panel3.Controls.Add(this.lbIDLP);
             this.panel3.Location = new System.Drawing.Point(15, 49);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1038, 188);
@@ -255,7 +238,7 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(688, 140);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(496, 95);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -290,7 +273,7 @@
             this.btnTimKiem.IconVisible = true;
             this.btnTimKiem.IconZoom = 90D;
             this.btnTimKiem.IsTab = false;
-            this.btnTimKiem.Location = new System.Drawing.Point(568, 140);
+            this.btnTimKiem.Location = new System.Drawing.Point(376, 95);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnTimKiem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -330,75 +313,14 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // cbTrangThai
-            // 
-            this.cbTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTrangThai.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTrangThai.FormattingEnabled = true;
-            this.cbTrangThai.Items.AddRange(new object[] {
-            "Hoạt động",
-            "Không hoạt động"});
-            this.cbTrangThai.Location = new System.Drawing.Point(300, 141);
-            this.cbTrangThai.Name = "cbTrangThai";
-            this.cbTrangThai.Size = new System.Drawing.Size(194, 23);
-            this.cbTrangThai.TabIndex = 11;
-            // 
-            // numDonGia
-            // 
-            this.numDonGia.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numDonGia.Location = new System.Drawing.Point(300, 51);
-            this.numDonGia.Name = "numDonGia";
-            this.numDonGia.Size = new System.Drawing.Size(194, 21);
-            this.numDonGia.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.Location = new System.Drawing.Point(300, 91);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(194, 13);
-            this.label5.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.label6.Location = new System.Drawing.Point(297, 114);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 15);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Trạng thái";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.label7.Location = new System.Drawing.Point(297, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 15);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Đơn giá";
-            // 
-            // label4
-            // 
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.Location = new System.Drawing.Point(63, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(198, 13);
-            this.label4.TabIndex = 4;
-            // 
             // txtTen
             // 
             this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTen.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTen.Location = new System.Drawing.Point(63, 141);
+            this.txtTen.Location = new System.Drawing.Point(41, 105);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(198, 22);
+            this.txtTen.Size = new System.Drawing.Size(302, 22);
             this.txtTen.TabIndex = 3;
             this.txtTen.Text = "Nhập tên loại....";
             this.txtTen.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtTen_MouseClick);
@@ -408,34 +330,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.label3.Location = new System.Drawing.Point(60, 114);
+            this.label3.Location = new System.Drawing.Point(38, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên Loại phòng";
-            // 
-            // txtMa
-            // 
-            this.txtMa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMa.Location = new System.Drawing.Point(63, 50);
-            this.txtMa.Name = "txtMa";
-            this.txtMa.Size = new System.Drawing.Size(198, 22);
-            this.txtMa.TabIndex = 1;
-            this.txtMa.Text = "Nhập mã loại....";
-            this.txtMa.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtMa_MouseClick);
-            // 
-            // lbIDLP
-            // 
-            this.lbIDLP.AutoSize = true;
-            this.lbIDLP.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDLP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.lbIDLP.Location = new System.Drawing.Point(60, 22);
-            this.lbIDLP.Name = "lbIDLP";
-            this.lbIDLP.Size = new System.Drawing.Size(83, 15);
-            this.lbIDLP.TabIndex = 0;
-            this.lbIDLP.Text = "Mã loại phòng";
             // 
             // panel2
             // 
@@ -485,7 +384,6 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDonGia)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -502,16 +400,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnTimKiem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.ComboBox cbTrangThai;
-        private System.Windows.Forms.NumericUpDown numDonGia;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMa;
-        private System.Windows.Forms.Label lbIDLP;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private System.Windows.Forms.Label lbSoLuong;

@@ -188,17 +188,21 @@ namespace Hotel.ListForm1
                     break;
 
                 case 7:
-                    //if (frm4.ShowDialog() == DialogResult.OK)
-                    //{
-                    //    DGVDichVu.GetData(dgvPhong, "", "", "", lbSoLuong, "Danhsachkhach");
-                    //}
+                    Properties.Settings.Default.FlagLoaiPhong = 2;
+                    AddKhachHang frmKhachHang = new AddKhachHang();
+                    if (frmKhachHang.ShowDialog() == DialogResult.OK)
+                    {
+                        DGVDanhSachKhach.GetData(dgvPhong, "", "", "", lbSoLuong, "KhachHang");
+                    }
                     break;
 
                 case 8:
-                    label2.Text = "Thông tin nhân viên";
-                    DGVDanhSachKhach.dgv(dgvPhong);
-                    DGVDanhSachKhach.GetData(dgvPhong, "", "", "", lbSoLuong, "KhachHang");
-                    Properties.Settings.Default.Flag = 2;
+                    Properties.Settings.Default.FlagLoaiPhong = 2;
+                    AddNV fromnv = new AddNV();
+                    if (fromnv.ShowDialog() == DialogResult.OK)
+                    {
+                        DGVDSNhanVien.GetData(dgvPhong, "", "", "", lbSoLuong, "NhanVien");
+                    }
                     break;
 
                 case 9:
@@ -212,11 +216,11 @@ namespace Hotel.ListForm1
                     break;
 
                 case 10:
-                    label2.Text = "Thông tin nhân viên";
-                    DGVDanhSachKhach.dgv(dgvPhong);
-                    DGVDanhSachKhach.GetData(dgvPhong, "", "", "", lbSoLuong, "KhachHang");
-                    Properties.Settings.Default.Flag = 2;
-                    break;
+                //label2.Text = "Thông tin nhân viên";
+                //DGVDanhSachKhach.dgv(dgvPhong);
+                //DGVDanhSachKhach.GetData(dgvPhong, "", "", "", lbSoLuong, "KhachHang");
+                //Properties.Settings.Default.Flag = 2;
+                //break;
 
                 case 11:
 
@@ -272,18 +276,20 @@ namespace Hotel.ListForm1
 
                 case 7:
                     Properties.Settings.Default.FlagLoaiPhong = 1;
-
-                    //if (frm4.ShowDialog() == DialogResult.OK)
-                    //{
-                    //    DGVDichVu.GetData(dgvPhong, "", "", "", lbSoLuong, "Danhsachkhach");
-                    //}
+                    AddKhachHang fromkh = new AddKhachHang();
+                    if (fromkh.ShowDialog() == DialogResult.OK)
+                    {
+                        DGVDanhSachKhach.GetData(dgvPhong, "", "", "", lbSoLuong, "KhachHang");
+                    }
                     break;
 
                 case 8:
-                    label2.Text = "Thông tin nhân viên";
-                    DGVDanhSachKhach.dgv(dgvPhong);
-                    DGVDanhSachKhach.GetData(dgvPhong, "", "", "", lbSoLuong, "KhachHang");
-                    Properties.Settings.Default.Flag = 2;
+                    Properties.Settings.Default.FlagLoaiPhong = 1;
+                    AddNV fromNV = new AddNV();
+                    if (fromNV.ShowDialog() == DialogResult.OK)
+                    {
+                        DGVDSNhanVien.GetData(dgvPhong, "", "", "", lbSoLuong, "NhanVien");
+                    }
                     break;
 
                 case 9:
@@ -294,13 +300,6 @@ namespace Hotel.ListForm1
                     {
                         DGVKhuVuc.GetData(dgvPhong, "", "", "", lbSoLuong, "KhuVuc");
                     }
-                    break;
-
-                case 10:
-                    label2.Text = "Thông tin nhân viên";
-                    DGVDanhSachKhach.dgv(dgvPhong);
-                    DGVDanhSachKhach.GetData(dgvPhong, "", "", "", lbSoLuong, "KhachHang");
-                    Properties.Settings.Default.Flag = 2;
                     break;
 
                 case 11:
@@ -325,21 +324,29 @@ namespace Hotel.ListForm1
                     break;
 
                 case 4:
+                    string strDV = " TenDv LIKE '%" + txtTimKiem.Text + "%'"; ;
+                    DGVDichVu.GetData(dgvPhong, "", strDV, "", lbSoLuong, "DichVu");
                     label2.Text = "Dịch vụ";
                     Properties.Settings.Default.Flag = 0;
                     break;
 
                 case 5:
+                    string strTD = " TenMonAn LIKE '%" + txtTimKiem.Text + "%'"; ;
+                    DGVThucDon.GetData(dgvPhong, "", strTD, "", lbSoLuong, "ThucDon");
                     label2.Text = "Thực đơn";
                     Properties.Settings.Default.Flag = 0;
                     break;
 
                 case 6:
+                    string strPB = " TenPhongBan LIKE '%" + txtTimKiem.Text + "%'"; ;
+                    DGVPhongBan.GetData(dgvPhong, "", strPB, "", lbSoLuong, "PhongBan");
                     label2.Text = "Phòng ban";
                     Properties.Settings.Default.Flag = 0;
                     break;
 
                 case 7:
+                    string strKhach = " TenKH LIKE '%" + txtTimKiem.Text + "%'"; ;
+                    DGVDanhSachKhach.GetData(dgvPhong, "", strKhach, "", lbSoLuong, "KhachHang");
                     label2.Text = "Danh sách khách";
                     Properties.Settings.Default.Flag = 0;
                     break;
@@ -352,11 +359,15 @@ namespace Hotel.ListForm1
                     break;
 
                 case 9:
+                    string strKV = " TenKH LIKE '%" + txtTimKiem.Text + "%'"; ;
+                    DGVKhuVuc.GetData(dgvPhong, "", strKV, "", lbSoLuong, "KhuVuc");
                     label2.Text = "Khu vực";
                     Properties.Settings.Default.Flag = 0;
                     break;
 
                 case 10:
+                    string strNV = " TenKH LIKE '%" + txtTimKiem.Text + "%'"; ;
+                    DGVDSNhanVien.GetData(dgvPhong, "", strNV, "", lbSoLuong, "NhanVien");
                     label2.Text = "Thông tin nhân viên";
                     DGVDanhSachKhach.dgv(dgvPhong);
                     DGVDanhSachKhach.GetData(dgvPhong, "", "", "", lbSoLuong, "KhachHang");
@@ -364,6 +375,8 @@ namespace Hotel.ListForm1
                     break;
 
                 case 11:
+                    string strCV = " TenKH LIKE '%" + txtTimKiem.Text + "%'"; ;
+                    DGVChucVu.GetData(dgvPhong, "", strCV, "", lbSoLuong, "ChucVu");
                     label2.Text = "Chức vụ";
                     Properties.Settings.Default.Flag = 0;
                     break;

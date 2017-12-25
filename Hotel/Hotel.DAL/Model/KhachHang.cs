@@ -8,6 +8,7 @@ namespace Hotel.Model
         private string _cMT;
         private string _diaChi;
         private string _email;
+        private string _gioiTinh;
         private string _maKH;
         private string _ns;
         private string _sDT;
@@ -50,6 +51,19 @@ namespace Hotel.Model
             set
             {
                 _email = value;
+            }
+        }
+
+        public string GioiTinh
+        {
+            get
+            {
+                return _gioiTinh;
+            }
+
+            set
+            {
+                _gioiTinh = value;
             }
         }
 

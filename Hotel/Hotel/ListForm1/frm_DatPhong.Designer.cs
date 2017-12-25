@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.cbPhong = new System.Windows.Forms.ComboBox();
+            this.phongBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDichVu = new System.Windows.Forms.Button();
             this.dateNgayDi = new System.Windows.Forms.DateTimePicker();
             this.dateNgayDen = new System.Windows.Forms.DateTimePicker();
             this.cbDichVu = new System.Windows.Forms.ComboBox();
+            this.dichVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -46,7 +49,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateNamSinh = new System.Windows.Forms.DateTimePicker();
+            this.txtdate = new System.Windows.Forms.TextBox();
+            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbKH = new System.Windows.Forms.ComboBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtCMND = new System.Windows.Forms.TextBox();
@@ -58,10 +62,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.loaiPhongBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvLoadCmbDichVu = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbResurt = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phongBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dichVuBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiPhongBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoadCmbDichVu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,12 +88,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1039, 295);
+            this.panel1.Size = new System.Drawing.Size(1039, 302);
             this.panel1.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.lbResurt);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnHuy);
             this.groupBox2.Controls.Add(this.cbPhong);
@@ -115,6 +131,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "Lưu";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnHuy
             // 
@@ -129,15 +146,24 @@
             this.btnHuy.TabIndex = 16;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // cbPhong
             // 
+            this.cbPhong.DataSource = this.phongBindingSource;
+            this.cbPhong.DisplayMember = "TenPhong";
             this.cbPhong.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPhong.FormattingEnabled = true;
             this.cbPhong.Location = new System.Drawing.Point(106, 29);
             this.cbPhong.Name = "cbPhong";
             this.cbPhong.Size = new System.Drawing.Size(286, 23);
             this.cbPhong.TabIndex = 15;
+            this.cbPhong.ValueMember = "MaPhong";
+            this.cbPhong.SelectedIndexChanged += new System.EventHandler(this.cbPhong_SelectedIndexChanged);
+            // 
+            // phongBindingSource
+            // 
+            this.phongBindingSource.DataSource = typeof(Hotel.NewFolder1.Phong);
             // 
             // btnDichVu
             // 
@@ -152,6 +178,7 @@
             this.btnDichVu.TabIndex = 14;
             this.btnDichVu.Text = "Chọn";
             this.btnDichVu.UseVisualStyleBackColor = false;
+            this.btnDichVu.Click += new System.EventHandler(this.btnDichVu_Click);
             // 
             // dateNgayDi
             // 
@@ -171,12 +198,19 @@
             // 
             // cbDichVu
             // 
+            this.cbDichVu.DataSource = this.dichVuBindingSource;
+            this.cbDichVu.DisplayMember = "TenDv";
             this.cbDichVu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDichVu.FormattingEnabled = true;
             this.cbDichVu.Location = new System.Drawing.Point(106, 170);
             this.cbDichVu.Name = "cbDichVu";
             this.cbDichVu.Size = new System.Drawing.Size(286, 23);
             this.cbDichVu.TabIndex = 11;
+            this.cbDichVu.ValueMember = "MaDV";
+            // 
+            // dichVuBindingSource
+            // 
+            this.dichVuBindingSource.DataSource = typeof(Hotel.NewFolder1.DichVu);
             // 
             // txtTongTien
             // 
@@ -257,7 +291,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.dateNamSinh);
+            this.groupBox1.Controls.Add(this.txtdate);
             this.groupBox1.Controls.Add(this.cbKH);
             this.groupBox1.Controls.Add(this.txtSDT);
             this.groupBox1.Controls.Add(this.txtCMND);
@@ -277,26 +311,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
             // 
-            // dateNamSinh
+            // txtdate
             // 
-            this.dateNamSinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateNamSinh.Location = new System.Drawing.Point(109, 143);
-            this.dateNamSinh.Name = "dateNamSinh";
-            this.dateNamSinh.Size = new System.Drawing.Size(286, 22);
-            this.dateNamSinh.TabIndex = 11;
+            this.txtdate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khachHangBindingSource, "NamSinh", true));
+            this.txtdate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdate.Location = new System.Drawing.Point(109, 139);
+            this.txtdate.Name = "txtdate";
+            this.txtdate.Size = new System.Drawing.Size(286, 22);
+            this.txtdate.TabIndex = 11;
+            // 
+            // khachHangBindingSource
+            // 
+            this.khachHangBindingSource.DataSource = typeof(Hotel.NewFolder1.KhachHang);
             // 
             // cbKH
             // 
+            this.cbKH.DataSource = this.khachHangBindingSource;
+            this.cbKH.DisplayMember = "TenKH";
             this.cbKH.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKH.FormattingEnabled = true;
             this.cbKH.Location = new System.Drawing.Point(109, 40);
             this.cbKH.Name = "cbKH";
             this.cbKH.Size = new System.Drawing.Size(286, 23);
             this.cbKH.TabIndex = 10;
-            this.cbKH.TextChanged += new System.EventHandler(this.cbKH_TextChanged);
+            this.cbKH.ValueMember = "MaKH";
             // 
             // txtSDT
             // 
+            this.txtSDT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khachHangBindingSource, "SDT", true));
             this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Location = new System.Drawing.Point(109, 213);
             this.txtSDT.Name = "txtSDT";
@@ -305,6 +347,7 @@
             // 
             // txtCMND
             // 
+            this.txtCMND.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khachHangBindingSource, "CMT", true));
             this.txtCMND.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCMND.Location = new System.Drawing.Point(109, 178);
             this.txtCMND.Name = "txtCMND";
@@ -313,6 +356,7 @@
             // 
             // txtGioiTinh
             // 
+            this.txtGioiTinh.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khachHangBindingSource, "GioiTinh", true));
             this.txtGioiTinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGioiTinh.Location = new System.Drawing.Point(109, 112);
             this.txtGioiTinh.Name = "txtGioiTinh";
@@ -321,6 +365,7 @@
             // 
             // txtDiaChi
             // 
+            this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khachHangBindingSource, "DiaChi", true));
             this.txtDiaChi.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(109, 76);
             this.txtDiaChi.Name = "txtDiaChi";
@@ -387,19 +432,77 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Họ tên: ";
             // 
+            // loaiPhongBindingSource
+            // 
+            this.loaiPhongBindingSource.DataSource = typeof(Hotel.NewFolder1.LoaiPhong);
+            // 
             // dgvLoadCmbDichVu
             // 
             this.dgvLoadCmbDichVu.AllowUserToAddRows = false;
             this.dgvLoadCmbDichVu.AllowUserToDeleteRows = false;
+            this.dgvLoadCmbDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLoadCmbDichVu.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoadCmbDichVu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLoadCmbDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoadCmbDichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.GiaDV,
+            this.Column3,
+            this.MaDV,
+            this.Column5});
             this.dgvLoadCmbDichVu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvLoadCmbDichVu.Location = new System.Drawing.Point(0, 296);
+            this.dgvLoadCmbDichVu.Location = new System.Drawing.Point(0, 308);
             this.dgvLoadCmbDichVu.Name = "dgvLoadCmbDichVu";
             this.dgvLoadCmbDichVu.ReadOnly = true;
-            this.dgvLoadCmbDichVu.Size = new System.Drawing.Size(1039, 206);
+            this.dgvLoadCmbDichVu.Size = new System.Drawing.Size(1039, 194);
             this.dgvLoadCmbDichVu.TabIndex = 1;
+            this.dgvLoadCmbDichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoadCmbDichVu_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "TenDv";
+            this.Column1.HeaderText = "Dịch vụ";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // GiaDV
+            // 
+            this.GiaDV.DataPropertyName = "Gia";
+            this.GiaDV.HeaderText = "Giá";
+            this.GiaDV.Name = "GiaDV";
+            this.GiaDV.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "GhiChu";
+            this.Column3.HeaderText = "Ghi chú";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // MaDV
+            // 
+            this.MaDV.DataPropertyName = "MaDV";
+            this.MaDV.HeaderText = "mã";
+            this.MaDV.Name = "MaDV";
+            this.MaDV.ReadOnly = true;
+            this.MaDV.Visible = false;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "TrangThai";
+            this.Column5.HeaderText = "trạng thái";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Visible = false;
+            // 
+            // lbResurt
+            // 
+            this.lbResurt.AutoSize = true;
+            this.lbResurt.Location = new System.Drawing.Point(53, 246);
+            this.lbResurt.Name = "lbResurt";
+            this.lbResurt.Size = new System.Drawing.Size(41, 13);
+            this.lbResurt.TabIndex = 18;
+            this.lbResurt.Text = "label13";
             // 
             // frm_DatPhong
             // 
@@ -410,11 +513,16 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frm_DatPhong";
+            this.Load += new System.EventHandler(this.frm_DatPhong_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phongBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dichVuBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiPhongBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoadCmbDichVu)).EndInit();
             this.ResumeLayout(false);
 
@@ -426,7 +534,6 @@
         private System.Windows.Forms.DataGridView dgvLoadCmbDichVu;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateNamSinh;
         private System.Windows.Forms.ComboBox cbKH;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtCMND;
@@ -453,5 +560,16 @@
         private System.Windows.Forms.ComboBox cbPhong;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtdate;
+        private System.Windows.Forms.BindingSource khachHangBindingSource;
+        private System.Windows.Forms.BindingSource phongBindingSource;
+        private System.Windows.Forms.BindingSource loaiPhongBindingSource;
+        private System.Windows.Forms.BindingSource dichVuBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Label lbResurt;
     }
 }

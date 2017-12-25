@@ -1,0 +1,960 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelNetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BookRoom">
+    <Key>
+      <PropertyRef Name="MaBookRoom" />
+    </Key>
+    <Property Name="MaBookRoom" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaPhong" Type="Int32" />
+    <Property Name="BookRoomStart" Type="DateTime" Precision="3" />
+    <Property Name="BookRoomTill" Type="DateTime" Precision="3" />
+    <Property Name="TrangThai" Type="Int32" />
+    <Property Name="SoLuongKhach" Type="Int32" />
+    <NavigationProperty Name="CTDichVus" Relationship="Self.FK_CTDichVu_BookRoom" FromRole="BookRoom" ToRole="CTDichVu" />
+    <NavigationProperty Name="CTHoaDons" Relationship="Self.FK_CTHoaDon_BookRoom1" FromRole="BookRoom" ToRole="CTHoaDon" />
+    <NavigationProperty Name="LichDonPhongs" Relationship="Self.FK_LichDonPhong_BookRoom1" FromRole="BookRoom" ToRole="LichDonPhong" />
+    <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_BookRoom1" FromRole="BookRoom" ToRole="Menu" />
+    <NavigationProperty Name="KhachHangs" Relationship="Self.CheckOut" FromRole="BookRoom" ToRole="KhachHang" />
+    <NavigationProperty Name="Phongs" Relationship="Self.ctphong" FromRole="BookRoom" ToRole="Phong" />
+  </EntityType>
+  <EntityType Name="ChucVu">
+    <Key>
+      <PropertyRef Name="MaCV" />
+    </Key>
+    <Property Name="MaCV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenCV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HSLuong" Type="Double" />
+    <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_ChucVu" FromRole="ChucVu" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="CTDichVu">
+    <Key>
+      <PropertyRef Name="MaDV" />
+      <PropertyRef Name="MaBookRoom" />
+    </Key>
+    <Property Name="MaDV" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="NgaySD" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MaBookRoom" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BookRoom" Relationship="Self.FK_CTDichVu_BookRoom" FromRole="CTDichVu" ToRole="BookRoom" />
+    <NavigationProperty Name="DichVu" Relationship="Self.FK_CTDichVu_DichVu1" FromRole="CTDichVu" ToRole="DichVu" />
+  </EntityType>
+  <EntityType Name="CTHoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="MaBookRoom" />
+    </Key>
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <Property Name="MaBookRoom" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BookRoom" Relationship="Self.FK_CTHoaDon_BookRoom1" FromRole="CTHoaDon" ToRole="BookRoom" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK_CTHoaDon_HoaDon1" FromRole="CTHoaDon" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="DichVu">
+    <Key>
+      <PropertyRef Name="MaDV" />
+    </Key>
+    <Property Name="MaDV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDv" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangThai" Type="Boolean" Nullable="false" />
+    <Property Name="Gia" Type="Double" Nullable="false" />
+    <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CTDichVus" Relationship="Self.FK_CTDichVu_DichVu1" FromRole="DichVu" ToRole="CTDichVu" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TongTien" Type="Double" Nullable="false" />
+    <Property Name="NgayThanhToan" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CTHoaDons" Relationship="Self.FK_CTHoaDon_HoaDon1" FromRole="HoaDon" ToRole="CTHoaDon" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangThai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CMT" Type="Int32" />
+    <Property Name="NamSinh" Type="Int32" />
+    <Property Name="GioiTinh" Type="Int32" />
+    <NavigationProperty Name="BookRooms" Relationship="Self.CheckOut" FromRole="KhachHang" ToRole="BookRoom" />
+  </EntityType>
+  <EntityType Name="KhuVuc">
+    <Key>
+      <PropertyRef Name="MaKV" />
+    </Key>
+    <Property Name="MaKV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Phongs" Relationship="Self.FK_Phong_KhuVuc" FromRole="KhuVuc" ToRole="Phong" />
+  </EntityType>
+  <EntityType Name="LichDonPhong">
+    <Key>
+      <PropertyRef Name="MaLich" />
+    </Key>
+    <Property Name="MaBookRoom" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="Int32" Nullable="false" />
+    <Property Name="NgayLam" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <Property Name="MaLich" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="BookRoom" Relationship="Self.FK_LichDonPhong_BookRoom1" FromRole="LichDonPhong" ToRole="BookRoom" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_LichDonPhong_NhanVien1" FromRole="LichDonPhong" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="LoaiPhong">
+    <Key>
+      <PropertyRef Name="MaLoaiPhong" />
+    </Key>
+    <Property Name="MaLoaiPhong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoaiPhong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiaPhong" Type="Double" Nullable="false" />
+    <Property Name="TrangThai" Type="Int32" />
+    <NavigationProperty Name="Phongs" Relationship="Self.FK_Phong_LoaiPhong1" FromRole="LoaiPhong" ToRole="Phong" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="MaBookRoom" />
+      <PropertyRef Name="MaMonAn" />
+    </Key>
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="TrangThai" Type="Boolean" Nullable="false" />
+    <Property Name="MaBookRoom" Type="Int32" Nullable="false" />
+    <Property Name="MaMonAn" Type="Int32" Nullable="false" />
+    <Property Name="ThanhTien" Type="Double" />
+    <NavigationProperty Name="BookRoom" Relationship="Self.FK_Menu_BookRoom1" FromRole="Menu" ToRole="BookRoom" />
+    <NavigationProperty Name="TTMonAn" Relationship="Self.FK_Menu_TTMonAn" FromRole="Menu" ToRole="TTMonAn" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+    <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="Int32" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NgayBDL" Type="DateTime" Precision="3" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Luong" Type="Double" />
+    <Property Name="MaCV" Type="Int32" />
+    <Property Name="MaPhongBan" Type="Int32" />
+    <NavigationProperty Name="ChucVu" Relationship="Self.FK_NhanVien_ChucVu" FromRole="NhanVien" ToRole="ChucVu" />
+    <NavigationProperty Name="LichDonPhongs" Relationship="Self.FK_LichDonPhong_NhanVien1" FromRole="NhanVien" ToRole="LichDonPhong" />
+    <NavigationProperty Name="PhongBan" Relationship="Self.FK_NhanVien_PhongBan" FromRole="NhanVien" ToRole="PhongBan" />
+    <NavigationProperty Name="PhanQuyens" Relationship="Self.FK_PhanQuyen_NhanVien1" FromRole="NhanVien" ToRole="PhanQuyen" />
+  </EntityType>
+  <EntityType Name="PhanQuyen">
+    <Key>
+      <PropertyRef Name="MaTaiKhoan" />
+    </Key>
+    <Property Name="MaTaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangChu" Type="Boolean" />
+    <Property Name="TiepNhanKhach" Type="Boolean" />
+    <Property Name="DanhSachPhong" Type="Boolean" />
+    <Property Name="LoaiPhong" Type="Boolean" />
+    <Property Name="DichVu" Type="Boolean" />
+    <Property Name="ThucDon" Type="Boolean" />
+    <Property Name="PhongBan" Type="Boolean" />
+    <Property Name="KhuVuc" Type="Boolean" />
+    <Property Name="ThongTinKhach" Type="Boolean" />
+    <Property Name="ThongTinNV" Type="Boolean" />
+    <Property Name="DanhSachHD" Type="Boolean" />
+    <Property Name="ChucVu" Type="Boolean" />
+    <Property Name="LichDonPhong" Type="Boolean" />
+    <Property Name="TKCuaTui" Type="Boolean" />
+    <Property Name="MaNV" Type="Int32" />
+    <Property Name="PhanQuyen1" Type="Boolean" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_PhanQuyen_NhanVien1" FromRole="PhanQuyen" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="Phong">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+    </Key>
+    <Property Name="MaPhong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenPhong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaLoaiPhong" Type="Int32" Nullable="false" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ViTri" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangThai" Type="Int32" Nullable="false" />
+    <Property Name="NguoiLon" Type="Int32" Nullable="false" />
+    <Property Name="TreEm" Type="Int32" Nullable="false" />
+    <Property Name="MaKV" Type="Int32" />
+    <Property Name="Anh" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="KhuVuc" Relationship="Self.FK_Phong_KhuVuc" FromRole="Phong" ToRole="KhuVuc" />
+    <NavigationProperty Name="LoaiPhong" Relationship="Self.FK_Phong_LoaiPhong1" FromRole="Phong" ToRole="LoaiPhong" />
+    <NavigationProperty Name="VatDungs" Relationship="Self.FK_VatDung_Phong1" FromRole="Phong" ToRole="VatDung" />
+    <NavigationProperty Name="BookRooms" Relationship="Self.ctphong" FromRole="Phong" ToRole="BookRoom" />
+  </EntityType>
+  <EntityType Name="PhongBan">
+    <Key>
+      <PropertyRef Name="MaPhongBan" />
+    </Key>
+    <Property Name="MaPhongBan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenPhongBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Int32" />
+    <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_PhongBan" FromRole="PhongBan" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductCode" />
+    </Key>
+    <Property Name="ProductCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Manufacturer" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="Weight" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TTMonAn">
+    <Key>
+      <PropertyRef Name="MaMonAn" />
+    </Key>
+    <Property Name="MaMonAn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenMonAn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Anh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gia" Type="Double" />
+    <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_TTMonAn" FromRole="TTMonAn" ToRole="Menu" />
+  </EntityType>
+  <EntityType Name="VatDung">
+    <Key>
+      <PropertyRef Name="MaVD" />
+    </Key>
+    <Property Name="MaVD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaPhong" Type="Int32" Nullable="false" />
+    <Property Name="KichThuoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TTWiFi" Type="Boolean" Nullable="false" />
+    <Property Name="SLGiuong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangThai" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Phong" Relationship="Self.FK_VatDung_Phong1" FromRole="VatDung" ToRole="Phong" />
+  </EntityType>
+  <EntityType Name="DisplayKH">
+    <Key>
+      <PropertyRef Name="MaKH" />
+      <PropertyRef Name="TenKH" />
+      <PropertyRef Name="DiaChi" />
+      <PropertyRef Name="SDT" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="TrangThai" />
+    </Key>
+    <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangThai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CMT" Type="Int32" />
+    <Property Name="NamSinh" Type="Int32" />
+    <Property Name="GioiTinh" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vv_HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="TenPhong" />
+      <PropertyRef Name="TenKH" />
+      <PropertyRef Name="TongTien" />
+    </Key>
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <Property Name="TenPhong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenKH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoLuongKhach" Type="Int32" />
+    <Property Name="ngaythanhtoan" Type="DateTime" Precision="0" />
+    <Property Name="TongTien" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vv_KHD">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+    </Key>
+    <Property Name="MaPhong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="vv_Phong">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+      <PropertyRef Name="TenPhong" />
+      <PropertyRef Name="GiaPhong" />
+      <PropertyRef Name="MaLoaiPhong" />
+    </Key>
+    <Property Name="MaPhong" Type="Int32" Nullable="false" />
+    <Property Name="TenPhong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiaPhong" Type="Double" Nullable="false" />
+    <Property Name="MaLoaiPhong" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vv_PhongHD">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+      <PropertyRef Name="TenPhong" />
+      <PropertyRef Name="MaLoaiPhong" />
+      <PropertyRef Name="MoTa" />
+      <PropertyRef Name="ViTri" />
+      <PropertyRef Name="TrangThai" />
+      <PropertyRef Name="NguoiLon" />
+      <PropertyRef Name="TreEm" />
+    </Key>
+    <Property Name="MaPhong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenPhong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaLoaiPhong" Type="Int32" Nullable="false" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ViTri" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangThai" Type="Int32" Nullable="false" />
+    <Property Name="NguoiLon" Type="Int32" Nullable="false" />
+    <Property Name="TreEm" Type="Int32" Nullable="false" />
+    <Property Name="MaKV" Type="Int32" />
+    <Property Name="Anh" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vv_rpKhachHang">
+    <Key>
+      <PropertyRef Name="TenKH" />
+      <PropertyRef Name="DiaChi" />
+      <PropertyRef Name="SDT" />
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="TenKH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NamSinh" Type="Int32" />
+    <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CMT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vv_rpNhanVien">
+    <Key>
+      <PropertyRef Name="gioitinh" />
+      <PropertyRef Name="MaPhongBan" />
+      <PropertyRef Name="MaNV" />
+      <PropertyRef Name="TrangThai" />
+    </Key>
+    <Property Name="TenNV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gioitinh" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="TenPhongBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenCV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NgayLam" Type="DateTime" Precision="0" />
+    <Property Name="MaCV" Type="Int32" />
+    <Property Name="MaPhongBan" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vv_rpNhanVienShow">
+    <Key>
+      <PropertyRef Name="gioitinh" />
+      <PropertyRef Name="TrangThai" />
+    </Key>
+    <Property Name="TenNV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gioitinh" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="TenCV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TenPhongBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vv_rpPhong">
+    <Key>
+      <PropertyRef Name="TenPhong" />
+      <PropertyRef Name="TenLoaiPhong" />
+      <PropertyRef Name="MoTa" />
+      <PropertyRef Name="ViTri" />
+      <PropertyRef Name="TrangThai" />
+      <PropertyRef Name="NguoiLon" />
+      <PropertyRef Name="TreEm" />
+      <PropertyRef Name="GiaPhong" />
+    </Key>
+    <Property Name="TenPhong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenLoaiPhong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenKV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ViTri" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangThai" Type="Int32" Nullable="false" />
+    <Property Name="NguoiLon" Type="Int32" Nullable="false" />
+    <Property Name="TreEm" Type="Int32" Nullable="false" />
+    <Property Name="GiaPhong" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vv_sl">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+    </Key>
+    <Property Name="MaPhong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="vv_SLSD">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+    </Key>
+    <Property Name="MaPhong" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CTDichVu_BookRoom">
+    <End Role="BookRoom" Type="Self.BookRoom" Multiplicity="1" />
+    <End Role="CTDichVu" Type="Self.CTDichVu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookRoom">
+        <PropertyRef Name="MaBookRoom" />
+      </Principal>
+      <Dependent Role="CTDichVu">
+        <PropertyRef Name="MaBookRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHoaDon_BookRoom1">
+    <End Role="BookRoom" Type="Self.BookRoom" Multiplicity="1" />
+    <End Role="CTHoaDon" Type="Self.CTHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookRoom">
+        <PropertyRef Name="MaBookRoom" />
+      </Principal>
+      <Dependent Role="CTHoaDon">
+        <PropertyRef Name="MaBookRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichDonPhong_BookRoom1">
+    <End Role="BookRoom" Type="Self.BookRoom" Multiplicity="1" />
+    <End Role="LichDonPhong" Type="Self.LichDonPhong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookRoom">
+        <PropertyRef Name="MaBookRoom" />
+      </Principal>
+      <Dependent Role="LichDonPhong">
+        <PropertyRef Name="MaBookRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_BookRoom1">
+    <End Role="BookRoom" Type="Self.BookRoom" Multiplicity="1" />
+    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookRoom">
+        <PropertyRef Name="MaBookRoom" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="MaBookRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_ChucVu">
+    <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChucVu">
+        <PropertyRef Name="MaCV" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="MaCV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDichVu_DichVu1">
+    <End Role="DichVu" Type="Self.DichVu" Multiplicity="1" />
+    <End Role="CTDichVu" Type="Self.CTDichVu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DichVu">
+        <PropertyRef Name="MaDV" />
+      </Principal>
+      <Dependent Role="CTDichVu">
+        <PropertyRef Name="MaDV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHoaDon_HoaDon1">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="CTHoaDon" Type="Self.CTHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="CTHoaDon">
+        <PropertyRef Name="MaBookRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Phong_KhuVuc">
+    <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhuVuc">
+        <PropertyRef Name="MaKV" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="MaKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichDonPhong_NhanVien1">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="LichDonPhong" Type="Self.LichDonPhong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="LichDonPhong">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Phong_LoaiPhong1">
+    <End Role="LoaiPhong" Type="Self.LoaiPhong" Multiplicity="1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiPhong">
+        <PropertyRef Name="MaLoaiPhong" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="MaLoaiPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_TTMonAn">
+    <End Role="TTMonAn" Type="Self.TTMonAn" Multiplicity="1" />
+    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTMonAn">
+        <PropertyRef Name="MaMonAn" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="MaMonAn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_PhongBan">
+    <End Role="PhongBan" Type="Self.PhongBan" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhongBan">
+        <PropertyRef Name="MaPhongBan" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="MaPhongBan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanQuyen_NhanVien1">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="PhanQuyen">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VatDung_Phong1">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="1" />
+    <End Role="VatDung" Type="Self.VatDung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="MaPhong" />
+      </Principal>
+      <Dependent Role="VatDung">
+        <PropertyRef Name="MaPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CheckOut">
+    <End Role="BookRoom" Type="Self.BookRoom" Multiplicity="*" />
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
+  </Association>
+  <Association Name="ctphong">
+    <End Role="BookRoom" Type="Self.BookRoom" Multiplicity="*" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="HotelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BookRooms" EntityType="Self.BookRoom" />
+    <EntitySet Name="ChucVus" EntityType="Self.ChucVu" />
+    <EntitySet Name="CTDichVus" EntityType="Self.CTDichVu" />
+    <EntitySet Name="CTHoaDons" EntityType="Self.CTHoaDon" />
+    <EntitySet Name="DichVus" EntityType="Self.DichVu" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+    <EntitySet Name="KhuVucs" EntityType="Self.KhuVuc" />
+    <EntitySet Name="LichDonPhongs" EntityType="Self.LichDonPhong" />
+    <EntitySet Name="LoaiPhongs" EntityType="Self.LoaiPhong" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="PhanQuyens" EntityType="Self.PhanQuyen" />
+    <EntitySet Name="Phongs" EntityType="Self.Phong" />
+    <EntitySet Name="PhongBans" EntityType="Self.PhongBan" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TTMonAns" EntityType="Self.TTMonAn" />
+    <EntitySet Name="VatDungs" EntityType="Self.VatDung" />
+    <EntitySet Name="DisplayKHs" EntityType="Self.DisplayKH" />
+    <EntitySet Name="vv_HoaDon" EntityType="Self.vv_HoaDon" />
+    <EntitySet Name="vv_KHD" EntityType="Self.vv_KHD" />
+    <EntitySet Name="vv_Phong" EntityType="Self.vv_Phong" />
+    <EntitySet Name="vv_PhongHD" EntityType="Self.vv_PhongHD" />
+    <EntitySet Name="vv_rpKhachHang" EntityType="Self.vv_rpKhachHang" />
+    <EntitySet Name="vv_rpNhanVien" EntityType="Self.vv_rpNhanVien" />
+    <EntitySet Name="vv_rpNhanVienShow" EntityType="Self.vv_rpNhanVienShow" />
+    <EntitySet Name="vv_rpPhong" EntityType="Self.vv_rpPhong" />
+    <EntitySet Name="vv_sl" EntityType="Self.vv_sl" />
+    <EntitySet Name="vv_SLSD" EntityType="Self.vv_SLSD" />
+    <AssociationSet Name="FK_CTDichVu_BookRoom" Association="Self.FK_CTDichVu_BookRoom">
+      <End Role="BookRoom" EntitySet="BookRooms" />
+      <End Role="CTDichVu" EntitySet="CTDichVus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHoaDon_BookRoom1" Association="Self.FK_CTHoaDon_BookRoom1">
+      <End Role="BookRoom" EntitySet="BookRooms" />
+      <End Role="CTHoaDon" EntitySet="CTHoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichDonPhong_BookRoom1" Association="Self.FK_LichDonPhong_BookRoom1">
+      <End Role="BookRoom" EntitySet="BookRooms" />
+      <End Role="LichDonPhong" EntitySet="LichDonPhongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_BookRoom1" Association="Self.FK_Menu_BookRoom1">
+      <End Role="BookRoom" EntitySet="BookRooms" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_ChucVu" Association="Self.FK_NhanVien_ChucVu">
+      <End Role="ChucVu" EntitySet="ChucVus" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDichVu_DichVu1" Association="Self.FK_CTDichVu_DichVu1">
+      <End Role="DichVu" EntitySet="DichVus" />
+      <End Role="CTDichVu" EntitySet="CTDichVus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHoaDon_HoaDon1" Association="Self.FK_CTHoaDon_HoaDon1">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="CTHoaDon" EntitySet="CTHoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Phong_KhuVuc" Association="Self.FK_Phong_KhuVuc">
+      <End Role="KhuVuc" EntitySet="KhuVucs" />
+      <End Role="Phong" EntitySet="Phongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichDonPhong_NhanVien1" Association="Self.FK_LichDonPhong_NhanVien1">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="LichDonPhong" EntitySet="LichDonPhongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Phong_LoaiPhong1" Association="Self.FK_Phong_LoaiPhong1">
+      <End Role="LoaiPhong" EntitySet="LoaiPhongs" />
+      <End Role="Phong" EntitySet="Phongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_TTMonAn" Association="Self.FK_Menu_TTMonAn">
+      <End Role="TTMonAn" EntitySet="TTMonAns" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_PhongBan" Association="Self.FK_NhanVien_PhongBan">
+      <End Role="PhongBan" EntitySet="PhongBans" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanQuyen_NhanVien1" Association="Self.FK_PhanQuyen_NhanVien1">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="PhanQuyen" EntitySet="PhanQuyens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VatDung_Phong1" Association="Self.FK_VatDung_Phong1">
+      <End Role="Phong" EntitySet="Phongs" />
+      <End Role="VatDung" EntitySet="VatDungs" />
+    </AssociationSet>
+    <AssociationSet Name="CheckOut" Association="Self.CheckOut">
+      <End Role="BookRoom" EntitySet="BookRooms" />
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+    </AssociationSet>
+    <AssociationSet Name="ctphong" Association="Self.ctphong">
+      <End Role="BookRoom" EntitySet="BookRooms" />
+      <End Role="Phong" EntitySet="Phongs" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_checkLoginLP" ReturnType="Collection(HotelNetModel.sp_checkLoginLP_Result)">
+      <Parameter Name="ma" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ChucVu_ADD">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="hsl" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ChucVu_Update">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="Double" />
+      <Parameter Name="ma" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ChucVuGet_By_Top">
+      <Parameter Name="top" Mode="In" Type="String" />
+      <Parameter Name="where" Mode="In" Type="String" />
+      <Parameter Name="order" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_delete_Phong">
+      <Parameter Name="ma" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DichVu_ADD">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="Double" />
+      <Parameter Name="trangThai" Mode="In" Type="Boolean" />
+      <Parameter Name="ghichu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DichVu_Update">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="Double" />
+      <Parameter Name="ma" Mode="In" Type="Int32" />
+      <Parameter Name="trangthai" Mode="In" Type="Int32" />
+      <Parameter Name="ghichu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DSP_GetByTop">
+      <Parameter Name="top" Mode="In" Type="String" />
+      <Parameter Name="where" Mode="In" Type="String" />
+      <Parameter Name="order" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Get_By_Top">
+      <Parameter Name="tenbang" Mode="In" Type="String" />
+      <Parameter Name="top" Mode="In" Type="String" />
+      <Parameter Name="where" Mode="In" Type="String" />
+      <Parameter Name="order" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Get_By_Top_Phong">
+      <Parameter Name="top" Mode="In" Type="String" />
+      <Parameter Name="where" Mode="In" Type="String" />
+      <Parameter Name="order" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(HotelNetModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(HotelNetModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Insearch_PQ">
+      <Parameter Name="MaTaiKhoan" Mode="In" Type="String" />
+      <Parameter Name="TrangChu" Mode="In" Type="Boolean" />
+      <Parameter Name="TiepNhanKhach" Mode="In" Type="Boolean" />
+      <Parameter Name="DanhSachPhong" Mode="In" Type="Boolean" />
+      <Parameter Name="LoaiPhong" Mode="In" Type="Boolean" />
+      <Parameter Name="DichVu" Mode="In" Type="Boolean" />
+      <Parameter Name="ThucDon" Mode="In" Type="Boolean" />
+      <Parameter Name="PhongBan" Mode="In" Type="Boolean" />
+      <Parameter Name="KhuVuc" Mode="In" Type="Boolean" />
+      <Parameter Name="ThongTinKhach" Mode="In" Type="Boolean" />
+      <Parameter Name="ThongTinNV" Mode="In" Type="Boolean" />
+      <Parameter Name="DanhSachHD" Mode="In" Type="Boolean" />
+      <Parameter Name="ChucVu" Mode="In" Type="Boolean" />
+      <Parameter Name="LichDonPhong" Mode="In" Type="Boolean" />
+      <Parameter Name="TKCuaTui" Mode="In" Type="Boolean" />
+      <Parameter Name="MaNV" Mode="In" Type="Int32" />
+      <Parameter Name="PhanQuyen" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_insert_Phong">
+      <Parameter Name="tenphong" Mode="In" Type="String" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+      <Parameter Name="vitri" Mode="In" Type="String" />
+      <Parameter Name="maloaiphong" Mode="In" Type="Int32" />
+      <Parameter Name="nguoilon" Mode="In" Type="Int32" />
+      <Parameter Name="treem" Mode="In" Type="Int32" />
+      <Parameter Name="makv" Mode="In" Type="Int32" />
+      <Parameter Name="trangthai" Mode="In" Type="Int32" />
+      <Parameter Name="anh" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KhuVuc_ADD">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KhuVuc_Update">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="ma" Mode="In" Type="Int32" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_loadcb">
+      <Parameter Name="ma" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="tenbang" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LoaiPhong_Delete">
+      <Parameter Name="ma" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LoaiPhong_Get_By_Top">
+      <Parameter Name="top" Mode="In" Type="String" />
+      <Parameter Name="where" Mode="In" Type="String" />
+      <Parameter Name="order" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LoaiPhong_insert">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="Double" />
+      <Parameter Name="trangthai" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LoaiPhong_Search" ReturnType="Collection(HotelNetModel.sp_LoaiPhong_Search_Result)">
+      <Parameter Name="ma" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="String" />
+      <Parameter Name="trangthai" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LoaiPhong_Update">
+      <Parameter Name="ma" Mode="In" Type="Int32" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="Double" />
+      <Parameter Name="trangthai" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_login" ReturnType="Collection(HotelNetModel.sp_login_Result)">
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_lstHoaDon" ReturnType="Collection(HotelNetModel.sp_lstHoaDon_Result)" />
+    <FunctionImport Name="sp_PhongBan_ADD">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="TrangThai" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PhongBan_Update">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="ma" Mode="In" Type="Int32" />
+      <Parameter Name="trangthai" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PQ_Get_By_Top" ReturnType="Collection(HotelNetModel.sp_PQ_Get_By_Top_Result)" />
+    <FunctionImport Name="sp_PQ_Get_By_Top1" ReturnType="Collection(HotelNetModel.sp_PQ_Get_By_Top1_Result)">
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Search_PQ">
+      <Parameter Name="tk" Mode="In" Type="String" />
+      <Parameter Name="tennv" Mode="In" Type="String" />
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="tencv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_update_Phong">
+      <Parameter Name="maphong" Mode="In" Type="Int32" />
+      <Parameter Name="tenphong" Mode="In" Type="String" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+      <Parameter Name="vitri" Mode="In" Type="String" />
+      <Parameter Name="maloaiphong" Mode="In" Type="Int32" />
+      <Parameter Name="nguoilon" Mode="In" Type="Int32" />
+      <Parameter Name="treem" Mode="In" Type="Int32" />
+      <Parameter Name="makv" Mode="In" Type="Int32" />
+      <Parameter Name="trangthai" Mode="In" Type="Int32" />
+      <Parameter Name="anh" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_checkLoginLP_Result">
+    <Property Type="Int32" Name="MaLoaiPhong" Nullable="false" />
+    <Property Type="String" Name="TenLoaiPhong" Nullable="false" />
+    <Property Type="Double" Name="GiaPhong" Nullable="false" />
+    <Property Type="Int32" Name="TrangThai" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_LoaiPhong_Search_Result">
+    <Property Type="Int32" Name="MaLoaiPhong" Nullable="false" />
+    <Property Type="String" Name="TenLoaiPhong" Nullable="false" />
+    <Property Type="Double" Name="GiaPhong" Nullable="false" />
+    <Property Type="Int32" Name="TrangThai" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_login_Result">
+    <Property Type="Int32" Name="MaNV" Nullable="false" />
+    <Property Type="String" Name="TenNV" Nullable="true" />
+    <Property Type="DateTime" Name="NgaySinh" Nullable="true" Precision="23" />
+    <Property Type="String" Name="DiaChi" Nullable="true" />
+    <Property Type="Int32" Name="GioiTinh" Nullable="true" />
+    <Property Type="Boolean" Name="TrangThai" Nullable="true" />
+    <Property Type="Int32" Name="SDT" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="true" />
+    <Property Type="DateTime" Name="NgayBDL" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Password" Nullable="true" />
+    <Property Type="Double" Name="Luong" Nullable="true" />
+    <Property Type="Int32" Name="MaCV" Nullable="true" />
+    <Property Type="Int32" Name="MaPhongBan" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_lstHoaDon_Result">
+    <Property Type="Int32" Name="MaHD" Nullable="false" />
+    <Property Type="String" Name="TenPhong" Nullable="false" />
+    <Property Type="DateTime" Name="BookRoomStart" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="BookRoomTill" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="SoLuongKhach" Nullable="true" />
+    <Property Type="Double" Name="TongTien" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_PQ_Get_By_Top_Result">
+    <Property Type="String" Name="MaTaiKhoan" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNv" Nullable="true" />
+    <Property Type="Int32" Name="MaNV" Nullable="false" />
+    <Property Type="String" Name="TenCV" Nullable="true" />
+    <Property Type="Boolean" Name="TrangChu" Nullable="true" />
+    <Property Type="Boolean" Name="TiepNhanKhach" Nullable="true" />
+    <Property Type="Boolean" Name="DanhSachPhong" Nullable="true" />
+    <Property Type="Boolean" Name="LoaiPhong" Nullable="true" />
+    <Property Type="Boolean" Name="DichVu" Nullable="true" />
+    <Property Type="Boolean" Name="ThucDon" Nullable="true" />
+    <Property Type="Boolean" Name="PhongBan" Nullable="true" />
+    <Property Type="Boolean" Name="KhuVuc" Nullable="true" />
+    <Property Type="Boolean" Name="ThongTinKhach" Nullable="true" />
+    <Property Type="Boolean" Name="ThongTinNV" Nullable="true" />
+    <Property Type="Boolean" Name="DanhSachHD" Nullable="true" />
+    <Property Type="Boolean" Name="ChucVu" Nullable="true" />
+    <Property Type="Boolean" Name="LichDonPhong" Nullable="true" />
+    <Property Type="Boolean" Name="TKCuaTui" Nullable="true" />
+    <Property Type="Boolean" Name="PhanQuyen" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_PQ_Get_By_Top1_Result">
+    <Property Type="String" Name="MaTaiKhoan" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="TrangChu" Nullable="true" />
+    <Property Type="Boolean" Name="TiepNhanKhach" Nullable="true" />
+    <Property Type="Boolean" Name="DanhSachPhong" Nullable="true" />
+    <Property Type="Boolean" Name="LoaiPhong" Nullable="true" />
+    <Property Type="Boolean" Name="DichVu" Nullable="true" />
+    <Property Type="Boolean" Name="ThucDon" Nullable="true" />
+    <Property Type="Boolean" Name="PhongBan" Nullable="true" />
+    <Property Type="Boolean" Name="KhuVuc" Nullable="true" />
+    <Property Type="Boolean" Name="ThongTinKhach" Nullable="true" />
+    <Property Type="Boolean" Name="ThongTinNV" Nullable="true" />
+    <Property Type="Boolean" Name="DanhSachHD" Nullable="true" />
+    <Property Type="Boolean" Name="ChucVu" Nullable="true" />
+    <Property Type="Boolean" Name="LichDonPhong" Nullable="true" />
+    <Property Type="Boolean" Name="TKCuaTui" Nullable="true" />
+    <Property Type="Int32" Name="MaNV" Nullable="true" />
+    <Property Type="Boolean" Name="PhanQuyen" Nullable="true" />
+    <Property Type="Int32" Name="MaNV1" Nullable="false" />
+    <Property Type="String" Name="TenNV" Nullable="true" />
+    <Property Type="DateTime" Name="NgaySinh" Nullable="true" Precision="23" />
+    <Property Type="String" Name="DiaChi" Nullable="true" />
+    <Property Type="Int32" Name="GioiTinh" Nullable="true" />
+    <Property Type="Boolean" Name="TrangThai" Nullable="true" />
+    <Property Type="Int32" Name="SDT" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="true" />
+    <Property Type="DateTime" Name="NgayBDL" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Password" Nullable="true" />
+    <Property Type="Double" Name="Luong" Nullable="true" />
+    <Property Type="Int32" Name="MaCV" Nullable="true" />
+    <Property Type="Int32" Name="MaPhongBan" Nullable="true" />
+  </ComplexType>
+</Schema>

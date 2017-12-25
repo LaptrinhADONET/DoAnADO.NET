@@ -43,7 +43,18 @@ namespace Hotel.DAL
 
         public override void Update(KhachHang obj)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("[sp_KhachHang_Update]", db.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ma", int.Parse(obj.MaKH)));
+            cmd.Parameters.Add(new SqlParameter("@ten", obj.TenKH));
+            cmd.Parameters.Add(new SqlParameter("@gioitinh", int.Parse(obj.GioiTinh)));
+            cmd.Parameters.Add(new SqlParameter("@trangthai", obj.TrangThai.Contains("1") ? 1 : 0));
+            cmd.Parameters.Add(new SqlParameter("@diachi", obj.DiaChi));
+            cmd.Parameters.Add(new SqlParameter("@sdt", int.Parse(obj.SDT)));
+            cmd.Parameters.Add(new SqlParameter("@email", obj.Email));
+            cmd.Parameters.Add(new SqlParameter("@cmt", int.Parse(obj.CMT)));
+            cmd.Parameters.Add(new SqlParameter("@namsinh", int.Parse(obj.Ns)));
+            cmd.ExecuteNonQuery();
         }
     }
 }

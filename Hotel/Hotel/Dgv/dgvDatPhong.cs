@@ -38,7 +38,7 @@ namespace Hotel.Dgv
             cb.ValueMember = "MaKH";
         }
 
-        public void getcmbPhong(ComboBox cb)
+        public DataTable getcmbPhong(ComboBox cb)
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.vv_Phong", db.GetConnection());
             cmd.ExecuteNonQuery();
@@ -48,18 +48,6 @@ namespace Hotel.Dgv
             cb.DataSource = dt;
             cb.DisplayMember = "TenPhong";
             cb.ValueMember = "TenPhong";
-        }
-
-        public DataTable getKH(string ma)
-        {
-            KhachHang obj = new KhachHang();
-            string str = " SELECT* FROM dbo.DisplayKH where MaKH = " + ma;
-            SqlCommand cmd = new SqlCommand(str, db.GetConnection());
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-
             return dt;
         }
     }

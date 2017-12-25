@@ -39,6 +39,9 @@ namespace Hotel.Dgv
             DataGridViewTextBoxColumn text7 = new DataGridViewTextBoxColumn();
             text7.HeaderText = "Năm sinh";
             text7.DataPropertyName = "NamSinh";
+            DataGridViewTextBoxColumn text8 = new DataGridViewTextBoxColumn();
+            text8.HeaderText = "Giới tính";
+            text8.DataPropertyName = "GioiTinh";
 
             dgv.Columns.Add(text0);
             dgv.Columns.Add(text1);
@@ -48,6 +51,7 @@ namespace Hotel.Dgv
             dgv.Columns.Add(text5);
             dgv.Columns.Add(text6);
             dgv.Columns.Add(text7);
+            dgv.Columns.Add(text8);
         }
 
         public static void GetData(DataGridView dgv, string top, string where, string order, Label lb, string tenbang)
@@ -70,6 +74,7 @@ namespace Hotel.Dgv
             obj.TrangThai = dgv.Rows[r].Cells[5].Value.ToString();
             obj.CMT = dgv.Rows[r].Cells[6].Value.ToString();
             obj.Ns = dgv.Rows[r].Cells[7].Value.ToString();
+            obj.GioiTinh = dgv.Rows[r].Cells[8].Value.ToString();
             Properties.Settings.Default.KhachHangObj = obj;
         }
     }

@@ -18,9 +18,9 @@ namespace Hotel.ListForm
     public partial class frmLoaiPhong : UserControl
     {
         public static bool flag;
-        public static LoaiPhong objLoai = new LoaiPhong();
+        public static Model.LoaiPhong objLoai = new Model.LoaiPhong();
         private DataTable data = new DataTable();
-        private List<LoaiPhong> lp = new List<LoaiPhong>();
+        private List<Model.LoaiPhong> lp = new List<Model.LoaiPhong>();
         private LoaiPhongBUS lpBUS = new LoaiPhongBUS();
 
         public frmLoaiPhong()
@@ -39,17 +39,11 @@ namespace Hotel.ListForm
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            LoaiPhong lp = new LoaiPhong();
-            lp.MaLoaiPhong = txtMa.Text;
+            Model.LoaiPhong lp = new Model.LoaiPhong();
+
             lp.TenLoaiPhong = txtTen.Text;
-            lp.GiaPhong = numDonGia.Value.ToString();
-            if (cbTrangThai.Text == "Hoạt động")
-            {
-                lp.TrangThai = "1";
-            }
-            lp.TrangThai = "0";
-            lpBUS.Get_By_Top("", "", "");
-            string sql = "MaLoaiPhong LIKE '%" + txtMa.Text + "%'AND TenLoaiPhong LIKE '%" + txtTen.Text + "%' AND GiaPhong LIKE '%" + numDonGia.Value + "%' AND TrangThai LIKE '%" + cbTrangThai.Text + "%'";
+            // lpBUS.Get_By_Top("", "", "");
+            string sql = "TenLoaiPhong LIKE '%" + txtTen.Text + "%'";
             getData("", sql, "");
         }
 
@@ -75,7 +69,6 @@ namespace Hotel.ListForm
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            txtMa.Text = "Nhập mã loại...";
             txtTen.Text = "Nhập tên loại...";
             getData("", "", "");
         }
@@ -134,7 +127,6 @@ namespace Hotel.ListForm
 
         private void txtMa_MouseClick(object sender, MouseEventArgs e)
         {
-            txtMa.Text = "";
         }
 
         private void txtTen_MouseClick(object sender, MouseEventArgs e)

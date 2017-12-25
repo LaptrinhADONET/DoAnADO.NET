@@ -1,4 +1,5 @@
 ﻿using Hotel.ListForm1;
+using Hotel.ListForm2;
 using Hotel.Repost;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Hotel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_DatPhong());
+            Application.Run(new Login());
         }
     }
 }

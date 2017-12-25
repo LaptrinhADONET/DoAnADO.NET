@@ -63,6 +63,14 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
@@ -77,7 +85,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -118,6 +129,147 @@
     </Compile>
     <Compile Include="ListForm1\frm_DatPhong.Designer.cs">
       <DependentUpon>frm_DatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListForm2\AddKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForm2\AddKhachHang.Designer.cs">
+      <DependentUpon>AddKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListForm2\AddNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForm2\AddNV.Designer.cs">
+      <DependentUpon>AddNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\BookRoom.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\ChucVu.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\CTDichVu.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\CTHoaDon.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\data.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>data.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\data.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\data.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>data.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\DichVu.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\DisplayKH.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\HoaDon.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\KhachHang.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\KhuVuc.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\LichDonPhong.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\LoaiPhong.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\Menu.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\NhanVien.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\PhanQuyen.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\Phong.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\PhongBan.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\Product.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\sp_checkLoginLP_Result.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\sp_helpdiagrams_Result.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\sp_LoaiPhong_Search_Result.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\sp_login_Result.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\sp_lstHoaDon_Result.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\sp_PQ_Get_By_Top1_Result.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\sp_PQ_Get_By_Top_Result.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\sysdiagram.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\TTMonAn.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\VatDung.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\vv_HoaDon.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\vv_KHD.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\vv_Phong.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\vv_PhongHD.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\vv_rpKhachHang.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\vv_rpNhanVien.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\vv_rpNhanVienShow.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\vv_rpPhong.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\vv_sl.cs">
+      <DependentUpon>data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\vv_SLSD.cs">
+      <DependentUpon>data.tt</DependentUpon>
     </Compile>
     <Compile Include="Repost\HoaDon_RP_View.cs">
       <AutoGen>True</AutoGen>
@@ -254,11 +406,27 @@
       <DependentUpon>Rp_KhachHang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="_LT_NetDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_LT_NetDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_LT_NetDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_LT_NetDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListForm1\frm_DatPhong.resx">
       <DependentUpon>frm_DatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm2\AddKhachHang.resx">
+      <DependentUpon>AddKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm2\AddNV.resx">
+      <DependentUpon>AddNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Repost\HoaDon_RP_View.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -346,7 +514,93 @@
     <None Include="DATABASE\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="NewFolder1\data.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>data.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="NewFolder1\data.edmx.diagram">
+      <DependentUpon>data.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\frmNhanKhach.datasource" />
+    <None Include="Properties\DataSources\Hotel.DAL.NewFolder1.KhachHang.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_HoaDonDataTable.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_HoaDonRow.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_HoaDonRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_HoaDonRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpKhachHangDataTable.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpKhachHangRow.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpKhachHangRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpKhachHangRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpNhanVienDataTable.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpNhanVienRow.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpNhanVienRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpNhanVienRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpNhanVienShowDataTable.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpNhanVienShowRow.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpNhanVienShowRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpNhanVienShowRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpPhongDataTable.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpPhongRow.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpPhongRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1+vv_rpPhongRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1TableAdapters.vv_HoaDonTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1TableAdapters.vv_rpKhachHangTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1TableAdapters.vv_rpNhanVienShowTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1TableAdapters.vv_rpNhanVienTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.DataSet1TableAdapters.vv_rpPhongTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Hotel.DATABASE.KhachHang.datasource" />
+    <None Include="Properties\DataSources\Hotel.Dgv.DGV.datasource" />
+    <None Include="Properties\DataSources\Hotel.Dgv.DGVChucVu.datasource" />
+    <None Include="Properties\DataSources\Hotel.Dgv.DGVDanhSachKhach.datasource" />
+    <None Include="Properties\DataSources\Hotel.Dgv.dgvDatPhong.datasource" />
+    <None Include="Properties\DataSources\Hotel.Dgv.DGVDichVu.datasource" />
+    <None Include="Properties\DataSources\Hotel.Dgv.DGVDSNhanVien.datasource" />
+    <None Include="Properties\DataSources\Hotel.Dgv.DGVHoaDon.datasource" />
+    <None Include="Properties\DataSources\Hotel.Dgv.DGVKhuVuc.datasource" />
+    <None Include="Properties\DataSources\Hotel.Dgv.DGVPhong.datasource" />
+    <None Include="Properties\DataSources\Hotel.Dgv.DGVPhongBan.datasource" />
+    <None Include="Properties\DataSources\Hotel.Dgv.DGVThucDon.datasource" />
+    <None Include="Properties\DataSources\Hotel.libraly.Admin.datasource" />
+    <None Include="Properties\DataSources\Hotel.ListForm.frmLoaiPhong.datasource" />
+    <None Include="Properties\DataSources\Hotel.ListForm.frmPhanQuyen.datasource" />
+    <None Include="Properties\DataSources\Hotel.ListForm.TrangChu.datasource" />
+    <None Include="Properties\DataSources\Hotel.ListForm1.DanhSachPhong.datasource" />
+    <None Include="Properties\DataSources\Hotel.ListForm1.frmDanhSachPhong.datasource" />
+    <None Include="Properties\DataSources\Hotel.ListForm1.frm_DatPhong.datasource" />
+    <None Include="Properties\DataSources\Hotel.ListForm2.frmADDTTLoaiPhong.datasource" />
+    <None Include="Properties\DataSources\Hotel.ListForm2.frmChucVu.datasource" />
+    <None Include="Properties\DataSources\Hotel.ListForm2.frmDichVu.datasource" />
+    <None Include="Properties\DataSources\Hotel.ListForm2.frmKhuVuc.datasource" />
+    <None Include="Properties\DataSources\Hotel.ListForm2.frmphongban.datasource" />
+    <None Include="Properties\DataSources\Hotel.NewFolder1.ChucVu.datasource" />
+    <None Include="Properties\DataSources\Hotel.NewFolder1.DichVu.datasource" />
+    <None Include="Properties\DataSources\Hotel.NewFolder1.frmAddLoaiPhong.datasource" />
+    <None Include="Properties\DataSources\Hotel.NewFolder1.KhachHang.datasource" />
+    <None Include="Properties\DataSources\Hotel.NewFolder1.LoaiPhong.datasource" />
+    <None Include="Properties\DataSources\Hotel.NewFolder1.Phong.datasource" />
+    <None Include="Properties\DataSources\Hotel.NewFolder1.PhongBan.datasource" />
+    <None Include="Properties\DataSources\Hotel.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Hotel.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.CachedHoaDon_RP_View.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.CachedNhan_Vien_RP.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.CachedRpPhong.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.CachedRp_KhachHang.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.Form1123.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.HoaDon_RP.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.HoaDon_RP_View.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.KhachHang_rp.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.NhanVien_rp.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.Nhan_Vien_RP.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.RpPhong.datasource" />
+    <None Include="Properties\DataSources\Hotel.Repost.Rp_KhachHang.datasource" />
+    <None Include="Properties\DataSources\Login.datasource" />
+    <None Include="Properties\DataSources\Menu.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -361,6 +615,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_LT_NetDataSet.xsc">
+      <DependentUpon>_LT_NetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_LT_NetDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_LT_NetDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_LT_NetDataSet.xss">
+      <DependentUpon>_LT_NetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_LT_NetDataSet1.xsc">
+      <DependentUpon>_LT_NetDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_LT_NetDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_LT_NetDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_LT_NetDataSet1.xss">
+      <DependentUpon>_LT_NetDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -378,12 +654,19 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="NewFolder1\data.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>data.edmx</DependentUpon>
+      <LastGenOutput>data.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NewFolder1\data.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>data.edmx</DependentUpon>
+      <LastGenOutput>data.cs</LastGenOutput>
+    </Content>
     <None Include="Resources\check.bmp" />
     <None Include="Images\High Importance_20px.png" />
     <None Include="Images\Ok_20px.png" />
-    <Content Include="DATABASE\LT.Net.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\Image1.bmp" />
     <None Include="Images\abc\Product1.jpg" />
     <None Include="Images\abc\Product2.jpg" />
@@ -413,6 +696,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup />

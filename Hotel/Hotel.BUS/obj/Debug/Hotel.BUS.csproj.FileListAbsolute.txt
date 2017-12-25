@@ -18,13 +18,18 @@ C:\Users\camIT\OneDrive\Documents\GitHub\New folder\Hotel\Hotel.BUS\bin\Debug\Co
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder\Hotel\Hotel.BUS\obj\Debug\Hotel.BUS.csprojResolveAssemblyReference.cache
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder\Hotel\Hotel.BUS\obj\Debug\Hotel.BUS.dll
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder\Hotel\Hotel.BUS\obj\Debug\Hotel.BUS.pdb
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\Hotel.BUS.dll.config
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\Hotel.BUS.dll
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\Hotel.BUS.pdb
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\Configuration.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\EntityFramework.dll
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\Hotel.DAL.dll
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\Hotel.DAL.pdb
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\Configuration.pdb
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\Configuration.xml
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\EntityFramework.xml
+C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\obj\Debug\Hotel.BUS.csprojResolveAssemblyReference.cache
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\obj\Debug\Hotel.BUS.dll
 C:\Users\camIT\OneDrive\Documents\GitHub\New folder (4)\Hotel\Hotel.BUS\obj\Debug\Hotel.BUS.pdb

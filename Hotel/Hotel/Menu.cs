@@ -91,7 +91,7 @@ namespace Hotel
             Login lg = new Login();
 
             btnTest[0, 0].Enabled = Login.TrangChu == true ? true : false;
-            btnTest[1, 0].Enabled = Login.TiepNhanKhach == true ? true : false;
+            btnTest[1, 0].Enabled = false;
             btnTest[2, 0].Enabled = Login.DanhSachPhong == true ? true : false;
             btnTest[3, 0].Enabled = Login.LoaiPhong == true ? true : false;
             btnTest[4, 0].Enabled = Login.DichVu == true ? true : false;
@@ -102,8 +102,8 @@ namespace Hotel
             btnTest[9, 0].Enabled = Login.KhuVuc == true ? true : false;
             btnTest[10, 0].Enabled = Login.DanhSachHD == true ? true : false;
             btnTest[11, 0].Enabled = Login.ChucVu == true ? true : false;
-            btnTest[12, 0].Enabled = Login.LichDonPhong == true ? true : false;
-            btnTest[13, 0].Enabled = Login.TKCuaTui == true ? true : false;
+            btnTest[12, 0].Enabled = false;
+            btnTest[13, 0].Enabled = false;
             btnTest[14, 0].Enabled = Login.PhanQuyen == true ? true : false;
         }
 

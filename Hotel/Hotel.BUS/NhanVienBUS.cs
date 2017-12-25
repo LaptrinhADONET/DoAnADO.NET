@@ -23,6 +23,11 @@ namespace Hotel.BUS
             return NVDAL.login(Email, Pass);
         }
 
+        public void Update(NhanVien obj)
+        {
+            NVDAL.Update(obj);
+        }
+
         public DataTable ViewData()
         {
             return NVDAL.ViewData();

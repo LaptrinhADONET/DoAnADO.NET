@@ -50,6 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -61,6 +62,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.lbDattruoc);
             this.panel2.Controls.Add(this.lbDonDep);
             this.panel2.Controls.Add(this.lbTrong);
@@ -302,6 +304,14 @@
             this.label10.Text = "Đang sử dụng";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label1
+            // 
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(23, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1024, 467);
+            this.label1.TabIndex = 111;
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,5 +358,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label1;
     }
 }
