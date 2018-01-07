@@ -70,6 +70,7 @@
             this.Panel.Name = "Panel";
             this.Panel.Size = new System.Drawing.Size(1069, 610);
             this.Panel.TabIndex = 0;
+            this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Paint);
             // 
             // panel2
             // 
@@ -281,6 +282,7 @@
             this.Controls.Add(this.Panel);
             this.Name = "frmNhanKhach";
             this.Size = new System.Drawing.Size(1069, 610);
+            this.Load += new System.EventHandler(this.frmNhanKhach_Load);
             this.Panel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

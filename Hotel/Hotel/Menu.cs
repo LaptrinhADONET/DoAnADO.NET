@@ -13,6 +13,7 @@ using Hotel.BUS;
 using Hotel.Model;
 using Hotel.ListForm;
 using Hotel.ListForm1;
+using Hotel;
 
 namespace Hotel
 {
@@ -73,7 +74,7 @@ namespace Hotel
         public void CreateNameMenuAD()
         {
             btnTest[0, 0].Text = "TRANG CHỦ";
-            btnTest[1, 0].Text = "TIẾP NHẬN KHÁCH";
+            btnTest[1, 0].Text = "";
             btnTest[2, 0].Text = "DANH SÁCH PHÒNG";
             btnTest[3, 0].Text = "LOẠI PHÒNG";
             btnTest[4, 0].Text = "DỊCH VỤ";
@@ -84,8 +85,8 @@ namespace Hotel
             btnTest[9, 0].Text = "KHU VỰC";
             btnTest[10, 0].Text = "DANH SÁCH HÓA ĐƠN";
             btnTest[11, 0].Text = "CHỨC VỤ";
-            btnTest[12, 0].Text = "LỊCH DỌN PHÒNG";
-            btnTest[13, 0].Text = "TÀI KHOẢN CỦA TÔI";
+            btnTest[12, 0].Text = "";
+            btnTest[13, 0].Text = "";
             btnTest[14, 0].Text = "PHÂN QUYỀN";
             lbNameNV.Text = Properties.Settings.Default.Name.ToString();
             Login lg = new Login();
@@ -127,11 +128,8 @@ namespace Hotel
             }
             if (i == 1 && (btnTest[1, 0].Enabled == true))
             {
-                pnMenu.Controls.Clear();
-                frmNhanKhach frm = new frmNhanKhach();
-                pnMenu.Controls.Add(frm);
-                flag = true;
-                f = 1;
+                Form1 frmnk = new Form1();
+                frmnk.ShowDialog();
             }
             if (i == 2 && (btnTest[2, 0].Enabled == true))
             {

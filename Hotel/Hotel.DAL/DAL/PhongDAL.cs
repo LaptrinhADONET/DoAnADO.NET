@@ -42,6 +42,7 @@ namespace Hotel.DAL
             string str = " SELECT Phong.MaPhong, TenPhong, ViTri, NguoiLon, TreEm, Phong.TrangThai, KhuVuc.MaKV, TenKV FROM dbo.Phong, dbo.KhuVuc, dbo.BookRoom,dbo.KhachHang,dbo.ctphong, dbo.CheckOut WHERE dbo.KhuVuc.MaKV = dbo.Phong.MaKV AND phong.MaPhong = dbo.ctphong.MaPhong ANDdbo.ctphong.MaBookRoom = BookRoom.MaBookRoom AND dbo.CheckOut.MaBookRoom = BookRoom.MaBookRoomAND dbo.KhachHang.MaKH = dbo.CheckOut.MaKH AND dbo.Phong.MaPhong = N''";
             SqlCommand cmd = new SqlCommand(str, db.GetConnection());
             cmd.ExecuteNonQuery();
+            cmd.CommandTimeout = 0;
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -106,6 +107,7 @@ namespace Hotel.DAL
             cmd.Parameters.Add(new SqlParameter("@ma", ma));
             cmd.Parameters.Add(new SqlParameter("@ten", ten));
             cmd.Parameters.Add(new SqlParameter("@tenbang", tenbang));
+            cmd.CommandTimeout = 0;
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -115,6 +117,7 @@ namespace Hotel.DAL
         public int SoLuongPhong()
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.Phong", db.GetConnection());
+            cmd.CommandTimeout = 0;
             // cmd.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

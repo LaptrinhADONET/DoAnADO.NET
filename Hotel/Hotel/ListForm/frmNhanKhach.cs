@@ -19,15 +19,7 @@ namespace Hotel
         public frmNhanKhach()
         {
             InitializeComponent();
-            txtTenPhong.Enabled = false;
-            txtGia.Enabled = false;
-            txtViTri.Enabled = false;
-            txtNguoiLon.Enabled = false;
-            txtTreEm.Enabled = false;
-            txtTenKhuVuc.Enabled = false;
-            txtTrangThai.Enabled = false;
-            ve();
-            lbName.Text = "Tiếp nhận khách";
+           
         }
 
         private DataTable abc()
@@ -133,6 +125,24 @@ namespace Hotel
                     flag++;
                 }
             }
+        }
+
+        private void Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmNhanKhach_Load(object sender, EventArgs e)
+        {
+            txtTenPhong.Enabled = false;
+            txtGia.Enabled = false;
+            txtViTri.Enabled = false;
+            txtNguoiLon.Enabled = false;
+            txtTreEm.Enabled = false;
+            txtTenKhuVuc.Enabled = false;
+            txtTrangThai.Enabled = false;
+            ve();
+            lbName.Text = "Tiếp nhận khách";
         }
     }
 }
